@@ -56,3 +56,10 @@ real_words |>
   theme_few() +
   theme(axis.ticks.y = element_blank()) +
   scale_fill_colorblind()
+
+# -- write -- #
+
+non_words |> 
+  write_tsv('dat/non_words.tsv')
+real_words |> 
+  write_tsv('dat/real_words.tsv')
