@@ -52,32 +52,19 @@ p3 = non_words |>
   geom_point() +
   geom_smooth()
 
-p1 + p2 + p3
+# p1 + p2 + p3
 
-summary(glm(cbind(resp1,resp2) ~ 1 + gcm + mgl, data = non_words, family = binomial))
-
-fit1 = glm(cbind(resp1,resp2) ~ 1 + gcm, data = non_words, family = binomial)
-
-non_words$resid = resid(fit1)
-
-non_words |> 
-  mutate(base = fct_reorder(base, resid)) |> 
-  ggplot(aes(resid,base)) +
-  geom_col()
-
-non_words |> 
-  ggplot(aes(gcm,log_odds,colour = resid)) +
-  geom_point() +
-  scale_colour_viridis_b()
+# summary(glm(cbind(resp1,resp2) ~ 1 + gcm + mgl, data = non_words, family = binomial))
 
 # we're simulating
+# find subset of non words where similarity to real words is most helpful in determining behaviour. I mean that might be noise too but uh hey
 
 sim = tibble(
-  id = 1:10000
+  id = 1:100000
 ) |> 
   rowwise() |> 
   mutate(
-    data = list(sample_n(non_words, 50))
+    data = list(sample_n(non_words, 32))
     ) |> 
   ungroup() |> 
   mutate(
@@ -85,11 +72,10 @@ sim = tibble(
     sum = map(model, tidy)
   ) |> 
   unnest(sum) |> 
-  filter(term == 'gcm') |> 
-  mutate(
-    abs_est = abs(estimate)
-  ) |> 
-  filter(abs_est == max(abs_est))
+  filter(
+    term == 'gcm',
+    estimate == max(estimate)
+         )
 
 non_words2 = sim$data[[1]]
 

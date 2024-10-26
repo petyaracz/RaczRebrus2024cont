@@ -67,6 +67,7 @@ out = bind_rows(pl,ine)
 # -- write -- #
 
 write_tsv(out, 'dat/master.tsv')
-out |> 
-  toJSON(pretty = TRUE) |> 
-  write_lines('dat/stim.js')
+stim = out |> 
+  toJSON(pretty = TRUE)
+stim = paste0('stim = ', stim)
+write_lines(stim, 'dat/stim.js')

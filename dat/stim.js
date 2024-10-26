@@ -1,83 +1,13 @@
 stim = [
   {
-    "stem": "narem",
-    "back": 9,
-    "front": 18,
-    "log_odds_back": -0.6419,
+    "stem": "dihely",
+    "back": 1,
+    "front": 28,
+    "log_odds_back": -2.6741,
     "type": "non word",
-    "transcription": "narem",
-    "prompt": "Ez egy narem. Ezek itt...",
-    "target_words": ["naremok", "naremek"]
-  },
-  {
-    "stem": "kábesz",
-    "back": 11,
-    "front": 15,
-    "log_odds_back": -0.2877,
-    "type": "non word",
-    "transcription": "kábes",
-    "prompt": "Ez egy kábesz. Ezek itt...",
-    "target_words": ["kábeszok", "kábeszek"]
-  },
-  {
-    "stem": "trájeg",
-    "back": 5,
-    "front": 21,
-    "log_odds_back": -1.2993,
-    "type": "non word",
-    "transcription": "trájeg",
-    "prompt": "Ez egy trájeg. Ezek itt...",
-    "target_words": ["trájegok", "trájegek"]
-  },
-  {
-    "stem": "gótem",
-    "back": 5,
-    "front": 21,
-    "log_odds_back": -1.2993,
-    "type": "non word",
-    "transcription": "gótem",
-    "prompt": "Ez egy gótem. Ezek itt...",
-    "target_words": ["gótemok", "gótemek"]
-  },
-  {
-    "stem": "spatel",
-    "back": 4,
-    "front": 22,
-    "log_odds_back": -1.5261,
-    "type": "non word",
-    "transcription": "špatel",
-    "prompt": "Ez egy spatel. Ezek itt...",
-    "target_words": ["spatelok", "spatelek"]
-  },
-  {
-    "stem": "sporzem",
-    "back": 4,
-    "front": 25,
-    "log_odds_back": -1.6487,
-    "type": "non word",
-    "transcription": "šporzem",
-    "prompt": "Ez egy sporzem. Ezek itt...",
-    "target_words": ["sporzemok", "sporzemek"]
-  },
-  {
-    "stem": "zuten",
-    "back": 6,
-    "front": 23,
-    "log_odds_back": -1.2321,
-    "type": "non word",
-    "transcription": "zuten",
-    "prompt": "Ez egy zuten. Ezek itt...",
-    "target_words": ["zutenok", "zutenek"]
-  },
-  {
-    "stem": "pítend",
-    "back": 3,
-    "front": 26,
-    "log_odds_back": -1.9095,
-    "type": "non word",
-    "transcription": "pítend",
-    "prompt": "Ez egy pítend. Ezek itt...",
-    "target_words": ["pítendok", "pítendek"]
+    "transcription": "dihej",
+    "prompt": "Ez egy dihely. Ezek itt...",
+    "target_words": ["dihelyok", "dihelyek"]
   },
   {
     "stem": "fincek",
@@ -90,34 +20,44 @@ stim = [
     "target_words": ["fincekok", "fincekek"]
   },
   {
-    "stem": "sartely",
+    "stem": "jóbec",
+    "back": 8,
+    "front": 21,
+    "log_odds_back": -0.8938,
+    "type": "non word",
+    "transcription": "jóbec",
+    "prompt": "Ez egy jóbec. Ezek itt...",
+    "target_words": ["jóbecok", "jóbecek"]
+  },
+  {
+    "stem": "priszkenc",
+    "back": 2,
+    "front": 25,
+    "log_odds_back": -2.1595,
+    "type": "non word",
+    "transcription": "priskenc",
+    "prompt": "Ez egy priszkenc. Ezek itt...",
+    "target_words": ["priszkencok", "priszkencek"]
+  },
+  {
+    "stem": "dalenc",
     "back": 9,
     "front": 17,
     "log_odds_back": -0.5878,
     "type": "non word",
-    "transcription": "šartej",
-    "prompt": "Ez egy sartely. Ezek itt...",
-    "target_words": ["sartelyok", "sartelyek"]
+    "transcription": "dalenc",
+    "prompt": "Ez egy dalenc. Ezek itt...",
+    "target_words": ["dalencok", "dalencek"]
   },
   {
-    "stem": "priszec",
-    "back": 1,
-    "front": 26,
-    "log_odds_back": -2.6027,
+    "stem": "gúden",
+    "back": 2,
+    "front": 27,
+    "log_odds_back": -2.2336,
     "type": "non word",
-    "transcription": "prisec",
-    "prompt": "Ez egy priszec. Ezek itt...",
-    "target_words": ["priszecok", "priszecek"]
-  },
-  {
-    "stem": "sprivenc",
-    "back": 3,
-    "front": 23,
-    "log_odds_back": -1.7918,
-    "type": "non word",
-    "transcription": "šprivenc",
-    "prompt": "Ez egy sprivenc. Ezek itt...",
-    "target_words": ["sprivencok", "sprivencek"]
+    "transcription": "gúden",
+    "prompt": "Ez egy gúden. Ezek itt...",
+    "target_words": ["gúdenok", "gúdenek"]
   },
   {
     "stem": "csimen",
@@ -130,124 +70,24 @@ stim = [
     "target_words": ["csimenok", "csimenek"]
   },
   {
-    "stem": "braszenc",
-    "back": 8,
-    "front": 18,
-    "log_odds_back": -0.7472,
-    "type": "non word",
-    "transcription": "brasenc",
-    "prompt": "Ez egy braszenc. Ezek itt...",
-    "target_words": ["braszencok", "braszencek"]
-  },
-  {
-    "stem": "bidem",
-    "back": 1,
-    "front": 25,
-    "log_odds_back": -2.5649,
-    "type": "non word",
-    "transcription": "bidem",
-    "prompt": "Ez egy bidem. Ezek itt...",
-    "target_words": ["bidemok", "bidemek"]
-  },
-  {
-    "stem": "kliszer",
-    "back": 3,
-    "front": 24,
-    "log_odds_back": -1.8326,
-    "type": "non word",
-    "transcription": "kliser",
-    "prompt": "Ez egy kliszer. Ezek itt...",
-    "target_words": ["kliszerok", "kliszerek"]
-  },
-  {
-    "stem": "dingec",
-    "back": 3,
-    "front": 26,
-    "log_odds_back": -1.9095,
-    "type": "non word",
-    "transcription": "dingec",
-    "prompt": "Ez egy dingec. Ezek itt...",
-    "target_words": ["dingecok", "dingecek"]
-  },
-  {
-    "stem": "fojlegy",
-    "back": 1,
-    "front": 28,
-    "log_odds_back": -2.6741,
-    "type": "non word",
-    "transcription": "fojleḏ",
-    "prompt": "Ez egy fojlegy. Ezek itt...",
-    "target_words": ["fojlegyok", "fojlegyek"]
-  },
-  {
-    "stem": "surnegy",
-    "back": 9,
-    "front": 17,
-    "log_odds_back": -0.5878,
-    "type": "non word",
-    "transcription": "šurneḏ",
-    "prompt": "Ez egy surnegy. Ezek itt...",
-    "target_words": ["surnegyok", "surnegyek"]
-  },
-  {
-    "stem": "vurnel",
-    "back": 5,
-    "front": 21,
-    "log_odds_back": -1.2993,
-    "type": "non word",
-    "transcription": "vurnel",
-    "prompt": "Ez egy vurnel. Ezek itt...",
-    "target_words": ["vurnelok", "vurnelek"]
-  },
-  {
-    "stem": "dutec",
-    "back": 6,
-    "front": 21,
-    "log_odds_back": -1.1451,
-    "type": "non word",
-    "transcription": "dutec",
-    "prompt": "Ez egy dutec. Ezek itt...",
-    "target_words": ["dutecok", "dutecek"]
-  },
-  {
-    "stem": "dihely",
-    "back": 1,
-    "front": 28,
-    "log_odds_back": -2.6741,
-    "type": "non word",
-    "transcription": "dihej",
-    "prompt": "Ez egy dihely. Ezek itt...",
-    "target_words": ["dihelyok", "dihelyek"]
-  },
-  {
-    "stem": "hijegy",
-    "back": 3,
-    "front": 24,
-    "log_odds_back": -1.8326,
-    "type": "non word",
-    "transcription": "hijeḏ",
-    "prompt": "Ez egy hijegy. Ezek itt...",
-    "target_words": ["hijegyok", "hijegyek"]
-  },
-  {
-    "stem": "dajrens",
-    "back": 4,
-    "front": 23,
-    "log_odds_back": -1.5686,
-    "type": "non word",
-    "transcription": "dajrenš",
-    "prompt": "Ez egy dajrens. Ezek itt...",
-    "target_words": ["dajrensok", "dajrensek"]
-  },
-  {
-    "stem": "sihen",
+    "stem": "priszec",
     "back": 1,
     "front": 26,
     "log_odds_back": -2.6027,
     "type": "non word",
-    "transcription": "šihen",
-    "prompt": "Ez egy sihen. Ezek itt...",
-    "target_words": ["sihenok", "sihenek"]
+    "transcription": "prisec",
+    "prompt": "Ez egy priszec. Ezek itt...",
+    "target_words": ["priszecok", "priszecek"]
+  },
+  {
+    "stem": "spatel",
+    "back": 4,
+    "front": 22,
+    "log_odds_back": -1.5261,
+    "type": "non word",
+    "transcription": "špatel",
+    "prompt": "Ez egy spatel. Ezek itt...",
+    "target_words": ["spatelok", "spatelek"]
   },
   {
     "stem": "brigeszt",
@@ -260,14 +100,184 @@ stim = [
     "target_words": ["brigesztok", "brigesztek"]
   },
   {
-    "stem": "navec",
-    "back": 12,
-    "front": 17,
-    "log_odds_back": -0.3254,
+    "stem": "pítend",
+    "back": 3,
+    "front": 26,
+    "log_odds_back": -1.9095,
     "type": "non word",
-    "transcription": "navec",
-    "prompt": "Ez egy navec. Ezek itt...",
-    "target_words": ["navecok", "navecek"]
+    "transcription": "pítend",
+    "prompt": "Ez egy pítend. Ezek itt...",
+    "target_words": ["pítendok", "pítendek"]
+  },
+  {
+    "stem": "ikszert",
+    "back": 0,
+    "front": 29,
+    "log_odds_back": -3.4012,
+    "type": "non word",
+    "transcription": "iksert",
+    "prompt": "Ez egy ikszert. Ezek itt...",
+    "target_words": ["ikszertok", "ikszertek"]
+  },
+  {
+    "stem": "trincseg",
+    "back": 3,
+    "front": 23,
+    "log_odds_back": -1.7918,
+    "type": "non word",
+    "transcription": "trinčeg",
+    "prompt": "Ez egy trincseg. Ezek itt...",
+    "target_words": ["trincsegok", "trincsegek"]
+  },
+  {
+    "stem": "zuten",
+    "back": 6,
+    "front": 23,
+    "log_odds_back": -1.2321,
+    "type": "non word",
+    "transcription": "zuten",
+    "prompt": "Ez egy zuten. Ezek itt...",
+    "target_words": ["zutenok", "zutenek"]
+  },
+  {
+    "stem": "fojlegy",
+    "back": 1,
+    "front": 28,
+    "log_odds_back": -2.6741,
+    "type": "non word",
+    "transcription": "fojleḏ",
+    "prompt": "Ez egy fojlegy. Ezek itt...",
+    "target_words": ["fojlegyok", "fojlegyek"]
+  },
+  {
+    "stem": "ítens",
+    "back": 4,
+    "front": 25,
+    "log_odds_back": -1.6487,
+    "type": "non word",
+    "transcription": "ítenš",
+    "prompt": "Ez egy ítens. Ezek itt...",
+    "target_words": ["ítensok", "ítensek"]
+  },
+  {
+    "stem": "zihenc",
+    "back": 1,
+    "front": 28,
+    "log_odds_back": -2.6741,
+    "type": "non word",
+    "transcription": "zihenc",
+    "prompt": "Ez egy zihenc. Ezek itt...",
+    "target_words": ["zihencok", "zihencek"]
+  },
+  {
+    "stem": "jurdent",
+    "back": 7,
+    "front": 19,
+    "log_odds_back": -0.9163,
+    "type": "non word",
+    "transcription": "jurdent",
+    "prompt": "Ez egy jurdent. Ezek itt...",
+    "target_words": ["jurdentok", "jurdentek"]
+  },
+  {
+    "stem": "zined",
+    "back": 1,
+    "front": 25,
+    "log_odds_back": -2.5649,
+    "type": "non word",
+    "transcription": "zined",
+    "prompt": "Ez egy zined. Ezek itt...",
+    "target_words": ["zinedok", "zinedek"]
+  },
+  {
+    "stem": "nyítem",
+    "back": 1,
+    "front": 25,
+    "log_odds_back": -2.5649,
+    "type": "non word",
+    "transcription": "ṉítem",
+    "prompt": "Ez egy nyítem. Ezek itt...",
+    "target_words": ["nyítemok", "nyítemek"]
+  },
+  {
+    "stem": "braszenc",
+    "back": 8,
+    "front": 18,
+    "log_odds_back": -0.7472,
+    "type": "non word",
+    "transcription": "brasenc",
+    "prompt": "Ez egy braszenc. Ezek itt...",
+    "target_words": ["braszencok", "braszencek"]
+  },
+  {
+    "stem": "prately",
+    "back": 6,
+    "front": 23,
+    "log_odds_back": -1.2321,
+    "type": "non word",
+    "transcription": "pratej",
+    "prompt": "Ez egy prately. Ezek itt...",
+    "target_words": ["pratelyok", "pratelyek"]
+  },
+  {
+    "stem": "murdes",
+    "back": 9,
+    "front": 17,
+    "log_odds_back": -0.5878,
+    "type": "non word",
+    "transcription": "murdeš",
+    "prompt": "Ez egy murdes. Ezek itt...",
+    "target_words": ["murdesok", "murdesek"]
+  },
+  {
+    "stem": "vismer",
+    "back": 0,
+    "front": 27,
+    "log_odds_back": -3.3322,
+    "type": "non word",
+    "transcription": "višmer",
+    "prompt": "Ez egy vismer. Ezek itt...",
+    "target_words": ["vismerok", "vismerek"]
+  },
+  {
+    "stem": "licegy",
+    "back": 2,
+    "front": 24,
+    "log_odds_back": -2.1203,
+    "type": "non word",
+    "transcription": "liceḏ",
+    "prompt": "Ez egy licegy. Ezek itt...",
+    "target_words": ["licegyok", "licegyek"]
+  },
+  {
+    "stem": "dingec",
+    "back": 3,
+    "front": 26,
+    "log_odds_back": -1.9095,
+    "type": "non word",
+    "transcription": "dingec",
+    "prompt": "Ez egy dingec. Ezek itt...",
+    "target_words": ["dingecok", "dingecek"]
+  },
+  {
+    "stem": "spicet",
+    "back": 2,
+    "front": 25,
+    "log_odds_back": -2.1595,
+    "type": "non word",
+    "transcription": "špicet",
+    "prompt": "Ez egy spicet. Ezek itt...",
+    "target_words": ["spicetok", "spicetek"]
+  },
+  {
+    "stem": "klingesz",
+    "back": 3,
+    "front": 26,
+    "log_odds_back": -1.9095,
+    "type": "non word",
+    "transcription": "klinges",
+    "prompt": "Ez egy klingesz. Ezek itt...",
+    "target_words": ["klingeszok", "klingeszek"]
   },
   {
     "stem": "giheszt",
@@ -290,214 +300,24 @@ stim = [
     "target_words": ["bródeszok", "bródeszek"]
   },
   {
-    "stem": "vublet",
-    "back": 6,
-    "front": 20,
-    "log_odds_back": -1.0986,
-    "type": "non word",
-    "transcription": "vublet",
-    "prompt": "Ez egy vublet. Ezek itt...",
-    "target_words": ["vubletok", "vubletek"]
-  },
-  {
-    "stem": "hóbens",
-    "back": 5,
-    "front": 22,
-    "log_odds_back": -1.3437,
-    "type": "non word",
-    "transcription": "hóbenš",
-    "prompt": "Ez egy hóbens. Ezek itt...",
-    "target_words": ["hóbensok", "hóbensek"]
-  },
-  {
-    "stem": "jurdent",
-    "back": 7,
-    "front": 19,
-    "log_odds_back": -0.9163,
-    "type": "non word",
-    "transcription": "jurdent",
-    "prompt": "Ez egy jurdent. Ezek itt...",
-    "target_words": ["jurdentok", "jurdentek"]
-  },
-  {
-    "stem": "rapszek",
-    "back": 6,
-    "front": 23,
-    "log_odds_back": -1.2321,
-    "type": "non word",
-    "transcription": "rapsek",
-    "prompt": "Ez egy rapszek. Ezek itt...",
-    "target_words": ["rapszekok", "rapszekek"]
-  },
-  {
-    "stem": "priszkenc",
-    "back": 2,
-    "front": 25,
-    "log_odds_back": -2.1595,
-    "type": "non word",
-    "transcription": "priskenc",
-    "prompt": "Ez egy priszkenc. Ezek itt...",
-    "target_words": ["priszkencok", "priszkencek"]
-  },
-  {
-    "stem": "ítens",
-    "back": 4,
-    "front": 25,
-    "log_odds_back": -1.6487,
-    "type": "non word",
-    "transcription": "ítenš",
-    "prompt": "Ez egy ítens. Ezek itt...",
-    "target_words": ["ítensok", "ítensek"]
-  },
-  {
-    "stem": "júder",
-    "back": 10,
-    "front": 19,
-    "log_odds_back": -0.5978,
-    "type": "non word",
-    "transcription": "júder",
-    "prompt": "Ez egy júder. Ezek itt...",
-    "target_words": ["júderok", "júderek"]
-  },
-  {
-    "stem": "dalenc",
+    "stem": "surnegy",
     "back": 9,
     "front": 17,
     "log_odds_back": -0.5878,
     "type": "non word",
-    "transcription": "dalenc",
-    "prompt": "Ez egy dalenc. Ezek itt...",
-    "target_words": ["dalencok", "dalencek"]
+    "transcription": "šurneḏ",
+    "prompt": "Ez egy surnegy. Ezek itt...",
+    "target_words": ["surnegyok", "surnegyek"]
   },
   {
-    "stem": "dinelt",
+    "stem": "hijegy",
     "back": 3,
-    "front": 26,
-    "log_odds_back": -1.9095,
-    "type": "non word",
-    "transcription": "dinelt",
-    "prompt": "Ez egy dinelt. Ezek itt...",
-    "target_words": ["dineltok", "dineltek"]
-  },
-  {
-    "stem": "licegy",
-    "back": 2,
     "front": 24,
-    "log_odds_back": -2.1203,
+    "log_odds_back": -1.8326,
     "type": "non word",
-    "transcription": "liceḏ",
-    "prompt": "Ez egy licegy. Ezek itt...",
-    "target_words": ["licegyok", "licegyek"]
-  },
-  {
-    "stem": "klingesz",
-    "back": 3,
-    "front": 26,
-    "log_odds_back": -1.9095,
-    "type": "non word",
-    "transcription": "klinges",
-    "prompt": "Ez egy klingesz. Ezek itt...",
-    "target_words": ["klingeszok", "klingeszek"]
-  },
-  {
-    "stem": "klítegy",
-    "back": 4,
-    "front": 25,
-    "log_odds_back": -1.6487,
-    "type": "non word",
-    "transcription": "klíteḏ",
-    "prompt": "Ez egy klítegy. Ezek itt...",
-    "target_words": ["klítegyok", "klítegyek"]
-  },
-  {
-    "stem": "dábegy",
-    "back": 4,
-    "front": 23,
-    "log_odds_back": -1.5686,
-    "type": "non word",
-    "transcription": "dábeḏ",
-    "prompt": "Ez egy dábegy. Ezek itt...",
-    "target_words": ["dábegyok", "dábegyek"]
-  },
-  {
-    "stem": "prately",
-    "back": 6,
-    "front": 23,
-    "log_odds_back": -1.2321,
-    "type": "non word",
-    "transcription": "pratej",
-    "prompt": "Ez egy prately. Ezek itt...",
-    "target_words": ["pratelyok", "pratelyek"]
-  },
-  {
-    "stem": "vismer",
-    "back": 0,
-    "front": 27,
-    "log_odds_back": -3.3322,
-    "type": "non word",
-    "transcription": "višmer",
-    "prompt": "Ez egy vismer. Ezek itt...",
-    "target_words": ["vismerok", "vismerek"]
-  },
-  {
-    "stem": "trigenc",
-    "back": 1,
-    "front": 28,
-    "log_odds_back": -2.6741,
-    "type": "non word",
-    "transcription": "trigenc",
-    "prompt": "Ez egy trigenc. Ezek itt...",
-    "target_words": ["trigencok", "trigencek"]
-  },
-  {
-    "stem": "zsúdel",
-    "back": 6,
-    "front": 21,
-    "log_odds_back": -1.1451,
-    "type": "non word",
-    "transcription": "žúdel",
-    "prompt": "Ez egy zsúdel. Ezek itt...",
-    "target_words": ["zsúdelok", "zsúdelek"]
-  },
-  {
-    "stem": "ikszert",
-    "back": 0,
-    "front": 29,
-    "log_odds_back": -3.4012,
-    "type": "non word",
-    "transcription": "iksert",
-    "prompt": "Ez egy ikszert. Ezek itt...",
-    "target_words": ["ikszertok", "ikszertek"]
-  },
-  {
-    "stem": "jóbec",
-    "back": 8,
-    "front": 21,
-    "log_odds_back": -0.8938,
-    "type": "non word",
-    "transcription": "jóbec",
-    "prompt": "Ez egy jóbec. Ezek itt...",
-    "target_words": ["jóbecok", "jóbecek"]
-  },
-  {
-    "stem": "murdes",
-    "back": 9,
-    "front": 17,
-    "log_odds_back": -0.5878,
-    "type": "non word",
-    "transcription": "murdeš",
-    "prompt": "Ez egy murdes. Ezek itt...",
-    "target_words": ["murdesok", "murdesek"]
-  },
-  {
-    "stem": "spizec",
-    "back": 3,
-    "front": 26,
-    "log_odds_back": -1.9095,
-    "type": "non word",
-    "transcription": "špizec",
-    "prompt": "Ez egy spizec. Ezek itt...",
-    "target_words": ["spizecok", "spizecek"]
+    "transcription": "hijeḏ",
+    "prompt": "Ez egy hijegy. Ezek itt...",
+    "target_words": ["hijegyok", "hijegyek"]
   },
   {
     "stem": "balek",
@@ -884,91 +704,14 @@ stim = [
     "target_words": ["ómenok", "ómenek"]
   },
   {
-    "stem": "narem",
-    "back": 9,
-    "front": 18,
-    "log_odds_back": -0.6419,
+    "stem": "dihely",
+    "back": 1,
+    "front": 28,
+    "log_odds_back": -2.6741,
     "type": "non word",
-    "transcription": "narem",
-    "prompt": "Ez egy narem. Bízom a...",
-    "target_words": ["naremban", "naremben"],
-    "z": ""
-  },
-  {
-    "stem": "kábesz",
-    "back": 11,
-    "front": 15,
-    "log_odds_back": -0.2877,
-    "type": "non word",
-    "transcription": "kábes",
-    "prompt": "Ez egy kábesz. Bízom a...",
-    "target_words": ["kábeszban", "kábeszben"],
-    "z": ""
-  },
-  {
-    "stem": "trájeg",
-    "back": 5,
-    "front": 21,
-    "log_odds_back": -1.2993,
-    "type": "non word",
-    "transcription": "trájeg",
-    "prompt": "Ez egy trájeg. Bízom a...",
-    "target_words": ["trájegban", "trájegben"],
-    "z": ""
-  },
-  {
-    "stem": "gótem",
-    "back": 5,
-    "front": 21,
-    "log_odds_back": -1.2993,
-    "type": "non word",
-    "transcription": "gótem",
-    "prompt": "Ez egy gótem. Bízom a...",
-    "target_words": ["gótemban", "gótemben"],
-    "z": ""
-  },
-  {
-    "stem": "spatel",
-    "back": 4,
-    "front": 22,
-    "log_odds_back": -1.5261,
-    "type": "non word",
-    "transcription": "špatel",
-    "prompt": "Ez egy spatel. Bízom a...",
-    "target_words": ["spatelban", "spatelben"],
-    "z": ""
-  },
-  {
-    "stem": "sporzem",
-    "back": 4,
-    "front": 25,
-    "log_odds_back": -1.6487,
-    "type": "non word",
-    "transcription": "šporzem",
-    "prompt": "Ez egy sporzem. Bízom a...",
-    "target_words": ["sporzemban", "sporzemben"],
-    "z": ""
-  },
-  {
-    "stem": "zuten",
-    "back": 6,
-    "front": 23,
-    "log_odds_back": -1.2321,
-    "type": "non word",
-    "transcription": "zuten",
-    "prompt": "Ez egy zuten. Bízom a...",
-    "target_words": ["zutenban", "zutenben"],
-    "z": ""
-  },
-  {
-    "stem": "pítend",
-    "back": 3,
-    "front": 26,
-    "log_odds_back": -1.9095,
-    "type": "non word",
-    "transcription": "pítend",
-    "prompt": "Ez egy pítend. Bízom a...",
-    "target_words": ["pítendban", "pítendben"],
+    "transcription": "dihej",
+    "prompt": "Ez egy dihely. Bízom a...",
+    "target_words": ["dihelyban", "dihelyben"],
     "z": ""
   },
   {
@@ -983,36 +726,47 @@ stim = [
     "z": ""
   },
   {
-    "stem": "sartely",
+    "stem": "jóbec",
+    "back": 8,
+    "front": 21,
+    "log_odds_back": -0.8938,
+    "type": "non word",
+    "transcription": "jóbec",
+    "prompt": "Ez egy jóbec. Bízom a...",
+    "target_words": ["jóbecban", "jóbecben"],
+    "z": ""
+  },
+  {
+    "stem": "priszkenc",
+    "back": 2,
+    "front": 25,
+    "log_odds_back": -2.1595,
+    "type": "non word",
+    "transcription": "priskenc",
+    "prompt": "Ez egy priszkenc. Bízom a...",
+    "target_words": ["priszkencban", "priszkencben"],
+    "z": ""
+  },
+  {
+    "stem": "dalenc",
     "back": 9,
     "front": 17,
     "log_odds_back": -0.5878,
     "type": "non word",
-    "transcription": "šartej",
-    "prompt": "Ez egy sartely. Bízom a...",
-    "target_words": ["sartelyban", "sartelyben"],
+    "transcription": "dalenc",
+    "prompt": "Ez egy dalenc. Bízom a...",
+    "target_words": ["dalencban", "dalencben"],
     "z": ""
   },
   {
-    "stem": "priszec",
-    "back": 1,
-    "front": 26,
-    "log_odds_back": -2.6027,
+    "stem": "gúden",
+    "back": 2,
+    "front": 27,
+    "log_odds_back": -2.2336,
     "type": "non word",
-    "transcription": "prisec",
-    "prompt": "Ez egy priszec. Bízom a...",
-    "target_words": ["priszecban", "priszecben"],
-    "z": ""
-  },
-  {
-    "stem": "sprivenc",
-    "back": 3,
-    "front": 23,
-    "log_odds_back": -1.7918,
-    "type": "non word",
-    "transcription": "šprivenc",
-    "prompt": "Ez egy sprivenc. Bízom a...",
-    "target_words": ["sprivencban", "sprivencben"],
+    "transcription": "gúden",
+    "prompt": "Ez egy gúden. Bízom a...",
+    "target_words": ["gúdenban", "gúdenben"],
     "z": ""
   },
   {
@@ -1027,135 +781,25 @@ stim = [
     "z": ""
   },
   {
-    "stem": "braszenc",
-    "back": 8,
-    "front": 18,
-    "log_odds_back": -0.7472,
-    "type": "non word",
-    "transcription": "brasenc",
-    "prompt": "Ez egy braszenc. Bízom a...",
-    "target_words": ["braszencban", "braszencben"],
-    "z": ""
-  },
-  {
-    "stem": "bidem",
-    "back": 1,
-    "front": 25,
-    "log_odds_back": -2.5649,
-    "type": "non word",
-    "transcription": "bidem",
-    "prompt": "Ez egy bidem. Bízom a...",
-    "target_words": ["bidemban", "bidemben"],
-    "z": ""
-  },
-  {
-    "stem": "kliszer",
-    "back": 3,
-    "front": 24,
-    "log_odds_back": -1.8326,
-    "type": "non word",
-    "transcription": "kliser",
-    "prompt": "Ez egy kliszer. Bízom a...",
-    "target_words": ["kliszerban", "kliszerben"],
-    "z": ""
-  },
-  {
-    "stem": "dingec",
-    "back": 3,
-    "front": 26,
-    "log_odds_back": -1.9095,
-    "type": "non word",
-    "transcription": "dingec",
-    "prompt": "Ez egy dingec. Bízom a...",
-    "target_words": ["dingecban", "dingecben"],
-    "z": ""
-  },
-  {
-    "stem": "fojlegy",
-    "back": 1,
-    "front": 28,
-    "log_odds_back": -2.6741,
-    "type": "non word",
-    "transcription": "fojleḏ",
-    "prompt": "Ez egy fojlegy. Bízom a...",
-    "target_words": ["fojlegyban", "fojlegyben"],
-    "z": ""
-  },
-  {
-    "stem": "surnegy",
-    "back": 9,
-    "front": 17,
-    "log_odds_back": -0.5878,
-    "type": "non word",
-    "transcription": "šurneḏ",
-    "prompt": "Ez egy surnegy. Bízom a...",
-    "target_words": ["surnegyban", "surnegyben"],
-    "z": ""
-  },
-  {
-    "stem": "vurnel",
-    "back": 5,
-    "front": 21,
-    "log_odds_back": -1.2993,
-    "type": "non word",
-    "transcription": "vurnel",
-    "prompt": "Ez egy vurnel. Bízom a...",
-    "target_words": ["vurnelban", "vurnelben"],
-    "z": ""
-  },
-  {
-    "stem": "dutec",
-    "back": 6,
-    "front": 21,
-    "log_odds_back": -1.1451,
-    "type": "non word",
-    "transcription": "dutec",
-    "prompt": "Ez egy dutec. Bízom a...",
-    "target_words": ["dutecban", "dutecben"],
-    "z": ""
-  },
-  {
-    "stem": "dihely",
-    "back": 1,
-    "front": 28,
-    "log_odds_back": -2.6741,
-    "type": "non word",
-    "transcription": "dihej",
-    "prompt": "Ez egy dihely. Bízom a...",
-    "target_words": ["dihelyban", "dihelyben"],
-    "z": ""
-  },
-  {
-    "stem": "hijegy",
-    "back": 3,
-    "front": 24,
-    "log_odds_back": -1.8326,
-    "type": "non word",
-    "transcription": "hijeḏ",
-    "prompt": "Ez egy hijegy. Bízom a...",
-    "target_words": ["hijegyban", "hijegyben"],
-    "z": ""
-  },
-  {
-    "stem": "dajrens",
-    "back": 4,
-    "front": 23,
-    "log_odds_back": -1.5686,
-    "type": "non word",
-    "transcription": "dajrenš",
-    "prompt": "Ez egy dajrens. Bízom a...",
-    "target_words": ["dajrensban", "dajrensben"],
-    "z": ""
-  },
-  {
-    "stem": "sihen",
+    "stem": "priszec",
     "back": 1,
     "front": 26,
     "log_odds_back": -2.6027,
     "type": "non word",
-    "transcription": "šihen",
-    "prompt": "Ez egy sihen. Bízom a...",
-    "target_words": ["sihenban", "sihenben"],
+    "transcription": "prisec",
+    "prompt": "Ez egy priszec. Bízom a...",
+    "target_words": ["priszecban", "priszecben"],
+    "z": ""
+  },
+  {
+    "stem": "spatel",
+    "back": 4,
+    "front": 22,
+    "log_odds_back": -1.5261,
+    "type": "non word",
+    "transcription": "špatel",
+    "prompt": "Ez egy spatel. Bízom a...",
+    "target_words": ["spatelban", "spatelben"],
     "z": ""
   },
   {
@@ -1170,14 +814,201 @@ stim = [
     "z": ""
   },
   {
-    "stem": "navec",
-    "back": 12,
-    "front": 17,
-    "log_odds_back": -0.3254,
+    "stem": "pítend",
+    "back": 3,
+    "front": 26,
+    "log_odds_back": -1.9095,
     "type": "non word",
-    "transcription": "navec",
-    "prompt": "Ez egy navec. Bízom a...",
-    "target_words": ["navecban", "navecben"],
+    "transcription": "pítend",
+    "prompt": "Ez egy pítend. Bízom a...",
+    "target_words": ["pítendban", "pítendben"],
+    "z": ""
+  },
+  {
+    "stem": "ikszert",
+    "back": 0,
+    "front": 29,
+    "log_odds_back": -3.4012,
+    "type": "non word",
+    "transcription": "iksert",
+    "prompt": "Ez egy ikszert. Bízom az...",
+    "target_words": ["ikszertban", "ikszertben"],
+    "z": "z"
+  },
+  {
+    "stem": "trincseg",
+    "back": 3,
+    "front": 23,
+    "log_odds_back": -1.7918,
+    "type": "non word",
+    "transcription": "trinčeg",
+    "prompt": "Ez egy trincseg. Bízom a...",
+    "target_words": ["trincsegban", "trincsegben"],
+    "z": ""
+  },
+  {
+    "stem": "zuten",
+    "back": 6,
+    "front": 23,
+    "log_odds_back": -1.2321,
+    "type": "non word",
+    "transcription": "zuten",
+    "prompt": "Ez egy zuten. Bízom a...",
+    "target_words": ["zutenban", "zutenben"],
+    "z": ""
+  },
+  {
+    "stem": "fojlegy",
+    "back": 1,
+    "front": 28,
+    "log_odds_back": -2.6741,
+    "type": "non word",
+    "transcription": "fojleḏ",
+    "prompt": "Ez egy fojlegy. Bízom a...",
+    "target_words": ["fojlegyban", "fojlegyben"],
+    "z": ""
+  },
+  {
+    "stem": "ítens",
+    "back": 4,
+    "front": 25,
+    "log_odds_back": -1.6487,
+    "type": "non word",
+    "transcription": "ítenš",
+    "prompt": "Ez egy ítens. Bízom az...",
+    "target_words": ["ítensban", "ítensben"],
+    "z": "z"
+  },
+  {
+    "stem": "zihenc",
+    "back": 1,
+    "front": 28,
+    "log_odds_back": -2.6741,
+    "type": "non word",
+    "transcription": "zihenc",
+    "prompt": "Ez egy zihenc. Bízom a...",
+    "target_words": ["zihencban", "zihencben"],
+    "z": ""
+  },
+  {
+    "stem": "jurdent",
+    "back": 7,
+    "front": 19,
+    "log_odds_back": -0.9163,
+    "type": "non word",
+    "transcription": "jurdent",
+    "prompt": "Ez egy jurdent. Bízom a...",
+    "target_words": ["jurdentban", "jurdentben"],
+    "z": ""
+  },
+  {
+    "stem": "zined",
+    "back": 1,
+    "front": 25,
+    "log_odds_back": -2.5649,
+    "type": "non word",
+    "transcription": "zined",
+    "prompt": "Ez egy zined. Bízom a...",
+    "target_words": ["zinedban", "zinedben"],
+    "z": ""
+  },
+  {
+    "stem": "nyítem",
+    "back": 1,
+    "front": 25,
+    "log_odds_back": -2.5649,
+    "type": "non word",
+    "transcription": "ṉítem",
+    "prompt": "Ez egy nyítem. Bízom a...",
+    "target_words": ["nyítemban", "nyítemben"],
+    "z": ""
+  },
+  {
+    "stem": "braszenc",
+    "back": 8,
+    "front": 18,
+    "log_odds_back": -0.7472,
+    "type": "non word",
+    "transcription": "brasenc",
+    "prompt": "Ez egy braszenc. Bízom a...",
+    "target_words": ["braszencban", "braszencben"],
+    "z": ""
+  },
+  {
+    "stem": "prately",
+    "back": 6,
+    "front": 23,
+    "log_odds_back": -1.2321,
+    "type": "non word",
+    "transcription": "pratej",
+    "prompt": "Ez egy prately. Bízom a...",
+    "target_words": ["pratelyban", "pratelyben"],
+    "z": ""
+  },
+  {
+    "stem": "murdes",
+    "back": 9,
+    "front": 17,
+    "log_odds_back": -0.5878,
+    "type": "non word",
+    "transcription": "murdeš",
+    "prompt": "Ez egy murdes. Bízom a...",
+    "target_words": ["murdesban", "murdesben"],
+    "z": ""
+  },
+  {
+    "stem": "vismer",
+    "back": 0,
+    "front": 27,
+    "log_odds_back": -3.3322,
+    "type": "non word",
+    "transcription": "višmer",
+    "prompt": "Ez egy vismer. Bízom a...",
+    "target_words": ["vismerban", "vismerben"],
+    "z": ""
+  },
+  {
+    "stem": "licegy",
+    "back": 2,
+    "front": 24,
+    "log_odds_back": -2.1203,
+    "type": "non word",
+    "transcription": "liceḏ",
+    "prompt": "Ez egy licegy. Bízom a...",
+    "target_words": ["licegyban", "licegyben"],
+    "z": ""
+  },
+  {
+    "stem": "dingec",
+    "back": 3,
+    "front": 26,
+    "log_odds_back": -1.9095,
+    "type": "non word",
+    "transcription": "dingec",
+    "prompt": "Ez egy dingec. Bízom a...",
+    "target_words": ["dingecban", "dingecben"],
+    "z": ""
+  },
+  {
+    "stem": "spicet",
+    "back": 2,
+    "front": 25,
+    "log_odds_back": -2.1595,
+    "type": "non word",
+    "transcription": "špicet",
+    "prompt": "Ez egy spicet. Bízom a...",
+    "target_words": ["spicetban", "spicetben"],
+    "z": ""
+  },
+  {
+    "stem": "klingesz",
+    "back": 3,
+    "front": 26,
+    "log_odds_back": -1.9095,
+    "type": "non word",
+    "transcription": "klinges",
+    "prompt": "Ez egy klingesz. Bízom a...",
+    "target_words": ["klingeszban", "klingeszben"],
     "z": ""
   },
   {
@@ -1203,234 +1034,25 @@ stim = [
     "z": ""
   },
   {
-    "stem": "vublet",
-    "back": 6,
-    "front": 20,
-    "log_odds_back": -1.0986,
-    "type": "non word",
-    "transcription": "vublet",
-    "prompt": "Ez egy vublet. Bízom a...",
-    "target_words": ["vubletban", "vubletben"],
-    "z": ""
-  },
-  {
-    "stem": "hóbens",
-    "back": 5,
-    "front": 22,
-    "log_odds_back": -1.3437,
-    "type": "non word",
-    "transcription": "hóbenš",
-    "prompt": "Ez egy hóbens. Bízom a...",
-    "target_words": ["hóbensban", "hóbensben"],
-    "z": ""
-  },
-  {
-    "stem": "jurdent",
-    "back": 7,
-    "front": 19,
-    "log_odds_back": -0.9163,
-    "type": "non word",
-    "transcription": "jurdent",
-    "prompt": "Ez egy jurdent. Bízom a...",
-    "target_words": ["jurdentban", "jurdentben"],
-    "z": ""
-  },
-  {
-    "stem": "rapszek",
-    "back": 6,
-    "front": 23,
-    "log_odds_back": -1.2321,
-    "type": "non word",
-    "transcription": "rapsek",
-    "prompt": "Ez egy rapszek. Bízom a...",
-    "target_words": ["rapszekban", "rapszekben"],
-    "z": ""
-  },
-  {
-    "stem": "priszkenc",
-    "back": 2,
-    "front": 25,
-    "log_odds_back": -2.1595,
-    "type": "non word",
-    "transcription": "priskenc",
-    "prompt": "Ez egy priszkenc. Bízom a...",
-    "target_words": ["priszkencban", "priszkencben"],
-    "z": ""
-  },
-  {
-    "stem": "ítens",
-    "back": 4,
-    "front": 25,
-    "log_odds_back": -1.6487,
-    "type": "non word",
-    "transcription": "ítenš",
-    "prompt": "Ez egy ítens. Bízom az...",
-    "target_words": ["ítensban", "ítensben"],
-    "z": "z"
-  },
-  {
-    "stem": "júder",
-    "back": 10,
-    "front": 19,
-    "log_odds_back": -0.5978,
-    "type": "non word",
-    "transcription": "júder",
-    "prompt": "Ez egy júder. Bízom a...",
-    "target_words": ["júderban", "júderben"],
-    "z": ""
-  },
-  {
-    "stem": "dalenc",
+    "stem": "surnegy",
     "back": 9,
     "front": 17,
     "log_odds_back": -0.5878,
     "type": "non word",
-    "transcription": "dalenc",
-    "prompt": "Ez egy dalenc. Bízom a...",
-    "target_words": ["dalencban", "dalencben"],
+    "transcription": "šurneḏ",
+    "prompt": "Ez egy surnegy. Bízom a...",
+    "target_words": ["surnegyban", "surnegyben"],
     "z": ""
   },
   {
-    "stem": "dinelt",
+    "stem": "hijegy",
     "back": 3,
-    "front": 26,
-    "log_odds_back": -1.9095,
-    "type": "non word",
-    "transcription": "dinelt",
-    "prompt": "Ez egy dinelt. Bízom a...",
-    "target_words": ["dineltban", "dineltben"],
-    "z": ""
-  },
-  {
-    "stem": "licegy",
-    "back": 2,
     "front": 24,
-    "log_odds_back": -2.1203,
+    "log_odds_back": -1.8326,
     "type": "non word",
-    "transcription": "liceḏ",
-    "prompt": "Ez egy licegy. Bízom a...",
-    "target_words": ["licegyban", "licegyben"],
-    "z": ""
-  },
-  {
-    "stem": "klingesz",
-    "back": 3,
-    "front": 26,
-    "log_odds_back": -1.9095,
-    "type": "non word",
-    "transcription": "klinges",
-    "prompt": "Ez egy klingesz. Bízom a...",
-    "target_words": ["klingeszban", "klingeszben"],
-    "z": ""
-  },
-  {
-    "stem": "klítegy",
-    "back": 4,
-    "front": 25,
-    "log_odds_back": -1.6487,
-    "type": "non word",
-    "transcription": "klíteḏ",
-    "prompt": "Ez egy klítegy. Bízom a...",
-    "target_words": ["klítegyban", "klítegyben"],
-    "z": ""
-  },
-  {
-    "stem": "dábegy",
-    "back": 4,
-    "front": 23,
-    "log_odds_back": -1.5686,
-    "type": "non word",
-    "transcription": "dábeḏ",
-    "prompt": "Ez egy dábegy. Bízom a...",
-    "target_words": ["dábegyban", "dábegyben"],
-    "z": ""
-  },
-  {
-    "stem": "prately",
-    "back": 6,
-    "front": 23,
-    "log_odds_back": -1.2321,
-    "type": "non word",
-    "transcription": "pratej",
-    "prompt": "Ez egy prately. Bízom a...",
-    "target_words": ["pratelyban", "pratelyben"],
-    "z": ""
-  },
-  {
-    "stem": "vismer",
-    "back": 0,
-    "front": 27,
-    "log_odds_back": -3.3322,
-    "type": "non word",
-    "transcription": "višmer",
-    "prompt": "Ez egy vismer. Bízom a...",
-    "target_words": ["vismerban", "vismerben"],
-    "z": ""
-  },
-  {
-    "stem": "trigenc",
-    "back": 1,
-    "front": 28,
-    "log_odds_back": -2.6741,
-    "type": "non word",
-    "transcription": "trigenc",
-    "prompt": "Ez egy trigenc. Bízom a...",
-    "target_words": ["trigencban", "trigencben"],
-    "z": ""
-  },
-  {
-    "stem": "zsúdel",
-    "back": 6,
-    "front": 21,
-    "log_odds_back": -1.1451,
-    "type": "non word",
-    "transcription": "žúdel",
-    "prompt": "Ez egy zsúdel. Bízom a...",
-    "target_words": ["zsúdelban", "zsúdelben"],
-    "z": ""
-  },
-  {
-    "stem": "ikszert",
-    "back": 0,
-    "front": 29,
-    "log_odds_back": -3.4012,
-    "type": "non word",
-    "transcription": "iksert",
-    "prompt": "Ez egy ikszert. Bízom az...",
-    "target_words": ["ikszertban", "ikszertben"],
-    "z": "z"
-  },
-  {
-    "stem": "jóbec",
-    "back": 8,
-    "front": 21,
-    "log_odds_back": -0.8938,
-    "type": "non word",
-    "transcription": "jóbec",
-    "prompt": "Ez egy jóbec. Bízom a...",
-    "target_words": ["jóbecban", "jóbecben"],
-    "z": ""
-  },
-  {
-    "stem": "murdes",
-    "back": 9,
-    "front": 17,
-    "log_odds_back": -0.5878,
-    "type": "non word",
-    "transcription": "murdeš",
-    "prompt": "Ez egy murdes. Bízom a...",
-    "target_words": ["murdesban", "murdesben"],
-    "z": ""
-  },
-  {
-    "stem": "spizec",
-    "back": 3,
-    "front": 26,
-    "log_odds_back": -1.9095,
-    "type": "non word",
-    "transcription": "špizec",
-    "prompt": "Ez egy spizec. Bízom a...",
-    "target_words": ["spizecban", "spizecben"],
+    "transcription": "hijeḏ",
+    "prompt": "Ez egy hijegy. Bízom a...",
+    "target_words": ["hijegyban", "hijegyben"],
     "z": ""
   },
   {
