@@ -23,51 +23,44 @@ transcribeIPA = function(string, direction){
 # -- read -- #
 
 rw = read_tsv('dat/real_words.tsv')
-nw = read_tsv('dat/non_words.tsv')
 
 # -- setup -- #
 
-rw = rw |> 
-  select(stem,back,front,log_odds_back,stem_freq,language) |> 
-  mutate(type = 'real word')
-nw = nw |> 
-  select(base,resp1,resp2,log_odds) |> 
-  rename(
-    stem = base,
-    back = resp1,
-    front = resp2,
-    log_odds_back = log_odds
-         ) |> 
-  mutate(type = 'non word')
-
-master = bind_rows(nw,rw) |> 
+master = rw |> 
+  select(-sd_back,-stem_varies) |> 
   mutate(transcription = transcribeIPA(stem, 'single'))
 
-# -- prompt, target, json -- #
+# -- stimulus, prompt, target, json -- #
 
-pl = master |> 
+# https://www.jspsych.org/latest/plugins/html-keyboard-response/
+
+master = master |> 
   rowwise() |> 
   mutate(
-    prompt = glue('Ez egy {stem}. Ezek itt...'),
-    target_words = list(c(glue('{stem}ok'), glue('{stem}ek')))
+    pl_back = glue('{stem}ok'),
+    pl_front = glue('{stem}ek'),
+    ine_back = glue('{stem}ban'),
+    ine_front = glue('{stem}ben'),
+    z = ifelse(str_detect(stem, '^[aáeéiíoóöőuúüű]'),'z','')
   ) |> 
-  ungroup()
+  pivot_longer(c(pl_back,pl_front,ine_back,ine_front), names_to = 'trial_type', values_to = 'target')
 
-ine = master |> 
-  rowwise() |> 
+master = master |> 
   mutate(
-    z = ifelse(str_detect(stem, '^[aáeéiíoóöőuúüű]'),'z',''),
-    prompt = glue('Ez egy {stem}. Bízom a{z}...'),
-    target_words = list(c(glue('{stem}ban'), glue('{stem}ben')))
-  ) |> 
-  ungroup()
-
-out = bind_rows(pl,ine)
+    prompt = case_when(
+      str_detect(trial_type, 'pl_') ~ glue('Ez egy {stem}. Ezek itt {target}.'),
+      str_detect(trial_type, 'ine_') ~ glue('Ez egy {stem}. Bízom a{z} {target}.')
+    ),
+    stimulus = glue('<p style="font-size:48px;">{target}</p>'),
+    trial_front = str_detect(trial_type, 'front$'),
+    trial_pl = str_detect(trial_type, '^pl'),
+    choices = list(c('f','j'))
+  )
 
 # -- write -- #
 
-write_tsv(out, 'dat/master.tsv')
-stim = out |> 
+write_tsv(master, 'dat/master.tsv')
+stim = master |> 
   toJSON(pretty = TRUE)
 stim = paste0('stim = ', stim)
 write_lines(stim, 'dat/stim.js')

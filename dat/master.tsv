@@ -1,165 +1,201 @@
-stem	back	front	log_odds_back	type	stem_freq	language	transcription	prompt	target_words	z
-narem	9	18	-0.6418538861723948	non word	NA	NA	narem	Ez egy narem. Ezek itt...		NA
-kábesz	11	15	-0.2876820724517809	non word	NA	NA	kábes	Ez egy kábesz. Ezek itt...		NA
-trájeg	5	21	-1.2992829841302609	non word	NA	NA	trájeg	Ez egy trájeg. Ezek itt...		NA
-gótem	5	21	-1.2992829841302609	non word	NA	NA	gótem	Ez egy gótem. Ezek itt...		NA
-spatel	4	22	-1.5260563034950494	non word	NA	NA	špatel	Ez egy spatel. Ezek itt...		NA
-sporzem	4	25	-1.6486586255873816	non word	NA	NA	šporzem	Ez egy sporzem. Ezek itt...		NA
-zuten	6	23	-1.2321436812926323	non word	NA	NA	zuten	Ez egy zuten. Ezek itt...		NA
-pítend	3	26	-1.9095425048844383	non word	NA	NA	pítend	Ez egy pítend. Ezek itt...		NA
-fincek	4	22	-1.5260563034950494	non word	NA	NA	fincek	Ez egy fincek. Ezek itt...		NA
-sartely	9	17	-0.587786664902119	non word	NA	NA	šartej	Ez egy sartely. Ezek itt...		NA
-priszec	1	26	-2.6026896854443837	non word	NA	NA	prisec	Ez egy priszec. Ezek itt...		NA
-sprivenc	3	23	-1.791759469228055	non word	NA	NA	šprivenc	Ez egy sprivenc. Ezek itt...		NA
-csimen	1	28	-2.6741486494265287	non word	NA	NA	čimen	Ez egy csimen. Ezek itt...		NA
-braszenc	8	18	-0.7472144018302211	non word	NA	NA	brasenc	Ez egy braszenc. Ezek itt...		NA
-bidem	1	25	-2.5649493574615367	non word	NA	NA	bidem	Ez egy bidem. Ezek itt...		NA
-kliszer	3	24	-1.8325814637483104	non word	NA	NA	kliser	Ez egy kliszer. Ezek itt...		NA
-dingec	3	26	-1.9095425048844383	non word	NA	NA	dingec	Ez egy dingec. Ezek itt...		NA
-fojlegy	1	28	-2.6741486494265287	non word	NA	NA	fojleḏ	Ez egy fojlegy. Ezek itt...		NA
-surnegy	9	17	-0.587786664902119	non word	NA	NA	šurneḏ	Ez egy surnegy. Ezek itt...		NA
-vurnel	5	21	-1.2992829841302609	non word	NA	NA	vurnel	Ez egy vurnel. Ezek itt...		NA
-dutec	6	21	-1.1451323043030026	non word	NA	NA	dutec	Ez egy dutec. Ezek itt...		NA
-dihely	1	28	-2.6741486494265287	non word	NA	NA	dihej	Ez egy dihely. Ezek itt...		NA
-hijegy	3	24	-1.8325814637483104	non word	NA	NA	hijeḏ	Ez egy hijegy. Ezek itt...		NA
-dajrens	4	23	-1.5686159179138452	non word	NA	NA	dajrenš	Ez egy dajrens. Ezek itt...		NA
-sihen	1	26	-2.6026896854443837	non word	NA	NA	šihen	Ez egy sihen. Ezek itt...		NA
-brigeszt	1	26	-2.6026896854443837	non word	NA	NA	brigest	Ez egy brigeszt. Ezek itt...		NA
-navec	12	17	-0.325422400434628	non word	NA	NA	navec	Ez egy navec. Ezek itt...		NA
-giheszt	2	27	-2.2335922215070942	non word	NA	NA	gihest	Ez egy giheszt. Ezek itt...		NA
-bródesz	6	20	-1.0986122886681098	non word	NA	NA	bródes	Ez egy bródesz. Ezek itt...		NA
-vublet	6	20	-1.0986122886681098	non word	NA	NA	vublet	Ez egy vublet. Ezek itt...		NA
-hóbens	5	22	-1.3437347467010947	non word	NA	NA	hóbenš	Ez egy hóbens. Ezek itt...		NA
-jurdent	7	19	-0.916290731874155	non word	NA	NA	jurdent	Ez egy jurdent. Ezek itt...		NA
-rapszek	6	23	-1.2321436812926323	non word	NA	NA	rapsek	Ez egy rapszek. Ezek itt...		NA
-priszkenc	2	25	-2.159484249353372	non word	NA	NA	priskenc	Ez egy priszkenc. Ezek itt...		NA
-ítens	4	25	-1.6486586255873816	non word	NA	NA	ítenš	Ez egy ítens. Ezek itt...		NA
-júder	10	19	-0.5978370007556204	non word	NA	NA	júder	Ez egy júder. Ezek itt...		NA
-dalenc	9	17	-0.587786664902119	non word	NA	NA	dalenc	Ez egy dalenc. Ezek itt...		NA
-dinelt	3	26	-1.9095425048844383	non word	NA	NA	dinelt	Ez egy dinelt. Ezek itt...		NA
-licegy	2	24	-2.120263536200091	non word	NA	NA	liceḏ	Ez egy licegy. Ezek itt...		NA
-klingesz	3	26	-1.9095425048844383	non word	NA	NA	klinges	Ez egy klingesz. Ezek itt...		NA
-klítegy	4	25	-1.6486586255873816	non word	NA	NA	klíteḏ	Ez egy klítegy. Ezek itt...		NA
-dábegy	4	23	-1.5686159179138452	non word	NA	NA	dábeḏ	Ez egy dábegy. Ezek itt...		NA
-prately	6	23	-1.2321436812926323	non word	NA	NA	pratej	Ez egy prately. Ezek itt...		NA
-vismer	0	27	-3.332204510175204	non word	NA	NA	višmer	Ez egy vismer. Ezek itt...		NA
-trigenc	1	28	-2.6741486494265287	non word	NA	NA	trigenc	Ez egy trigenc. Ezek itt...		NA
-zsúdel	6	21	-1.1451323043030026	non word	NA	NA	žúdel	Ez egy zsúdel. Ezek itt...		NA
-ikszert	0	29	-3.4011973816621555	non word	NA	NA	iksert	Ez egy ikszert. Ezek itt...		NA
-jóbec	8	21	-0.8938178760220964	non word	NA	NA	jóbec	Ez egy jóbec. Ezek itt...		NA
-murdes	9	17	-0.587786664902119	non word	NA	NA	murdeš	Ez egy murdes. Ezek itt...		NA
-spizec	3	26	-1.9095425048844383	non word	NA	NA	špizec	Ez egy spizec. Ezek itt...		NA
-balek	5215	225	3.1431939652304526	real word	5440	yi	balek	Ez egy balek. Ezek itt...		NA
-barchesz	8	37	-1.5314763709643884	real word	45	yi	barches	Ez egy barchesz. Ezek itt...		NA
-docens	6	29878	-8.513118233374207	real word	29884	la	docenš	Ez egy docens. Ezek itt...		NA
-fater	5385	190	3.344348517430003	real word	5575	yi	fater	Ez egy fater. Ezek itt...		NA
-fráter	34	997	-3.378390245345677	real word	1031	la	fráter	Ez egy fráter. Ezek itt...		NA
-gólem	1	1736	-7.459338895220296	real word	1737	yi	gólem	Ez egy gólem. Ezek itt...		NA
-haver	71848	634	4.7302591009135595	real word	72482	yi	haver	Ez egy haver. Ezek itt...		NA
-kampec	41	30	0.31237468504215243	real word	71	yi	kampec	Ez egy kampec. Ezek itt...		NA
-karcer	36	93	-0.949080554697146	real word	129	la	karcer	Ez egy karcer. Ezek itt...		NA
-kráter	87	9093	-4.649352047071329	real word	9180	la	kráter	Ez egy kráter. Ezek itt...		NA
-kódex	19	48210	-7.838882768233227	real word	48229	la	kódex	Ez egy kódex. Ezek itt...		NA
-latex	125	2639	-3.049841599201023	real word	2764	la	latex	Ez egy latex. Ezek itt...		NA
-luesz	1	22	-3.0910424533583156	real word	23	la	lues	Ez egy luesz. Ezek itt...		NA
-lumen	2	1760	-6.779921907472252	real word	1762	la	lumen	Ez egy lumen. Ezek itt...		NA
-macesz	117	88	0.28483712031954966	real word	205	yi	maces	Ez egy macesz. Ezek itt...		NA
-macher	14	40	-1.0498221244986778	real word	54	yi	macher	Ez egy macher. Ezek itt...		NA
-maszek	2084	80	3.260017768199376	real word	2164	yi	masek	Ez egy maszek. Ezek itt...		NA
-mater	193	2954	-2.7282252741864395	real word	3147	la	mater	Ez egy mater. Ezek itt...		NA
-muter	745	102	1.9884114050952884	real word	847	yi	muter	Ez egy muter. Ezek itt...		NA
-pajesz	271	14	2.963061491264442	real word	285	yi	pajes	Ez egy pajesz. Ezek itt...		NA
-pollen	7	10478	-7.311122950912852	real word	10485	la	pollen	Ez egy pollen. Ezek itt...		NA
-pátens	2	616	-5.730099782973574	real word	618	la	pátenš	Ez egy pátens. Ezek itt...		NA
-páter	32	923	-3.3618933317031257	real word	955	la	páter	Ez egy páter. Ezek itt...		NA
-samesz	484	188	0.9456429438866824	real word	672	yi	šames	Ez egy samesz. Ezek itt...		NA
-sábesz	10	102	-2.3223877202902252	real word	112	yi	šábes	Ez egy sábesz. Ezek itt...		NA
-sólet	86	1280	-2.700268060660155	real word	1366	yi	šólet	Ez egy sólet. Ezek itt...		NA
-vamzer	9	107	-2.4756042571256867	real word	116	yi	vamzer	Ez egy vamzer. Ezek itt...		NA
-vátesz	1	737	-6.602587892189336	real word	738	la	vátes	Ez egy vátesz. Ezek itt...		NA
-zacsek	59	12	1.5926307941177191	real word	71	yi	začek	Ez egy zacsek. Ezek itt...		NA
-ágens	7	7110	-6.923347373741973	real word	7117	la	ágenš	Ez egy ágens. Ezek itt...		NA
-ájer	15	67	-1.496642418288756	real word	82	yi	ájer	Ez egy ájer. Ezek itt...		NA
-ómen	2	996	-6.210600077024653	real word	998	la	ómen	Ez egy ómen. Ezek itt...		NA
-narem	9	18	-0.6418538861723948	non word	NA	NA	narem	Ez egy narem. Bízom a...		
-kábesz	11	15	-0.2876820724517809	non word	NA	NA	kábes	Ez egy kábesz. Bízom a...		
-trájeg	5	21	-1.2992829841302609	non word	NA	NA	trájeg	Ez egy trájeg. Bízom a...		
-gótem	5	21	-1.2992829841302609	non word	NA	NA	gótem	Ez egy gótem. Bízom a...		
-spatel	4	22	-1.5260563034950494	non word	NA	NA	špatel	Ez egy spatel. Bízom a...		
-sporzem	4	25	-1.6486586255873816	non word	NA	NA	šporzem	Ez egy sporzem. Bízom a...		
-zuten	6	23	-1.2321436812926323	non word	NA	NA	zuten	Ez egy zuten. Bízom a...		
-pítend	3	26	-1.9095425048844383	non word	NA	NA	pítend	Ez egy pítend. Bízom a...		
-fincek	4	22	-1.5260563034950494	non word	NA	NA	fincek	Ez egy fincek. Bízom a...		
-sartely	9	17	-0.587786664902119	non word	NA	NA	šartej	Ez egy sartely. Bízom a...		
-priszec	1	26	-2.6026896854443837	non word	NA	NA	prisec	Ez egy priszec. Bízom a...		
-sprivenc	3	23	-1.791759469228055	non word	NA	NA	šprivenc	Ez egy sprivenc. Bízom a...		
-csimen	1	28	-2.6741486494265287	non word	NA	NA	čimen	Ez egy csimen. Bízom a...		
-braszenc	8	18	-0.7472144018302211	non word	NA	NA	brasenc	Ez egy braszenc. Bízom a...		
-bidem	1	25	-2.5649493574615367	non word	NA	NA	bidem	Ez egy bidem. Bízom a...		
-kliszer	3	24	-1.8325814637483104	non word	NA	NA	kliser	Ez egy kliszer. Bízom a...		
-dingec	3	26	-1.9095425048844383	non word	NA	NA	dingec	Ez egy dingec. Bízom a...		
-fojlegy	1	28	-2.6741486494265287	non word	NA	NA	fojleḏ	Ez egy fojlegy. Bízom a...		
-surnegy	9	17	-0.587786664902119	non word	NA	NA	šurneḏ	Ez egy surnegy. Bízom a...		
-vurnel	5	21	-1.2992829841302609	non word	NA	NA	vurnel	Ez egy vurnel. Bízom a...		
-dutec	6	21	-1.1451323043030026	non word	NA	NA	dutec	Ez egy dutec. Bízom a...		
-dihely	1	28	-2.6741486494265287	non word	NA	NA	dihej	Ez egy dihely. Bízom a...		
-hijegy	3	24	-1.8325814637483104	non word	NA	NA	hijeḏ	Ez egy hijegy. Bízom a...		
-dajrens	4	23	-1.5686159179138452	non word	NA	NA	dajrenš	Ez egy dajrens. Bízom a...		
-sihen	1	26	-2.6026896854443837	non word	NA	NA	šihen	Ez egy sihen. Bízom a...		
-brigeszt	1	26	-2.6026896854443837	non word	NA	NA	brigest	Ez egy brigeszt. Bízom a...		
-navec	12	17	-0.325422400434628	non word	NA	NA	navec	Ez egy navec. Bízom a...		
-giheszt	2	27	-2.2335922215070942	non word	NA	NA	gihest	Ez egy giheszt. Bízom a...		
-bródesz	6	20	-1.0986122886681098	non word	NA	NA	bródes	Ez egy bródesz. Bízom a...		
-vublet	6	20	-1.0986122886681098	non word	NA	NA	vublet	Ez egy vublet. Bízom a...		
-hóbens	5	22	-1.3437347467010947	non word	NA	NA	hóbenš	Ez egy hóbens. Bízom a...		
-jurdent	7	19	-0.916290731874155	non word	NA	NA	jurdent	Ez egy jurdent. Bízom a...		
-rapszek	6	23	-1.2321436812926323	non word	NA	NA	rapsek	Ez egy rapszek. Bízom a...		
-priszkenc	2	25	-2.159484249353372	non word	NA	NA	priskenc	Ez egy priszkenc. Bízom a...		
-ítens	4	25	-1.6486586255873816	non word	NA	NA	ítenš	Ez egy ítens. Bízom az...		z
-júder	10	19	-0.5978370007556204	non word	NA	NA	júder	Ez egy júder. Bízom a...		
-dalenc	9	17	-0.587786664902119	non word	NA	NA	dalenc	Ez egy dalenc. Bízom a...		
-dinelt	3	26	-1.9095425048844383	non word	NA	NA	dinelt	Ez egy dinelt. Bízom a...		
-licegy	2	24	-2.120263536200091	non word	NA	NA	liceḏ	Ez egy licegy. Bízom a...		
-klingesz	3	26	-1.9095425048844383	non word	NA	NA	klinges	Ez egy klingesz. Bízom a...		
-klítegy	4	25	-1.6486586255873816	non word	NA	NA	klíteḏ	Ez egy klítegy. Bízom a...		
-dábegy	4	23	-1.5686159179138452	non word	NA	NA	dábeḏ	Ez egy dábegy. Bízom a...		
-prately	6	23	-1.2321436812926323	non word	NA	NA	pratej	Ez egy prately. Bízom a...		
-vismer	0	27	-3.332204510175204	non word	NA	NA	višmer	Ez egy vismer. Bízom a...		
-trigenc	1	28	-2.6741486494265287	non word	NA	NA	trigenc	Ez egy trigenc. Bízom a...		
-zsúdel	6	21	-1.1451323043030026	non word	NA	NA	žúdel	Ez egy zsúdel. Bízom a...		
-ikszert	0	29	-3.4011973816621555	non word	NA	NA	iksert	Ez egy ikszert. Bízom az...		z
-jóbec	8	21	-0.8938178760220964	non word	NA	NA	jóbec	Ez egy jóbec. Bízom a...		
-murdes	9	17	-0.587786664902119	non word	NA	NA	murdeš	Ez egy murdes. Bízom a...		
-spizec	3	26	-1.9095425048844383	non word	NA	NA	špizec	Ez egy spizec. Bízom a...		
-balek	5215	225	3.1431939652304526	real word	5440	yi	balek	Ez egy balek. Bízom a...		
-barchesz	8	37	-1.5314763709643884	real word	45	yi	barches	Ez egy barchesz. Bízom a...		
-docens	6	29878	-8.513118233374207	real word	29884	la	docenš	Ez egy docens. Bízom a...		
-fater	5385	190	3.344348517430003	real word	5575	yi	fater	Ez egy fater. Bízom a...		
-fráter	34	997	-3.378390245345677	real word	1031	la	fráter	Ez egy fráter. Bízom a...		
-gólem	1	1736	-7.459338895220296	real word	1737	yi	gólem	Ez egy gólem. Bízom a...		
-haver	71848	634	4.7302591009135595	real word	72482	yi	haver	Ez egy haver. Bízom a...		
-kampec	41	30	0.31237468504215243	real word	71	yi	kampec	Ez egy kampec. Bízom a...		
-karcer	36	93	-0.949080554697146	real word	129	la	karcer	Ez egy karcer. Bízom a...		
-kráter	87	9093	-4.649352047071329	real word	9180	la	kráter	Ez egy kráter. Bízom a...		
-kódex	19	48210	-7.838882768233227	real word	48229	la	kódex	Ez egy kódex. Bízom a...		
-latex	125	2639	-3.049841599201023	real word	2764	la	latex	Ez egy latex. Bízom a...		
-luesz	1	22	-3.0910424533583156	real word	23	la	lues	Ez egy luesz. Bízom a...		
-lumen	2	1760	-6.779921907472252	real word	1762	la	lumen	Ez egy lumen. Bízom a...		
-macesz	117	88	0.28483712031954966	real word	205	yi	maces	Ez egy macesz. Bízom a...		
-macher	14	40	-1.0498221244986778	real word	54	yi	macher	Ez egy macher. Bízom a...		
-maszek	2084	80	3.260017768199376	real word	2164	yi	masek	Ez egy maszek. Bízom a...		
-mater	193	2954	-2.7282252741864395	real word	3147	la	mater	Ez egy mater. Bízom a...		
-muter	745	102	1.9884114050952884	real word	847	yi	muter	Ez egy muter. Bízom a...		
-pajesz	271	14	2.963061491264442	real word	285	yi	pajes	Ez egy pajesz. Bízom a...		
-pollen	7	10478	-7.311122950912852	real word	10485	la	pollen	Ez egy pollen. Bízom a...		
-pátens	2	616	-5.730099782973574	real word	618	la	pátenš	Ez egy pátens. Bízom a...		
-páter	32	923	-3.3618933317031257	real word	955	la	páter	Ez egy páter. Bízom a...		
-samesz	484	188	0.9456429438866824	real word	672	yi	šames	Ez egy samesz. Bízom a...		
-sábesz	10	102	-2.3223877202902252	real word	112	yi	šábes	Ez egy sábesz. Bízom a...		
-sólet	86	1280	-2.700268060660155	real word	1366	yi	šólet	Ez egy sólet. Bízom a...		
-vamzer	9	107	-2.4756042571256867	real word	116	yi	vamzer	Ez egy vamzer. Bízom a...		
-vátesz	1	737	-6.602587892189336	real word	738	la	vátes	Ez egy vátesz. Bízom a...		
-zacsek	59	12	1.5926307941177191	real word	71	yi	začek	Ez egy zacsek. Bízom a...		
-ágens	7	7110	-6.923347373741973	real word	7117	la	ágenš	Ez egy ágens. Bízom az...		z
-ájer	15	67	-1.496642418288756	real word	82	yi	ájer	Ez egy ájer. Bízom az...		z
-ómen	2	996	-6.210600077024653	real word	998	la	ómen	Ez egy ómen. Bízom az...		z
+stem	back	front	log_odds_back	stem_freq	language	transcription	z	trial_type	target	prompt	stimulus	trial_front	trial_pl	choices
+balek	5215	225	3.1431939652304526	5440	yi	balek		pl_back	balekok	Ez egy balek. Ezek itt balekok.	<p style=""font-size:48px;"">balekok</p>	FALSE	TRUE	
+balek	5215	225	3.1431939652304526	5440	yi	balek		pl_front	balekek	Ez egy balek. Ezek itt balekek.	<p style=""font-size:48px;"">balekek</p>	TRUE	TRUE	
+balek	5215	225	3.1431939652304526	5440	yi	balek		ine_back	balekban	Ez egy balek. Bízom a balekban.	<p style=""font-size:48px;"">balekban</p>	FALSE	FALSE	
+balek	5215	225	3.1431939652304526	5440	yi	balek		ine_front	balekben	Ez egy balek. Bízom a balekben.	<p style=""font-size:48px;"">balekben</p>	TRUE	FALSE	
+barchesz	8	37	-1.5314763709643884	45	yi	barches		pl_back	barcheszok	Ez egy barchesz. Ezek itt barcheszok.	<p style=""font-size:48px;"">barcheszok</p>	FALSE	TRUE	
+barchesz	8	37	-1.5314763709643884	45	yi	barches		pl_front	barcheszek	Ez egy barchesz. Ezek itt barcheszek.	<p style=""font-size:48px;"">barcheszek</p>	TRUE	TRUE	
+barchesz	8	37	-1.5314763709643884	45	yi	barches		ine_back	barcheszban	Ez egy barchesz. Bízom a barcheszban.	<p style=""font-size:48px;"">barcheszban</p>	FALSE	FALSE	
+barchesz	8	37	-1.5314763709643884	45	yi	barches		ine_front	barcheszben	Ez egy barchesz. Bízom a barcheszben.	<p style=""font-size:48px;"">barcheszben</p>	TRUE	FALSE	
+docens	6	29878	-8.513118233374207	29884	la	docenš		pl_back	docensok	Ez egy docens. Ezek itt docensok.	<p style=""font-size:48px;"">docensok</p>	FALSE	TRUE	
+docens	6	29878	-8.513118233374207	29884	la	docenš		pl_front	docensek	Ez egy docens. Ezek itt docensek.	<p style=""font-size:48px;"">docensek</p>	TRUE	TRUE	
+docens	6	29878	-8.513118233374207	29884	la	docenš		ine_back	docensban	Ez egy docens. Bízom a docensban.	<p style=""font-size:48px;"">docensban</p>	FALSE	FALSE	
+docens	6	29878	-8.513118233374207	29884	la	docenš		ine_front	docensben	Ez egy docens. Bízom a docensben.	<p style=""font-size:48px;"">docensben</p>	TRUE	FALSE	
+fater	5385	190	3.344348517430003	5575	yi	fater		pl_back	faterok	Ez egy fater. Ezek itt faterok.	<p style=""font-size:48px;"">faterok</p>	FALSE	TRUE	
+fater	5385	190	3.344348517430003	5575	yi	fater		pl_front	faterek	Ez egy fater. Ezek itt faterek.	<p style=""font-size:48px;"">faterek</p>	TRUE	TRUE	
+fater	5385	190	3.344348517430003	5575	yi	fater		ine_back	faterban	Ez egy fater. Bízom a faterban.	<p style=""font-size:48px;"">faterban</p>	FALSE	FALSE	
+fater	5385	190	3.344348517430003	5575	yi	fater		ine_front	faterben	Ez egy fater. Bízom a faterben.	<p style=""font-size:48px;"">faterben</p>	TRUE	FALSE	
+fráter	34	997	-3.378390245345677	1031	la	fráter		pl_back	fráterok	Ez egy fráter. Ezek itt fráterok.	<p style=""font-size:48px;"">fráterok</p>	FALSE	TRUE	
+fráter	34	997	-3.378390245345677	1031	la	fráter		pl_front	fráterek	Ez egy fráter. Ezek itt fráterek.	<p style=""font-size:48px;"">fráterek</p>	TRUE	TRUE	
+fráter	34	997	-3.378390245345677	1031	la	fráter		ine_back	fráterban	Ez egy fráter. Bízom a fráterban.	<p style=""font-size:48px;"">fráterban</p>	FALSE	FALSE	
+fráter	34	997	-3.378390245345677	1031	la	fráter		ine_front	fráterben	Ez egy fráter. Bízom a fráterben.	<p style=""font-size:48px;"">fráterben</p>	TRUE	FALSE	
+gólem	1	1736	-7.459338895220296	1737	yi	gólem		pl_back	gólemok	Ez egy gólem. Ezek itt gólemok.	<p style=""font-size:48px;"">gólemok</p>	FALSE	TRUE	
+gólem	1	1736	-7.459338895220296	1737	yi	gólem		pl_front	gólemek	Ez egy gólem. Ezek itt gólemek.	<p style=""font-size:48px;"">gólemek</p>	TRUE	TRUE	
+gólem	1	1736	-7.459338895220296	1737	yi	gólem		ine_back	gólemban	Ez egy gólem. Bízom a gólemban.	<p style=""font-size:48px;"">gólemban</p>	FALSE	FALSE	
+gólem	1	1736	-7.459338895220296	1737	yi	gólem		ine_front	gólemben	Ez egy gólem. Bízom a gólemben.	<p style=""font-size:48px;"">gólemben</p>	TRUE	FALSE	
+haver	71848	634	4.7302591009135595	72482	yi	haver		pl_back	haverok	Ez egy haver. Ezek itt haverok.	<p style=""font-size:48px;"">haverok</p>	FALSE	TRUE	
+haver	71848	634	4.7302591009135595	72482	yi	haver		pl_front	haverek	Ez egy haver. Ezek itt haverek.	<p style=""font-size:48px;"">haverek</p>	TRUE	TRUE	
+haver	71848	634	4.7302591009135595	72482	yi	haver		ine_back	haverban	Ez egy haver. Bízom a haverban.	<p style=""font-size:48px;"">haverban</p>	FALSE	FALSE	
+haver	71848	634	4.7302591009135595	72482	yi	haver		ine_front	haverben	Ez egy haver. Bízom a haverben.	<p style=""font-size:48px;"">haverben</p>	TRUE	FALSE	
+kampec	41	30	0.31237468504215243	71	yi	kampec		pl_back	kampecok	Ez egy kampec. Ezek itt kampecok.	<p style=""font-size:48px;"">kampecok</p>	FALSE	TRUE	
+kampec	41	30	0.31237468504215243	71	yi	kampec		pl_front	kampecek	Ez egy kampec. Ezek itt kampecek.	<p style=""font-size:48px;"">kampecek</p>	TRUE	TRUE	
+kampec	41	30	0.31237468504215243	71	yi	kampec		ine_back	kampecban	Ez egy kampec. Bízom a kampecban.	<p style=""font-size:48px;"">kampecban</p>	FALSE	FALSE	
+kampec	41	30	0.31237468504215243	71	yi	kampec		ine_front	kampecben	Ez egy kampec. Bízom a kampecben.	<p style=""font-size:48px;"">kampecben</p>	TRUE	FALSE	
+karcer	36	93	-0.949080554697146	129	la	karcer		pl_back	karcerok	Ez egy karcer. Ezek itt karcerok.	<p style=""font-size:48px;"">karcerok</p>	FALSE	TRUE	
+karcer	36	93	-0.949080554697146	129	la	karcer		pl_front	karcerek	Ez egy karcer. Ezek itt karcerek.	<p style=""font-size:48px;"">karcerek</p>	TRUE	TRUE	
+karcer	36	93	-0.949080554697146	129	la	karcer		ine_back	karcerban	Ez egy karcer. Bízom a karcerban.	<p style=""font-size:48px;"">karcerban</p>	FALSE	FALSE	
+karcer	36	93	-0.949080554697146	129	la	karcer		ine_front	karcerben	Ez egy karcer. Bízom a karcerben.	<p style=""font-size:48px;"">karcerben</p>	TRUE	FALSE	
+kráter	87	9093	-4.649352047071329	9180	la	kráter		pl_back	kráterok	Ez egy kráter. Ezek itt kráterok.	<p style=""font-size:48px;"">kráterok</p>	FALSE	TRUE	
+kráter	87	9093	-4.649352047071329	9180	la	kráter		pl_front	kráterek	Ez egy kráter. Ezek itt kráterek.	<p style=""font-size:48px;"">kráterek</p>	TRUE	TRUE	
+kráter	87	9093	-4.649352047071329	9180	la	kráter		ine_back	kráterban	Ez egy kráter. Bízom a kráterban.	<p style=""font-size:48px;"">kráterban</p>	FALSE	FALSE	
+kráter	87	9093	-4.649352047071329	9180	la	kráter		ine_front	kráterben	Ez egy kráter. Bízom a kráterben.	<p style=""font-size:48px;"">kráterben</p>	TRUE	FALSE	
+kódex	19	48210	-7.838882768233227	48229	la	kódex		pl_back	kódexok	Ez egy kódex. Ezek itt kódexok.	<p style=""font-size:48px;"">kódexok</p>	FALSE	TRUE	
+kódex	19	48210	-7.838882768233227	48229	la	kódex		pl_front	kódexek	Ez egy kódex. Ezek itt kódexek.	<p style=""font-size:48px;"">kódexek</p>	TRUE	TRUE	
+kódex	19	48210	-7.838882768233227	48229	la	kódex		ine_back	kódexban	Ez egy kódex. Bízom a kódexban.	<p style=""font-size:48px;"">kódexban</p>	FALSE	FALSE	
+kódex	19	48210	-7.838882768233227	48229	la	kódex		ine_front	kódexben	Ez egy kódex. Bízom a kódexben.	<p style=""font-size:48px;"">kódexben</p>	TRUE	FALSE	
+latex	125	2639	-3.049841599201023	2764	la	latex		pl_back	latexok	Ez egy latex. Ezek itt latexok.	<p style=""font-size:48px;"">latexok</p>	FALSE	TRUE	
+latex	125	2639	-3.049841599201023	2764	la	latex		pl_front	latexek	Ez egy latex. Ezek itt latexek.	<p style=""font-size:48px;"">latexek</p>	TRUE	TRUE	
+latex	125	2639	-3.049841599201023	2764	la	latex		ine_back	latexban	Ez egy latex. Bízom a latexban.	<p style=""font-size:48px;"">latexban</p>	FALSE	FALSE	
+latex	125	2639	-3.049841599201023	2764	la	latex		ine_front	latexben	Ez egy latex. Bízom a latexben.	<p style=""font-size:48px;"">latexben</p>	TRUE	FALSE	
+luesz	1	22	-3.0910424533583156	23	la	lues		pl_back	lueszok	Ez egy luesz. Ezek itt lueszok.	<p style=""font-size:48px;"">lueszok</p>	FALSE	TRUE	
+luesz	1	22	-3.0910424533583156	23	la	lues		pl_front	lueszek	Ez egy luesz. Ezek itt lueszek.	<p style=""font-size:48px;"">lueszek</p>	TRUE	TRUE	
+luesz	1	22	-3.0910424533583156	23	la	lues		ine_back	lueszban	Ez egy luesz. Bízom a lueszban.	<p style=""font-size:48px;"">lueszban</p>	FALSE	FALSE	
+luesz	1	22	-3.0910424533583156	23	la	lues		ine_front	lueszben	Ez egy luesz. Bízom a lueszben.	<p style=""font-size:48px;"">lueszben</p>	TRUE	FALSE	
+lumen	2	1760	-6.779921907472252	1762	la	lumen		pl_back	lumenok	Ez egy lumen. Ezek itt lumenok.	<p style=""font-size:48px;"">lumenok</p>	FALSE	TRUE	
+lumen	2	1760	-6.779921907472252	1762	la	lumen		pl_front	lumenek	Ez egy lumen. Ezek itt lumenek.	<p style=""font-size:48px;"">lumenek</p>	TRUE	TRUE	
+lumen	2	1760	-6.779921907472252	1762	la	lumen		ine_back	lumenban	Ez egy lumen. Bízom a lumenban.	<p style=""font-size:48px;"">lumenban</p>	FALSE	FALSE	
+lumen	2	1760	-6.779921907472252	1762	la	lumen		ine_front	lumenben	Ez egy lumen. Bízom a lumenben.	<p style=""font-size:48px;"">lumenben</p>	TRUE	FALSE	
+macesz	117	88	0.28483712031954966	205	yi	maces		pl_back	maceszok	Ez egy macesz. Ezek itt maceszok.	<p style=""font-size:48px;"">maceszok</p>	FALSE	TRUE	
+macesz	117	88	0.28483712031954966	205	yi	maces		pl_front	maceszek	Ez egy macesz. Ezek itt maceszek.	<p style=""font-size:48px;"">maceszek</p>	TRUE	TRUE	
+macesz	117	88	0.28483712031954966	205	yi	maces		ine_back	maceszban	Ez egy macesz. Bízom a maceszban.	<p style=""font-size:48px;"">maceszban</p>	FALSE	FALSE	
+macesz	117	88	0.28483712031954966	205	yi	maces		ine_front	maceszben	Ez egy macesz. Bízom a maceszben.	<p style=""font-size:48px;"">maceszben</p>	TRUE	FALSE	
+macher	14	40	-1.0498221244986778	54	yi	macher		pl_back	macherok	Ez egy macher. Ezek itt macherok.	<p style=""font-size:48px;"">macherok</p>	FALSE	TRUE	
+macher	14	40	-1.0498221244986778	54	yi	macher		pl_front	macherek	Ez egy macher. Ezek itt macherek.	<p style=""font-size:48px;"">macherek</p>	TRUE	TRUE	
+macher	14	40	-1.0498221244986778	54	yi	macher		ine_back	macherban	Ez egy macher. Bízom a macherban.	<p style=""font-size:48px;"">macherban</p>	FALSE	FALSE	
+macher	14	40	-1.0498221244986778	54	yi	macher		ine_front	macherben	Ez egy macher. Bízom a macherben.	<p style=""font-size:48px;"">macherben</p>	TRUE	FALSE	
+maszek	2084	80	3.260017768199376	2164	yi	masek		pl_back	maszekok	Ez egy maszek. Ezek itt maszekok.	<p style=""font-size:48px;"">maszekok</p>	FALSE	TRUE	
+maszek	2084	80	3.260017768199376	2164	yi	masek		pl_front	maszekek	Ez egy maszek. Ezek itt maszekek.	<p style=""font-size:48px;"">maszekek</p>	TRUE	TRUE	
+maszek	2084	80	3.260017768199376	2164	yi	masek		ine_back	maszekban	Ez egy maszek. Bízom a maszekban.	<p style=""font-size:48px;"">maszekban</p>	FALSE	FALSE	
+maszek	2084	80	3.260017768199376	2164	yi	masek		ine_front	maszekben	Ez egy maszek. Bízom a maszekben.	<p style=""font-size:48px;"">maszekben</p>	TRUE	FALSE	
+mater	193	2954	-2.7282252741864395	3147	la	mater		pl_back	materok	Ez egy mater. Ezek itt materok.	<p style=""font-size:48px;"">materok</p>	FALSE	TRUE	
+mater	193	2954	-2.7282252741864395	3147	la	mater		pl_front	materek	Ez egy mater. Ezek itt materek.	<p style=""font-size:48px;"">materek</p>	TRUE	TRUE	
+mater	193	2954	-2.7282252741864395	3147	la	mater		ine_back	materban	Ez egy mater. Bízom a materban.	<p style=""font-size:48px;"">materban</p>	FALSE	FALSE	
+mater	193	2954	-2.7282252741864395	3147	la	mater		ine_front	materben	Ez egy mater. Bízom a materben.	<p style=""font-size:48px;"">materben</p>	TRUE	FALSE	
+muter	745	102	1.9884114050952884	847	yi	muter		pl_back	muterok	Ez egy muter. Ezek itt muterok.	<p style=""font-size:48px;"">muterok</p>	FALSE	TRUE	
+muter	745	102	1.9884114050952884	847	yi	muter		pl_front	muterek	Ez egy muter. Ezek itt muterek.	<p style=""font-size:48px;"">muterek</p>	TRUE	TRUE	
+muter	745	102	1.9884114050952884	847	yi	muter		ine_back	muterban	Ez egy muter. Bízom a muterban.	<p style=""font-size:48px;"">muterban</p>	FALSE	FALSE	
+muter	745	102	1.9884114050952884	847	yi	muter		ine_front	muterben	Ez egy muter. Bízom a muterben.	<p style=""font-size:48px;"">muterben</p>	TRUE	FALSE	
+pajesz	271	14	2.963061491264442	285	yi	pajes		pl_back	pajeszok	Ez egy pajesz. Ezek itt pajeszok.	<p style=""font-size:48px;"">pajeszok</p>	FALSE	TRUE	
+pajesz	271	14	2.963061491264442	285	yi	pajes		pl_front	pajeszek	Ez egy pajesz. Ezek itt pajeszek.	<p style=""font-size:48px;"">pajeszek</p>	TRUE	TRUE	
+pajesz	271	14	2.963061491264442	285	yi	pajes		ine_back	pajeszban	Ez egy pajesz. Bízom a pajeszban.	<p style=""font-size:48px;"">pajeszban</p>	FALSE	FALSE	
+pajesz	271	14	2.963061491264442	285	yi	pajes		ine_front	pajeszben	Ez egy pajesz. Bízom a pajeszben.	<p style=""font-size:48px;"">pajeszben</p>	TRUE	FALSE	
+pollen	7	10478	-7.311122950912852	10485	la	pollen		pl_back	pollenok	Ez egy pollen. Ezek itt pollenok.	<p style=""font-size:48px;"">pollenok</p>	FALSE	TRUE	
+pollen	7	10478	-7.311122950912852	10485	la	pollen		pl_front	pollenek	Ez egy pollen. Ezek itt pollenek.	<p style=""font-size:48px;"">pollenek</p>	TRUE	TRUE	
+pollen	7	10478	-7.311122950912852	10485	la	pollen		ine_back	pollenban	Ez egy pollen. Bízom a pollenban.	<p style=""font-size:48px;"">pollenban</p>	FALSE	FALSE	
+pollen	7	10478	-7.311122950912852	10485	la	pollen		ine_front	pollenben	Ez egy pollen. Bízom a pollenben.	<p style=""font-size:48px;"">pollenben</p>	TRUE	FALSE	
+pátens	2	616	-5.730099782973574	618	la	pátenš		pl_back	pátensok	Ez egy pátens. Ezek itt pátensok.	<p style=""font-size:48px;"">pátensok</p>	FALSE	TRUE	
+pátens	2	616	-5.730099782973574	618	la	pátenš		pl_front	pátensek	Ez egy pátens. Ezek itt pátensek.	<p style=""font-size:48px;"">pátensek</p>	TRUE	TRUE	
+pátens	2	616	-5.730099782973574	618	la	pátenš		ine_back	pátensban	Ez egy pátens. Bízom a pátensban.	<p style=""font-size:48px;"">pátensban</p>	FALSE	FALSE	
+pátens	2	616	-5.730099782973574	618	la	pátenš		ine_front	pátensben	Ez egy pátens. Bízom a pátensben.	<p style=""font-size:48px;"">pátensben</p>	TRUE	FALSE	
+páter	32	923	-3.3618933317031257	955	la	páter		pl_back	páterok	Ez egy páter. Ezek itt páterok.	<p style=""font-size:48px;"">páterok</p>	FALSE	TRUE	
+páter	32	923	-3.3618933317031257	955	la	páter		pl_front	páterek	Ez egy páter. Ezek itt páterek.	<p style=""font-size:48px;"">páterek</p>	TRUE	TRUE	
+páter	32	923	-3.3618933317031257	955	la	páter		ine_back	páterban	Ez egy páter. Bízom a páterban.	<p style=""font-size:48px;"">páterban</p>	FALSE	FALSE	
+páter	32	923	-3.3618933317031257	955	la	páter		ine_front	páterben	Ez egy páter. Bízom a páterben.	<p style=""font-size:48px;"">páterben</p>	TRUE	FALSE	
+samesz	484	188	0.9456429438866824	672	yi	šames		pl_back	sameszok	Ez egy samesz. Ezek itt sameszok.	<p style=""font-size:48px;"">sameszok</p>	FALSE	TRUE	
+samesz	484	188	0.9456429438866824	672	yi	šames		pl_front	sameszek	Ez egy samesz. Ezek itt sameszek.	<p style=""font-size:48px;"">sameszek</p>	TRUE	TRUE	
+samesz	484	188	0.9456429438866824	672	yi	šames		ine_back	sameszban	Ez egy samesz. Bízom a sameszban.	<p style=""font-size:48px;"">sameszban</p>	FALSE	FALSE	
+samesz	484	188	0.9456429438866824	672	yi	šames		ine_front	sameszben	Ez egy samesz. Bízom a sameszben.	<p style=""font-size:48px;"">sameszben</p>	TRUE	FALSE	
+sábesz	10	102	-2.3223877202902252	112	yi	šábes		pl_back	sábeszok	Ez egy sábesz. Ezek itt sábeszok.	<p style=""font-size:48px;"">sábeszok</p>	FALSE	TRUE	
+sábesz	10	102	-2.3223877202902252	112	yi	šábes		pl_front	sábeszek	Ez egy sábesz. Ezek itt sábeszek.	<p style=""font-size:48px;"">sábeszek</p>	TRUE	TRUE	
+sábesz	10	102	-2.3223877202902252	112	yi	šábes		ine_back	sábeszban	Ez egy sábesz. Bízom a sábeszban.	<p style=""font-size:48px;"">sábeszban</p>	FALSE	FALSE	
+sábesz	10	102	-2.3223877202902252	112	yi	šábes		ine_front	sábeszben	Ez egy sábesz. Bízom a sábeszben.	<p style=""font-size:48px;"">sábeszben</p>	TRUE	FALSE	
+sólet	86	1280	-2.700268060660155	1366	yi	šólet		pl_back	sóletok	Ez egy sólet. Ezek itt sóletok.	<p style=""font-size:48px;"">sóletok</p>	FALSE	TRUE	
+sólet	86	1280	-2.700268060660155	1366	yi	šólet		pl_front	sóletek	Ez egy sólet. Ezek itt sóletek.	<p style=""font-size:48px;"">sóletek</p>	TRUE	TRUE	
+sólet	86	1280	-2.700268060660155	1366	yi	šólet		ine_back	sóletban	Ez egy sólet. Bízom a sóletban.	<p style=""font-size:48px;"">sóletban</p>	FALSE	FALSE	
+sólet	86	1280	-2.700268060660155	1366	yi	šólet		ine_front	sóletben	Ez egy sólet. Bízom a sóletben.	<p style=""font-size:48px;"">sóletben</p>	TRUE	FALSE	
+vamzer	9	107	-2.4756042571256867	116	yi	vamzer		pl_back	vamzerok	Ez egy vamzer. Ezek itt vamzerok.	<p style=""font-size:48px;"">vamzerok</p>	FALSE	TRUE	
+vamzer	9	107	-2.4756042571256867	116	yi	vamzer		pl_front	vamzerek	Ez egy vamzer. Ezek itt vamzerek.	<p style=""font-size:48px;"">vamzerek</p>	TRUE	TRUE	
+vamzer	9	107	-2.4756042571256867	116	yi	vamzer		ine_back	vamzerban	Ez egy vamzer. Bízom a vamzerban.	<p style=""font-size:48px;"">vamzerban</p>	FALSE	FALSE	
+vamzer	9	107	-2.4756042571256867	116	yi	vamzer		ine_front	vamzerben	Ez egy vamzer. Bízom a vamzerben.	<p style=""font-size:48px;"">vamzerben</p>	TRUE	FALSE	
+vátesz	1	737	-6.602587892189336	738	la	vátes		pl_back	váteszok	Ez egy vátesz. Ezek itt váteszok.	<p style=""font-size:48px;"">váteszok</p>	FALSE	TRUE	
+vátesz	1	737	-6.602587892189336	738	la	vátes		pl_front	váteszek	Ez egy vátesz. Ezek itt váteszek.	<p style=""font-size:48px;"">váteszek</p>	TRUE	TRUE	
+vátesz	1	737	-6.602587892189336	738	la	vátes		ine_back	váteszban	Ez egy vátesz. Bízom a váteszban.	<p style=""font-size:48px;"">váteszban</p>	FALSE	FALSE	
+vátesz	1	737	-6.602587892189336	738	la	vátes		ine_front	váteszben	Ez egy vátesz. Bízom a váteszben.	<p style=""font-size:48px;"">váteszben</p>	TRUE	FALSE	
+zacsek	59	12	1.5926307941177191	71	yi	začek		pl_back	zacsekok	Ez egy zacsek. Ezek itt zacsekok.	<p style=""font-size:48px;"">zacsekok</p>	FALSE	TRUE	
+zacsek	59	12	1.5926307941177191	71	yi	začek		pl_front	zacsekek	Ez egy zacsek. Ezek itt zacsekek.	<p style=""font-size:48px;"">zacsekek</p>	TRUE	TRUE	
+zacsek	59	12	1.5926307941177191	71	yi	začek		ine_back	zacsekban	Ez egy zacsek. Bízom a zacsekban.	<p style=""font-size:48px;"">zacsekban</p>	FALSE	FALSE	
+zacsek	59	12	1.5926307941177191	71	yi	začek		ine_front	zacsekben	Ez egy zacsek. Bízom a zacsekben.	<p style=""font-size:48px;"">zacsekben</p>	TRUE	FALSE	
+ágens	7	7110	-6.923347373741973	7117	la	ágenš	z	pl_back	ágensok	Ez egy ágens. Ezek itt ágensok.	<p style=""font-size:48px;"">ágensok</p>	FALSE	TRUE	
+ágens	7	7110	-6.923347373741973	7117	la	ágenš	z	pl_front	ágensek	Ez egy ágens. Ezek itt ágensek.	<p style=""font-size:48px;"">ágensek</p>	TRUE	TRUE	
+ágens	7	7110	-6.923347373741973	7117	la	ágenš	z	ine_back	ágensban	Ez egy ágens. Bízom az ágensban.	<p style=""font-size:48px;"">ágensban</p>	FALSE	FALSE	
+ágens	7	7110	-6.923347373741973	7117	la	ágenš	z	ine_front	ágensben	Ez egy ágens. Bízom az ágensben.	<p style=""font-size:48px;"">ágensben</p>	TRUE	FALSE	
+ájer	15	67	-1.496642418288756	82	yi	ájer	z	pl_back	ájerok	Ez egy ájer. Ezek itt ájerok.	<p style=""font-size:48px;"">ájerok</p>	FALSE	TRUE	
+ájer	15	67	-1.496642418288756	82	yi	ájer	z	pl_front	ájerek	Ez egy ájer. Ezek itt ájerek.	<p style=""font-size:48px;"">ájerek</p>	TRUE	TRUE	
+ájer	15	67	-1.496642418288756	82	yi	ájer	z	ine_back	ájerban	Ez egy ájer. Bízom az ájerban.	<p style=""font-size:48px;"">ájerban</p>	FALSE	FALSE	
+ájer	15	67	-1.496642418288756	82	yi	ájer	z	ine_front	ájerben	Ez egy ájer. Bízom az ájerben.	<p style=""font-size:48px;"">ájerben</p>	TRUE	FALSE	
+ómen	2	996	-6.210600077024653	998	la	ómen	z	pl_back	ómenok	Ez egy ómen. Ezek itt ómenok.	<p style=""font-size:48px;"">ómenok</p>	FALSE	TRUE	
+ómen	2	996	-6.210600077024653	998	la	ómen	z	pl_front	ómenek	Ez egy ómen. Ezek itt ómenek.	<p style=""font-size:48px;"">ómenek</p>	TRUE	TRUE	
+ómen	2	996	-6.210600077024653	998	la	ómen	z	ine_back	ómenban	Ez egy ómen. Bízom az ómenban.	<p style=""font-size:48px;"">ómenban</p>	FALSE	FALSE	
+ómen	2	996	-6.210600077024653	998	la	ómen	z	ine_front	ómenben	Ez egy ómen. Bízom az ómenben.	<p style=""font-size:48px;"">ómenben</p>	TRUE	FALSE	
+bakter	366	268	0.3116463528905096	634	de	bakter		pl_back	bakterok	Ez egy bakter. Ezek itt bakterok.	<p style=""font-size:48px;"">bakterok</p>	FALSE	TRUE	
+bakter	366	268	0.3116463528905096	634	de	bakter		pl_front	bakterek	Ez egy bakter. Ezek itt bakterek.	<p style=""font-size:48px;"">bakterek</p>	TRUE	TRUE	
+bakter	366	268	0.3116463528905096	634	de	bakter		ine_back	bakterban	Ez egy bakter. Bízom a bakterban.	<p style=""font-size:48px;"">bakterban</p>	FALSE	FALSE	
+bakter	366	268	0.3116463528905096	634	de	bakter		ine_front	bakterben	Ez egy bakter. Bízom a bakterben.	<p style=""font-size:48px;"">bakterben</p>	TRUE	FALSE	
+flanel	73	159	-0.7784447610718404	232	fr	flanel		pl_back	flanelok	Ez egy flanel. Ezek itt flanelok.	<p style=""font-size:48px;"">flanelok</p>	FALSE	TRUE	
+flanel	73	159	-0.7784447610718404	232	fr	flanel		pl_front	flanelek	Ez egy flanel. Ezek itt flanelek.	<p style=""font-size:48px;"">flanelek</p>	TRUE	TRUE	
+flanel	73	159	-0.7784447610718404	232	fr	flanel		ine_back	flanelban	Ez egy flanel. Bízom a flanelban.	<p style=""font-size:48px;"">flanelban</p>	FALSE	FALSE	
+flanel	73	159	-0.7784447610718404	232	fr	flanel		ine_front	flanelben	Ez egy flanel. Bízom a flanelben.	<p style=""font-size:48px;"">flanelben</p>	TRUE	FALSE	
+fotel	11597	25177	-0.7751844353673116	36774	fr	fotel		pl_back	fotelok	Ez egy fotel. Ezek itt fotelok.	<p style=""font-size:48px;"">fotelok</p>	FALSE	TRUE	
+fotel	11597	25177	-0.7751844353673116	36774	fr	fotel		pl_front	fotelek	Ez egy fotel. Ezek itt fotelek.	<p style=""font-size:48px;"">fotelek</p>	TRUE	TRUE	
+fotel	11597	25177	-0.7751844353673116	36774	fr	fotel		ine_back	fotelban	Ez egy fotel. Bízom a fotelban.	<p style=""font-size:48px;"">fotelban</p>	FALSE	FALSE	
+fotel	11597	25177	-0.7751844353673116	36774	fr	fotel		ine_front	fotelben	Ez egy fotel. Bízom a fotelben.	<p style=""font-size:48px;"">fotelben</p>	TRUE	FALSE	
+gatyesz	22	9	0.8938178760220965	31	hu	gaṯes		pl_back	gatyeszok	Ez egy gatyesz. Ezek itt gatyeszok.	<p style=""font-size:48px;"">gatyeszok</p>	FALSE	TRUE	
+gatyesz	22	9	0.8938178760220965	31	hu	gaṯes		pl_front	gatyeszek	Ez egy gatyesz. Ezek itt gatyeszek.	<p style=""font-size:48px;"">gatyeszek</p>	TRUE	TRUE	
+gatyesz	22	9	0.8938178760220965	31	hu	gaṯes		ine_back	gatyeszban	Ez egy gatyesz. Bízom a gatyeszban.	<p style=""font-size:48px;"">gatyeszban</p>	FALSE	FALSE	
+gatyesz	22	9	0.8938178760220965	31	hu	gaṯes		ine_front	gatyeszben	Ez egy gatyesz. Bízom a gatyeszben.	<p style=""font-size:48px;"">gatyeszben</p>	TRUE	FALSE	
+jampec	183	281	-0.4288685164923248	464	de	jampec		pl_back	jampecok	Ez egy jampec. Ezek itt jampecok.	<p style=""font-size:48px;"">jampecok</p>	FALSE	TRUE	
+jampec	183	281	-0.4288685164923248	464	de	jampec		pl_front	jampecek	Ez egy jampec. Ezek itt jampecek.	<p style=""font-size:48px;"">jampecek</p>	TRUE	TRUE	
+jampec	183	281	-0.4288685164923248	464	de	jampec		ine_back	jampecban	Ez egy jampec. Bízom a jampecban.	<p style=""font-size:48px;"">jampecban</p>	FALSE	FALSE	
+jampec	183	281	-0.4288685164923248	464	de	jampec		ine_front	jampecben	Ez egy jampec. Bízom a jampecben.	<p style=""font-size:48px;"">jampecben</p>	TRUE	FALSE	
+kadet	158	416	-0.9680902272342964	574	fr	kadet		pl_back	kadetok	Ez egy kadet. Ezek itt kadetok.	<p style=""font-size:48px;"">kadetok</p>	FALSE	TRUE	
+kadet	158	416	-0.9680902272342964	574	fr	kadet		pl_front	kadetek	Ez egy kadet. Ezek itt kadetek.	<p style=""font-size:48px;"">kadetek</p>	TRUE	TRUE	
+kadet	158	416	-0.9680902272342964	574	fr	kadet		ine_back	kadetban	Ez egy kadet. Bízom a kadetban.	<p style=""font-size:48px;"">kadetban</p>	FALSE	FALSE	
+kadet	158	416	-0.9680902272342964	574	fr	kadet		ine_front	kadetben	Ez egy kadet. Bízom a kadetben.	<p style=""font-size:48px;"">kadetben</p>	TRUE	FALSE	
+karter	113	232	-0.7193495529539694	345	en	karter		pl_back	karterok	Ez egy karter. Ezek itt karterok.	<p style=""font-size:48px;"">karterok</p>	FALSE	TRUE	
+karter	113	232	-0.7193495529539694	345	en	karter		pl_front	karterek	Ez egy karter. Ezek itt karterek.	<p style=""font-size:48px;"">karterek</p>	TRUE	TRUE	
+karter	113	232	-0.7193495529539694	345	en	karter		ine_back	karterban	Ez egy karter. Bízom a karterban.	<p style=""font-size:48px;"">karterban</p>	FALSE	FALSE	
+karter	113	232	-0.7193495529539694	345	en	karter		ine_front	karterben	Ez egy karter. Bízom a karterben.	<p style=""font-size:48px;"">karterben</p>	TRUE	FALSE	
+klapec	18	9	0.6931471805599453	27	de	klapec		pl_back	klapecok	Ez egy klapec. Ezek itt klapecok.	<p style=""font-size:48px;"">klapecok</p>	FALSE	TRUE	
+klapec	18	9	0.6931471805599453	27	de	klapec		pl_front	klapecek	Ez egy klapec. Ezek itt klapecek.	<p style=""font-size:48px;"">klapecek</p>	TRUE	TRUE	
+klapec	18	9	0.6931471805599453	27	de	klapec		ine_back	klapecban	Ez egy klapec. Bízom a klapecban.	<p style=""font-size:48px;"">klapecban</p>	FALSE	FALSE	
+klapec	18	9	0.6931471805599453	27	de	klapec		ine_front	klapecben	Ez egy klapec. Bízom a klapecben.	<p style=""font-size:48px;"">klapecben</p>	TRUE	FALSE	
+klozet	388	185	0.7406495145449485	573	fr	klozet		pl_back	klozetok	Ez egy klozet. Ezek itt klozetok.	<p style=""font-size:48px;"">klozetok</p>	FALSE	TRUE	
+klozet	388	185	0.7406495145449485	573	fr	klozet		pl_front	klozetek	Ez egy klozet. Ezek itt klozetek.	<p style=""font-size:48px;"">klozetek</p>	TRUE	TRUE	
+klozet	388	185	0.7406495145449485	573	fr	klozet		ine_back	klozetban	Ez egy klozet. Bízom a klozetban.	<p style=""font-size:48px;"">klozetban</p>	FALSE	FALSE	
+klozet	388	185	0.7406495145449485	573	fr	klozet		ine_front	klozetben	Ez egy klozet. Bízom a klozetben.	<p style=""font-size:48px;"">klozetben</p>	TRUE	FALSE	
+kolesz	2920	320	2.211017899468555	3240	hu	koles		pl_back	koleszok	Ez egy kolesz. Ezek itt koleszok.	<p style=""font-size:48px;"">koleszok</p>	FALSE	TRUE	
+kolesz	2920	320	2.211017899468555	3240	hu	koles		pl_front	koleszek	Ez egy kolesz. Ezek itt koleszek.	<p style=""font-size:48px;"">koleszek</p>	TRUE	TRUE	
+kolesz	2920	320	2.211017899468555	3240	hu	koles		ine_back	koleszban	Ez egy kolesz. Bízom a koleszban.	<p style=""font-size:48px;"">koleszban</p>	FALSE	FALSE	
+kolesz	2920	320	2.211017899468555	3240	hu	koles		ine_front	koleszben	Ez egy kolesz. Bízom a koleszben.	<p style=""font-size:48px;"">koleszben</p>	TRUE	FALSE	
+krapek	436	39	2.414080597219388	475	de	krapek		pl_back	krapekok	Ez egy krapek. Ezek itt krapekok.	<p style=""font-size:48px;"">krapekok</p>	FALSE	TRUE	
+krapek	436	39	2.414080597219388	475	de	krapek		pl_front	krapekek	Ez egy krapek. Ezek itt krapekek.	<p style=""font-size:48px;"">krapekek</p>	TRUE	TRUE	
+krapek	436	39	2.414080597219388	475	de	krapek		ine_back	krapekban	Ez egy krapek. Bízom a krapekban.	<p style=""font-size:48px;"">krapekban</p>	FALSE	FALSE	
+krapek	436	39	2.414080597219388	475	de	krapek		ine_front	krapekben	Ez egy krapek. Bízom a krapekben.	<p style=""font-size:48px;"">krapekben</p>	TRUE	FALSE	
+kóter	222	254	-0.13465688514625712	476	de	kóter		pl_back	kóterok	Ez egy kóter. Ezek itt kóterok.	<p style=""font-size:48px;"">kóterok</p>	FALSE	TRUE	
+kóter	222	254	-0.13465688514625712	476	de	kóter		pl_front	kóterek	Ez egy kóter. Ezek itt kóterek.	<p style=""font-size:48px;"">kóterek</p>	TRUE	TRUE	
+kóter	222	254	-0.13465688514625712	476	de	kóter		ine_back	kóterban	Ez egy kóter. Bízom a kóterban.	<p style=""font-size:48px;"">kóterban</p>	FALSE	FALSE	
+kóter	222	254	-0.13465688514625712	476	de	kóter		ine_front	kóterben	Ez egy kóter. Bízom a kóterben.	<p style=""font-size:48px;"">kóterben</p>	TRUE	FALSE	
+malter	667	222	1.1001126640433443	889	de	malter		pl_back	malterok	Ez egy malter. Ezek itt malterok.	<p style=""font-size:48px;"">malterok</p>	FALSE	TRUE	
+malter	667	222	1.1001126640433443	889	de	malter		pl_front	malterek	Ez egy malter. Ezek itt malterek.	<p style=""font-size:48px;"">malterek</p>	TRUE	TRUE	
+malter	667	222	1.1001126640433443	889	de	malter		ine_back	malterban	Ez egy malter. Bízom a malterban.	<p style=""font-size:48px;"">malterban</p>	FALSE	FALSE	
+malter	667	222	1.1001126640433443	889	de	malter		ine_front	malterben	Ez egy malter. Bízom a malterben.	<p style=""font-size:48px;"">malterben</p>	TRUE	FALSE	
+matek	18299	276	4.194200826810537	18575	en	matek		pl_back	matekok	Ez egy matek. Ezek itt matekok.	<p style=""font-size:48px;"">matekok</p>	FALSE	TRUE	
+matek	18299	276	4.194200826810537	18575	en	matek		pl_front	matekek	Ez egy matek. Ezek itt matekek.	<p style=""font-size:48px;"">matekek</p>	TRUE	TRUE	
+matek	18299	276	4.194200826810537	18575	en	matek		ine_back	matekban	Ez egy matek. Bízom a matekban.	<p style=""font-size:48px;"">matekban</p>	FALSE	FALSE	
+matek	18299	276	4.194200826810537	18575	en	matek		ine_front	matekben	Ez egy matek. Bízom a matekben.	<p style=""font-size:48px;"">matekben</p>	TRUE	FALSE	
+mutter	222	107	0.7298485474103733	329	de	mutter		pl_back	mutterok	Ez egy mutter. Ezek itt mutterok.	<p style=""font-size:48px;"">mutterok</p>	FALSE	TRUE	
+mutter	222	107	0.7298485474103733	329	de	mutter		pl_front	mutterek	Ez egy mutter. Ezek itt mutterek.	<p style=""font-size:48px;"">mutterek</p>	TRUE	TRUE	
+mutter	222	107	0.7298485474103733	329	de	mutter		ine_back	mutterban	Ez egy mutter. Bízom a mutterban.	<p style=""font-size:48px;"">mutterban</p>	FALSE	FALSE	
+mutter	222	107	0.7298485474103733	329	de	mutter		ine_front	mutterben	Ez egy mutter. Bízom a mutterben.	<p style=""font-size:48px;"">mutterben</p>	TRUE	FALSE	
+prakker	32	40	-0.2231435513142097	72	de	prakker		pl_back	prakkerok	Ez egy prakker. Ezek itt prakkerok.	<p style=""font-size:48px;"">prakkerok</p>	FALSE	TRUE	
+prakker	32	40	-0.2231435513142097	72	de	prakker		pl_front	prakkerek	Ez egy prakker. Ezek itt prakkerek.	<p style=""font-size:48px;"">prakkerek</p>	TRUE	TRUE	
+prakker	32	40	-0.2231435513142097	72	de	prakker		ine_back	prakkerban	Ez egy prakker. Bízom a prakkerban.	<p style=""font-size:48px;"">prakkerban</p>	FALSE	FALSE	
+prakker	32	40	-0.2231435513142097	72	de	prakker		ine_front	prakkerben	Ez egy prakker. Bízom a prakkerben.	<p style=""font-size:48px;"">prakkerben</p>	TRUE	FALSE	
+sumer	985	684	0.3646837235495385	1669	akk	šumer		pl_back	sumerok	Ez egy sumer. Ezek itt sumerok.	<p style=""font-size:48px;"">sumerok</p>	FALSE	TRUE	
+sumer	985	684	0.3646837235495385	1669	akk	šumer		pl_front	sumerek	Ez egy sumer. Ezek itt sumerek.	<p style=""font-size:48px;"">sumerek</p>	TRUE	TRUE	
+sumer	985	684	0.3646837235495385	1669	akk	šumer		ine_back	sumerban	Ez egy sumer. Bízom a sumerban.	<p style=""font-size:48px;"">sumerban</p>	FALSE	FALSE	
+sumer	985	684	0.3646837235495385	1669	akk	šumer		ine_front	sumerben	Ez egy sumer. Bízom a sumerben.	<p style=""font-size:48px;"">sumerben</p>	TRUE	FALSE	
+szkander	139	375	-0.9924520928397192	514	ar	skander		pl_back	szkanderok	Ez egy szkander. Ezek itt szkanderok.	<p style=""font-size:48px;"">szkanderok</p>	FALSE	TRUE	
+szkander	139	375	-0.9924520928397192	514	ar	skander		pl_front	szkanderek	Ez egy szkander. Ezek itt szkanderek.	<p style=""font-size:48px;"">szkanderek</p>	TRUE	TRUE	
+szkander	139	375	-0.9924520928397192	514	ar	skander		ine_back	szkanderban	Ez egy szkander. Bízom a szkanderban.	<p style=""font-size:48px;"">szkanderban</p>	FALSE	FALSE	
+szkander	139	375	-0.9924520928397192	514	ar	skander		ine_front	szkanderben	Ez egy szkander. Bízom a szkanderben.	<p style=""font-size:48px;"">szkanderben</p>	TRUE	FALSE	
