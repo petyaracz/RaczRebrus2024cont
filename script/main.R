@@ -13,81 +13,31 @@ library(broom)
 
 d = read_tsv('~/Github/RaczRebrus2024/dat/dat_wide_stems.tsv')
 s = read_tsv('~/Github/RaczRebrus2024/dat/stemlanguage.tsv')
-c = read_tsv('~/Github/published/Racz2024b/dat/tests.tz')
+# c = read_tsv('~/Github/published/Racz2024b/dat/tests.tz')
 
 # -- setup -- #
 
-word_yi = s[s$language == 'yi',]$stem
-word_la = s[s$language == 'la',]$stem
+d2 = d |> 
+  left_join(s)
 
-real_words = d |> 
-  filter(stem %in% c(word_yi,word_la)) |> 
-  mutate(
-    language = case_when(
-      stem %in% word_yi ~ 'yi',
-      stem %in% word_la ~ 'la'
-    )
-           )
+d2a = d2 |> 
+  filter(language %in% c('yi','la'))
 
-non_words = c |> 
+d2b = d2 |> 
   filter(
-    variation == 'hotelban/hotelben',
-    vowel == 'e'
-    )
+    !language %in% c('yi','la'),
+    log_odds_back > -1,
+    !stem %in% c('duplex','komplex','groteszk','komplett','halef','korrekt')
+  )
 
-# -- non words -- #
-
-p1 = non_words |> 
-  ggplot(aes(gcm,log_odds)) +
-  geom_point() +
-  geom_smooth()
-
-p2 = non_words |> 
-  ggplot(aes(mgl,log_odds)) +
-  geom_point() +
-  geom_smooth()
-
-p3 = non_words |> 
-  ggplot(aes(knn,log_odds)) +
-  geom_point() +
-  geom_smooth()
-
-# p1 + p2 + p3
-
-# summary(glm(cbind(resp1,resp2) ~ 1 + gcm + mgl, data = non_words, family = binomial))
-
-# we're simulating
-# find subset of non words where similarity to real words is most helpful in determining behaviour. I mean that might be noise too but uh hey
-
-sim = tibble(
-  id = 1:100000
-) |> 
-  rowwise() |> 
-  mutate(
-    data = list(sample_n(non_words, 32))
-    ) |> 
-  ungroup() |> 
-  mutate(
-    model = map(data, ~ glm(cbind(resp1,resp2) ~ gcm, data = ., family = binomial)),
-    sum = map(model, tidy)
-  ) |> 
-  unnest(sum) |> 
-  filter(
-    term == 'gcm',
-    estimate == max(estimate)
-         )
-
-non_words2 = sim$data[[1]]
-
-non_words2 |> 
-  ggplot(aes(gcm,log_odds)) +
-  geom_point() +
-  geom_smooth()
+real_words = bind_rows(d2a,d2b)  
 
 # -- real words -- #
 
 real_words |> 
-  mutate(stem = fct_reorder(stem,log_odds_back)) |> 
+  mutate(
+    stem = fct_reorder(stem,log_odds_back),
+         ) |> 
   ggplot(aes(log_odds_back,stem,fill = language)) +
   geom_col() +
   theme_few() +
@@ -96,7 +46,5 @@ real_words |>
 
 # -- write -- #
 
-non_words2 |> 
-  write_tsv('dat/non_words.tsv')
 real_words |> 
   write_tsv('dat/real_words.tsv')
