@@ -45,12 +45,13 @@ master = master |>
   ) |> 
   pivot_longer(c(pl_back,pl_front,ine_back,ine_front), names_to = 'trial_type', values_to = 'target')
 
-master = master |> 
+master2 = master |> 
   mutate(
     prompt = case_when(
-      str_detect(trial_type, 'pl_') ~ glue('Ez egy {stem}. Ezek itt {target}.'),
-      str_detect(trial_type, 'ine_') ~ glue('Ez egy {stem}. Bízom a{z} {target}.')
+      str_detect(trial_type, 'pl_') ~ glue('<p>Ez egy {stem}. Ezek itt {target}.</p>'),
+      str_detect(trial_type, 'ine_') ~ glue('<p>Ez egy {stem}. Bízom a{z} {target}.</p>')
     ),
+    prompt = glue('{prompt}<p><span style="font-size:24px; color:red;">nem: "f"</span>&emsp;<span style="font-size:24px; color:green;">igen: "j"</span></p>'),
     stimulus = glue('<p style="font-size:48px;">{target}</p>'),
     trial_front = str_detect(trial_type, 'front$'),
     trial_pl = str_detect(trial_type, '^pl'),
@@ -59,8 +60,8 @@ master = master |>
 
 # -- write -- #
 
-write_tsv(master, 'dat/master.tsv')
-stim = master |> 
+write_tsv(master2, 'dat/master.tsv')
+stim = master2 |> 
   toJSON(pretty = TRUE)
 stim = paste0('stim = ', stim)
 write_lines(stim, 'dat/stim.js')
