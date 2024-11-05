@@ -5,6 +5,9 @@ setwd('~/Github/RaczRebrus2024cont/')
 set.seed(1337)
 
 library(tidyverse)
+library(patchwork)
+library(ggthemes)
+library(broom)
 library(glue)
 library(jsonlite)
 
@@ -22,11 +25,27 @@ transcribeIPA = function(string, direction){
 
 # -- read -- #
 
-rw = read_tsv('dat/real_words.tsv')
+d = read_tsv('~/Github/RaczRebrus2024/dat/dat_wide_stems.tsv')
+s = read_tsv('~/Github/RaczRebrus2024/dat/stemlanguage.tsv')
+# c = read_tsv('~/Github/published/Racz2024b/dat/tests.tz')
 
-# -- setup -- #
+# -- build master list -- #
 
-master = rw |> 
+d2 = d |> 
+  left_join(s) |>
+  mutate(
+    log_odds_adj = log((back+1)/(front+1)),  
+    stem = fct_reorder(stem, log_odds_adj),
+    quantile_stem_freq = ntile(stem_freq, 4)
+  ) |> 
+  arrange(log_odds_adj)
+
+master = d2 |> 
+  filter(
+    quantile_stem_freq > 1,
+    !stem %in% c('mutter','charter','rocker','kadet')
+         ) |> 
+  slice(1:25,122:146) |> 
   select(-sd_back,-stem_varies) |> 
   mutate(transcription = transcribeIPA(stem, 'single'))
 
