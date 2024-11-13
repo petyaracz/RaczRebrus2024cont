@@ -27,6 +27,7 @@ transcribeIPA = function(string, direction){
 
 d = read_tsv('~/Github/RaczRebrus2024/dat/dat_wide_stems.tsv')
 s = read_tsv('~/Github/RaczRebrus2024/dat/stemlanguage.tsv')
+f = read_tsv('~/Github/Raczrebrus2024/dat/dat_wide.tsv')
 # c = read_tsv('~/Github/published/Racz2024b/dat/tests.tz')
 
 # -- build master list -- #
@@ -48,6 +49,22 @@ master = d2 |>
   slice(1:25,122:146) |> 
   select(-sd_back,-stem_varies,-quantile_stem_freq) |> 
   mutate(transcription = transcribeIPA(stem, 'single'))
+
+# -- word data -- #
+
+words = master |> 
+  select(stem,transcription,log_odds_back,stem_freq,language) |> 
+  rename(log_odds_back_total = log_odds_back)
+
+words2 = f |> 
+  filter(
+    stem %in% words$stem,
+    suffix %in% c('Pl','Dat')
+         ) |> 
+  mutate(log_odds_back_suffix = log((back+1)/(front+1))) |> 
+  select(stem,suffix,llfpm10,form_varies,log_odds_back_suffix)
+
+words = left_join(words,words2)
 
 # -- stimulus, prompt, target, json -- #
 
@@ -76,6 +93,7 @@ master2 = master |>
 # -- write -- #
 
 write_tsv(master2, 'dat/master.tsv')
+write_tsv(words, 'dat/words.tsv')
 stim = master2 |> 
   toJSON(pretty = TRUE)
 stim = paste0('stim = ', stim)
