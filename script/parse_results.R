@@ -10,7 +10,8 @@ library(glue)
 path = '~/Github/Pavlovia/noun_task/data/'
 
 d = tibble(
-  path = glue('{path}{list.files(path)}')
+  path = glue('{path}{list.files(path)}'),
+  start_time = str_extract(path, '(?<=SESSION_).*(?=\\.csv$)')
 ) |> 
   filter(str_detect(path, 'noun_guy')) |>  # this label is inserted in the filename upon completion
   mutate(
