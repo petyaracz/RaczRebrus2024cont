@@ -1,101 +1,101 @@
-stem	log_odds_adj	llfpm10	language	trial_type	neighbourhood_size	stem_length	stem_final	stem_phonology	stem_final_consonant_cluster	form_varies
-koncert	-8.894693768613832	NA	de	pl	0	7	rt	NA	4	NA
-koncert	-8.894693768613832	NA	de	dat	0	7	rt	NA	4	NA
-docens	-8.35900102242926	NA	la	pl	0	6	nš	sibilant	4	NA
-docens	-8.35900102242926	NA	la	dat	0	6	nš	sibilant	4	NA
-projekt	-8.196752177680663	NA	en	pl	0	7	kt	NA	4	NA
-projekt	-8.196752177680663	NA	en	dat	0	7	kt	NA	4	NA
-szovjet	-8.172195830075163	NA	ru	pl	0	7	t	NA	4	NA
-szovjet	-8.172195830075163	NA	ru	dat	0	7	t	NA	4	NA
-szoftver	-8.034782590438166	NA	en	pl	0	8	r	coronal_sonorant	4	NA
-szoftver	-8.034782590438166	NA	en	dat	0	8	r	coronal_sonorant	4	NA
-kódex	-7.787610216215079	NA	la	pl	0	5	x	NA	4	NA
-kódex	-7.787610216215079	NA	la	dat	0	5	x	NA	4	NA
-modell	-7.720901429007229	NA	en	pl	0	6	ll	coronal_sonorant	4	NA
-modell	-7.720901429007229	NA	en	dat	0	6	ll	coronal_sonorant	4	NA
-konszern	-7.451386854473306	NA	de	pl	0	8	rn	coronal_sonorant	4	NA
-konszern	-7.451386854473306	NA	de	dat	0	8	rn	coronal_sonorant	4	NA
-sláger	-7.314590876112485	NA	de	pl	2	6	r	coronal_sonorant	4	NA
-sláger	-7.314590876112485	NA	de	dat	2	6	r	coronal_sonorant	4	NA
-mágnes	-7.281448228089964	NA	en	pl	1	6	š	sibilant	4	NA
-mágnes	-7.281448228089964	NA	en	dat	1	6	š	sibilant	4	NA
-partner	-7.235716825935441	NA	en	pl	1	7	r	coronal_sonorant	4	NA
-partner	-7.235716825935441	NA	en	dat	1	7	r	coronal_sonorant	4	NA
-pollen	-7.177686991795106	NA	la	pl	2	6	n	coronal_sonorant	4	NA
-pollen	-7.177686991795106	NA	la	dat	2	6	n	coronal_sonorant	4	NA
-szlogen	-7.112076645286435	NA	en	pl	0	7	n	coronal_sonorant	4	NA
-szlogen	-7.112076645286435	NA	en	dat	0	7	n	coronal_sonorant	4	NA
-bukfenc	-6.867453982208612	NA	de	pl	0	7	nc	NA	4	NA
-bukfenc	-6.867453982208612	NA	de	dat	0	7	nc	NA	4	NA
-hosztesz	-6.80128303447162	NA	NA	pl	0	8	s	sibilant	4	NA
-hosztesz	-6.80128303447162	NA	NA	dat	0	8	s	sibilant	4	NA
-ágens	-6.789956618203682	NA	la	pl	0	5	nš	sibilant	4	NA
-ágens	-6.789956618203682	NA	la	dat	0	5	nš	sibilant	4	NA
-gólem	-6.766767585681159	NA	yi	pl	1	5	m	NA	4	NA
-gólem	-6.766767585681159	NA	yi	dat	1	5	m	NA	4	NA
-totem	-6.513230110912307	NA	en	pl	1	5	m	NA	4	NA
-totem	-6.513230110912307	NA	en	dat	1	5	m	NA	4	NA
-drukker	-6.493699807702544	NA	de	pl	1	7	r	coronal_sonorant	4	NA
-drukker	-6.493699807702544	NA	de	dat	1	7	r	coronal_sonorant	4	NA
-nonszensz	-6.492744758030441	NA	en	pl	0	9	ns	sibilant	4	NA
-nonszensz	-6.492744758030441	NA	en	dat	0	9	ns	sibilant	4	NA
-lumen	-6.375024819828097	NA	la	pl	1	5	n	coronal_sonorant	4	NA
-lumen	-6.375024819828097	NA	la	dat	1	5	n	coronal_sonorant	4	NA
-token	-6.33175601179619	NA	en	pl	0	5	n	coronal_sonorant	4	NA
-token	-6.33175601179619	NA	en	dat	0	5	n	coronal_sonorant	4	NA
-duett	-6.317078728093343	NA	it	pl	0	5	tt	NA	4	NA
-duett	-6.317078728093343	NA	it	dat	0	5	tt	NA	4	NA
-kortes	-6.115892125483034	NA	NA	pl	6	6	š	sibilant	4	NA
-kortes	-6.115892125483034	NA	NA	dat	6	6	š	sibilant	4	NA
-omlett	-5.929855065476291	NA	fr	pl	0	6	tt	NA	4	NA
-omlett	-5.929855065476291	NA	fr	dat	0	6	tt	NA	4	NA
-koffer	-1.1794595478476049	NA	de	pl	0	6	r	coronal_sonorant	4	NA
-koffer	-1.1794595478476049	NA	de	dat	0	6	r	coronal_sonorant	4	NA
-bojler	-1.0738131741339771	NA	en	pl	1	6	r	coronal_sonorant	4	NA
-bojler	-1.0738131741339771	NA	en	dat	1	6	r	coronal_sonorant	4	NA
-farmer	-1.021925633594891	NA	en	pl	4	6	r	coronal_sonorant	4	NA
-farmer	-1.021925633594891	NA	en	dat	4	6	r	coronal_sonorant	4	NA
-szkander	-0.9879467207805904	NA	ar	pl	0	8	r	coronal_sonorant	4	NA
-szkander	-0.9879467207805904	NA	ar	dat	0	8	r	coronal_sonorant	4	NA
-karcer	-0.9323768696257794	NA	la	pl	2	6	r	coronal_sonorant	4	NA
-karcer	-0.9323768696257794	NA	la	dat	2	6	r	coronal_sonorant	4	NA
-fotel	-0.7751379278898186	NA	fr	pl	2	5	l	coronal_sonorant	4	NA
-fotel	-0.7751379278898186	NA	fr	dat	2	5	l	coronal_sonorant	4	NA
-flanel	-0.7711087220296571	NA	fr	pl	0	6	l	coronal_sonorant	4	NA
-flanel	-0.7711087220296571	NA	fr	dat	0	6	l	coronal_sonorant	4	NA
-karter	-0.714840005171205	NA	en	pl	6	6	r	coronal_sonorant	4	NA
-karter	-0.714840005171205	NA	en	dat	6	6	r	coronal_sonorant	4	NA
-jampec	-0.4269713133291279	NA	de	pl	1	6	c	NA	4	NA
-jampec	-0.4269713133291279	NA	de	dat	1	6	c	NA	4	NA
-kóter	-0.13409177369830738	NA	de	pl	0	5	r	coronal_sonorant	4	NA
-kóter	-0.13409177369830738	NA	de	dat	0	5	r	coronal_sonorant	4	NA
-macesz	0.28204825473352485	NA	yi	pl	0	6	s	sibilant	4	NA
-macesz	0.28204825473352485	NA	yi	dat	0	6	s	sibilant	4	NA
-bakter	0.3106504684527312	NA	de	pl	6	6	r	coronal_sonorant	4	NA
-bakter	0.3106504684527312	NA	de	dat	6	6	r	coronal_sonorant	4	NA
-sumer	0.3642375163404102	NA	akk	pl	0	5	r	coronal_sonorant	4	NA
-sumer	0.3642375163404102	NA	akk	dat	0	5	r	coronal_sonorant	4	NA
-klozet	0.737832669905245	NA	fr	pl	0	6	t	NA	4	NA
-klozet	0.737832669905245	NA	fr	dat	0	6	t	NA	4	NA
-samesz	0.9424018758778407	NA	yi	pl	0	6	s	sibilant	4	NA
-samesz	0.9424018758778407	NA	yi	dat	0	6	s	sibilant	4	NA
-malter	1.097116402076527	NA	de	pl	1	6	r	coronal_sonorant	4	NA
-malter	1.097116402076527	NA	de	dat	1	6	r	coronal_sonorant	4	NA
-muter	1.979996611974125	NA	yi	pl	4	5	r	coronal_sonorant	4	NA
-muter	1.979996611974125	NA	yi	dat	4	5	r	coronal_sonorant	4	NA
-kolesz	2.208240179257725	NA	hu	pl	0	6	s	sibilant	4	NA
-kolesz	2.208240179257725	NA	hu	dat	0	6	s	sibilant	4	NA
-krapek	2.391053740981654	NA	de	pl	0	6	k	NA	4	NA
-krapek	2.391053740981654	NA	de	dat	0	6	k	NA	4	NA
-pajesz	2.8977518651937872	NA	yi	pl	0	6	s	sibilant	4	NA
-pajesz	2.8977518651937872	NA	yi	dat	0	6	s	sibilant	4	NA
-balek	3.138951104334203	NA	yi	pl	1	5	k	NA	4	NA
-balek	3.138951104334203	NA	yi	dat	1	5	k	NA	4	NA
-maszek	3.248074979560463	NA	yi	pl	1	6	k	NA	4	NA
-maszek	3.248074979560463	NA	yi	dat	1	6	k	NA	4	NA
-fater	3.339284845324914	NA	yi	pl	8	5	r	coronal_sonorant	4	NA
-fater	3.339284845324914	NA	yi	dat	8	5	r	coronal_sonorant	4	NA
-matek	4.190638832642174	NA	en	pl	4	5	k	NA	4	NA
-matek	4.190638832642174	NA	en	dat	4	5	k	NA	4	NA
-haver	4.728696974633143	NA	yi	pl	1	5	r	coronal_sonorant	4	NA
-haver	4.728696974633143	NA	yi	dat	1	5	r	coronal_sonorant	4	NA
+stem	transcription	language	log_odds_adj	neighbourhood_size	llfpm10	stem_length	stem_final	stem_phonology	stem_final_consonant_cluster	suffix	log_odds_back_suffix
+koncert	koncert	de	-8.894693768613832	0	3.0752510936798796	7	rt	NA	4	Pl	-11.459239837550424
+koncert	koncert	de	-8.894693768613832	0	3.0752510936798796	7	rt	NA	4	Dat	-8.901911226379612
+docens	docenš	la	-8.35900102242926	0	2.334254917204184	6	nš	sibilant	4	Pl	-7.168579897264035
+docens	docenš	la	-8.35900102242926	0	2.334254917204184	6	nš	sibilant	4	Dat	-6.790097235513905
+projekt	projekt	en	-8.196752177680663	0	3.416526341311925	7	kt	NA	4	Pl	-11.263164115751726
+projekt	projekt	en	-8.196752177680663	0	3.416526341311925	7	kt	NA	4	Dat	-8.264620829411216
+szovjet	sovjet	ru	-8.172195830075163	0	2.59966886920045	7	t	NA	4	Pl	-8.924489954353373
+szovjet	sovjet	ru	-8.172195830075163	0	2.59966886920045	7	t	NA	4	Dat	-5.8111409929767
+szoftver	softver	en	-8.034782590438166	0	2.8823776554889804	8	r	coronal_sonorant	4	Pl	-10.749602570784166
+szoftver	softver	en	-8.034782590438166	0	2.8823776554889804	8	r	coronal_sonorant	4	Dat	-7.163791873598372
+kódex	kódex	la	-7.787610216215079	0	2.156884917051594	5	x	NA	4	Pl	-8.924789360533357
+kódex	kódex	la	-7.787610216215079	0	2.156884917051594	5	x	NA	4	Dat	-7.068597804098967
+modell	modell	en	-7.720901429007229	0	3.2458076642479075	6	ll	coronal_sonorant	4	Pl	-11.15829604656456
+modell	modell	en	-7.720901429007229	0	3.2458076642479075	6	ll	coronal_sonorant	4	Dat	-7.154908282756699
+konszern	konsern	de	-7.451386854473306	0	1.5587549012315391	8	rn	coronal_sonorant	4	Pl	-7.475905969367397
+konszern	konsern	de	-7.451386854473306	0	1.5587549012315391	8	rn	coronal_sonorant	4	Dat	-6.652863029353347
+sláger	šláger	de	-7.314590876112485	2	2.2587678514546465	6	r	coronal_sonorant	4	Pl	-8.446395120107523
+sláger	šláger	de	-7.314590876112485	2	2.2587678514546465	6	r	coronal_sonorant	4	Dat	-5.318119993844216
+mágnes	mágneš	en	-7.281448228089964	1	1.8441518280462148	6	š	sibilant	4	Pl	-8.773694146384443
+mágnes	mágneš	en	-7.281448228089964	1	1.8441518280462148	6	š	sibilant	4	Dat	-5.264760583019194
+partner	partner	en	-7.235716825935441	1	3.170887565855278	7	r	coronal_sonorant	4	Pl	-9.323720076389852
+partner	partner	en	-7.235716825935441	1	3.170887565855278	7	r	coronal_sonorant	4	Dat	-4.651841705297238
+pollen	pollen	la	-7.177686991795106	2	1.5346232211256754	6	n	coronal_sonorant	4	Pl	-7.9991750970687425
+pollen	pollen	la	-7.177686991795106	2	1.5346232211256754	6	n	coronal_sonorant	4	Dat	-4.204692619390966
+szlogen	slogen	en	-7.112076645286435	0	1.9318761017045023	7	n	coronal_sonorant	4	Pl	-6.887807641172441
+szlogen	slogen	en	-7.112076645286435	0	1.9318761017045023	7	n	coronal_sonorant	4	Dat	-6.739336627357174
+bukfenc	bukfenc	de	-6.867453982208612	0	1.0306613020268856	7	nc	NA	4	Pl	-6.577861357721047
+bukfenc	bukfenc	de	-6.867453982208612	0	1.0306613020268856	7	nc	NA	4	Dat	-4.574710978503383
+hosztesz	hostes	NA	-6.80128303447162	0	0.4593602709032462	8	s	sibilant	4	Pl	-6.555356891810665
+hosztesz	hostes	NA	-6.80128303447162	0	0.4593602709032462	8	s	sibilant	4	Dat	-3.713572066704308
+ágens	ágenš	la	-6.789956618203682	0	1.3130456667326265	5	nš	sibilant	4	Pl	-7.778420832830016
+ágens	ágenš	la	-6.789956618203682	0	1.3130456667326265	5	nš	sibilant	4	Dat	-5.278114659230518
+gólem	gólem	yi	-6.766767585681159	1	0.9666714958476778	5	m	NA	4	Pl	-6.082218910376446
+gólem	gólem	yi	-6.766767585681159	1	0.9666714958476778	5	m	NA	4	Dat	-4.1588830833596715
+totem	totem	en	-6.513230110912307	1	0.8624780099324221	5	m	NA	4	Pl	-6.1675164908883415
+totem	totem	en	-6.513230110912307	1	0.8624780099324221	5	m	NA	4	Dat	-4.07753744390572
+drukker	drukker	de	-6.493699807702544	1	1.599349006057054	7	r	coronal_sonorant	4	Pl	-7.273023197338889
+drukker	drukker	de	-6.493699807702544	1	1.599349006057054	7	r	coronal_sonorant	4	Dat	-4.3400879454535515
+nonszensz	nonsens	en	-6.492744758030441	0	1.2858393542194446	9	ns	sibilant	4	Dat	-6.436951329565632
+nonszensz	nonsens	en	-6.492744758030441	0	1.2858393542194446	9	ns	sibilant	4	Pl	-6.2766434893416445
+lumen	lumen	la	-6.375024819828097	1	1.3578062989248016	5	n	coronal_sonorant	4	Dat	-4.406719247264253
+lumen	lumen	la	-6.375024819828097	1	1.3578062989248016	5	n	coronal_sonorant	4	Pl	-4.382026634673881
+token	token	en	-6.33175601179619	0	1.245905770590949	5	n	coronal_sonorant	4	Pl	-7.755338812846501
+token	token	en	-6.33175601179619	0	1.245905770590949	5	n	coronal_sonorant	4	Dat	-4.102643365036796
+duett	duett	it	-6.317078728093343	0	1.4809516014593376	5	tt	NA	4	Pl	-7.035268599281097
+duett	duett	it	-6.317078728093343	0	1.4809516014593376	5	tt	NA	4	Dat	-5.117993812416755
+kortes	korteš	NA	-6.115892125483034	6	0.13557201061440527	6	š	sibilant	4	Pl	-5.402677381872279
+kortes	korteš	NA	-6.115892125483034	6	0.13557201061440527	6	š	sibilant	4	Dat	-3.367295829986474
+omlett	omlett	fr	-5.929855065476291	0	0.9301594617947097	6	tt	NA	4	Dat	-6.47543271670409
+omlett	omlett	fr	-5.929855065476291	0	0.9301594617947097	6	tt	NA	4	Pl	-5.497168225293202
+koffer	koffer	de	-1.1794595478476049	0	0.9596105383709403	6	r	coronal_sonorant	4	Pl	-2.5100508315890258
+koffer	koffer	de	-1.1794595478476049	0	0.9596105383709403	6	r	coronal_sonorant	4	Dat	-1.2992829841302609
+bojler	bojler	en	-1.0738131741339771	1	1.4702901013537286	6	r	coronal_sonorant	4	Dat	3.367295829986474
+bojler	bojler	en	-1.0738131741339771	1	1.4702901013537286	6	r	coronal_sonorant	4	Pl	3.1354942159291497
+farmer	farmer	en	-1.021925633594891	4	1.984242209298364	6	r	coronal_sonorant	4	Pl	-2.795799905332738
+farmer	farmer	en	-1.021925633594891	4	1.984242209298364	6	r	coronal_sonorant	4	Dat	-1.5244446996007077
+szkander	skander	ar	-0.9879467207805904	0	0.6195616634977026	8	r	coronal_sonorant	4	Dat	-1.0296194171811581
+szkander	skander	ar	-0.9879467207805904	0	0.6195616634977026	8	r	coronal_sonorant	4	Pl	-0.6931471805599453
+karcer	karcer	la	-0.9323768696257794	2	-0.6005464245423525	6	r	coronal_sonorant	4	Pl	-1.0986122886681098
+fotel	fotel	fr	-0.7751379278898186	2	1.918034842594317	5	l	coronal_sonorant	4	Pl	-1.945531647915291
+fotel	fotel	fr	-0.7751379278898186	2	1.918034842594317	5	l	coronal_sonorant	4	Dat	-1.5664205273504095
+flanel	flanel	fr	-0.7711087220296571	0	0.35638106706207384	6	l	coronal_sonorant	4	Pl	-0.15415067982725836
+flanel	flanel	fr	-0.7711087220296571	0	0.35638106706207384	6	l	coronal_sonorant	4	Dat	-1.3862943611198906
+karter	karter	en	-0.714840005171205	6	0.13926501315555695	6	r	coronal_sonorant	4	Dat	-2.3978952727983707
+jampec	jampec	de	-0.4269713133291279	1	0.15123380228128092	6	c	NA	4	Pl	-0.36870421213309457
+jampec	jampec	de	-0.4269713133291279	1	0.15123380228128092	6	c	NA	4	Dat	0.5753641449035618
+kóter	kóter	de	-0.13409177369830738	0	-0.0567670438663156	5	r	coronal_sonorant	4	Pl	-2.4849066497880004
+kóter	kóter	de	-0.13409177369830738	0	-0.0567670438663156	5	r	coronal_sonorant	4	Dat	0.28768207245178085
+macesz	maces	yi	0.28204825473352485	0	0.375579529103281	6	s	sibilant	4	Dat	0.6931471805599453
+macesz	maces	yi	0.28204825473352485	0	0.375579529103281	6	s	sibilant	4	Pl	0.4054651081081644
+bakter	bakter	de	0.3106504684527312	6	0.716349974254184	6	r	coronal_sonorant	4	Dat	0.10880285984879917
+bakter	bakter	de	0.3106504684527312	6	0.716349974254184	6	r	coronal_sonorant	4	Pl	3.8501476017100584
+sumer	šumer	akk	0.3642375163404102	0	1.0545026216751352	5	r	coronal_sonorant	4	Pl	0.609653218382194
+sumer	šumer	akk	0.3642375163404102	0	1.0545026216751352	5	r	coronal_sonorant	4	Dat	-0.578077850775158
+klozet	klozet	fr	0.737832669905245	0	0.06396436403742334	6	t	NA	4	Pl	-0.45198512374305727
+klozet	klozet	fr	0.737832669905245	0	0.06396436403742334	6	t	NA	4	Dat	-0.45198512374305727
+samesz	šames	yi	0.9424018758778407	0	0.4668618282549646	6	s	sibilant	4	Pl	0.8680886300562773
+samesz	šames	yi	0.9424018758778407	0	0.4668618282549646	6	s	sibilant	4	Dat	0.3513978868378886
+malter	malter	de	1.097116402076527	1	0.6100893505755742	6	r	coronal_sonorant	4	Dat	0.7419373447293773
+malter	malter	de	1.097116402076527	1	0.6100893505755742	6	r	coronal_sonorant	4	Pl	-0.5108256237659907
+muter	muter	yi	1.979996611974125	4	0.5004649093036383	5	r	coronal_sonorant	4	Dat	1.1587808101345625
+muter	muter	yi	1.979996611974125	4	0.5004649093036383	5	r	coronal_sonorant	4	Pl	0.5108256237659907
+kolesz	koles	hu	2.208240179257725	0	0.7726222789466473	6	s	sibilant	4	Pl	1.8870696490323797
+kolesz	koles	hu	2.208240179257725	0	0.7726222789466473	6	s	sibilant	4	Dat	1.4271163556401458
+krapek	krapek	de	2.391053740981654	0	0.2858131136537797	6	k	NA	4	Pl	4.543294782270004
+krapek	krapek	de	2.391053740981654	0	0.2858131136537797	6	k	NA	4	Dat	1.2192402764567245
+pajesz	pajes	yi	2.8977518651937872	0	0.19606017543000023	6	s	sibilant	4	Pl	3.4011973816621555
+pajesz	pajes	yi	2.8977518651937872	0	0.19606017543000023	6	s	sibilant	4	Dat	1.9459101490553132
+balek	balek	yi	3.138951104334203	1	1.18302479496678	5	k	NA	4	Pl	7.905072849498666
+balek	balek	yi	3.138951104334203	1	1.18302479496678	5	k	NA	4	Dat	1.7882812048517303
+maszek	masek	yi	3.248074979560463	1	1.0569096792608152	6	k	NA	4	Pl	5.545177444479562
+maszek	masek	yi	3.248074979560463	1	1.0569096792608152	6	k	NA	4	Dat	2.4485390056171252
+fater	fater	yi	3.339284845324914	8	1.2643232470451446	5	r	coronal_sonorant	4	Dat	2.183412203048608
+fater	fater	yi	3.339284845324914	8	1.2643232470451446	5	r	coronal_sonorant	4	Pl	5.0369526024136295
+matek	matek	en	4.190638832642174	4	1.7446768078145567	5	k	NA	4	Dat	3.1354942159291497
+matek	matek	en	4.190638832642174	4	1.7446768078145567	5	k	NA	4	Pl	2.5649493574615367
+haver	haver	yi	4.728696974633143	1	2.2866022611361054	5	r	coronal_sonorant	4	Pl	4.990625553154944
+haver	haver	yi	4.728696974633143	1	2.2866022611361054	5	r	coronal_sonorant	4	Dat	3.001886139128369
+karcer	karcer	la	-0.9323768696257794	2	-0.6005464245423525	6	r	coronal_sonorant	4	Dat	NA
+karter	karter	en	-0.714840005171205	6	0.13926501315555695	6	r	coronal_sonorant	4	Pl	NA

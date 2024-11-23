@@ -41,14 +41,17 @@ r = read_tsv('~/Github/RaczRebrus2025/dat/noun_webcorpus2_hunspell.gz')
 
 # -- add -- #
 
-# stem freq, log odds for suffix
+# stem freq
 f2 = f |> 
-  filter(suffix %in% c("Dat",'Pl')) |> 
+  distinct(stem,llfpm10)
+
+# log odds for suffix
+f3 = f |> 
+  filter(suffix %in% c('Dat','Pl')) |> 
   mutate(
-    log_odds_back_suffix = log((back+1)/(front+1)),
-    trial_type = str_to_lower(suffix)
+    log_odds_back_suffix = log((back+1)/(front+1))
          ) |> 
-  select(stem,llfpm10,trial_type,log_odds_back_suffix)
+  select(stem,suffix,log_odds_back_suffix)
 
 # neighbourhood density
 neighbour_forms = r |> 
@@ -70,8 +73,9 @@ d2 = d |>
 
 # join lang of origin, stem freq, suffix odds
 d3 = d2 |> 
-  left_join(s) |> 
-  left_join(f) |> 
+  distinct(stem,transcription,language,log_odds_adj,neighbourhood_size) |> 
+  left_join(s) |>
+  left_join(f2) |> 
   mutate(
     stem_length = nchar(stem),
     stem_final = str_extract(transcription, '(?<=e)[^e]+$'),
@@ -79,11 +83,28 @@ d3 = d2 |>
       str_detect(stem_final, '[bp]$') ~ 'bilabial_stop',
       str_detect(stem_final, '[sšzž]$') ~ 'sibilant',
       str_detect(stem_final, '[nlrj]$') ~ 'coronal_sonorant'
-      ),
+    ),
     stem_final_consonant_cluster = nchar(stem_final > 1)
     # set up hayes cats: stem ends in a bilabial stop, a sibilant, a coronal sonorant, or a consonant cluster.
-         )
+  ) |> 
+  left_join(f3)
+# # A tibble: 2 × 3
+# stem   suffix log_odds_back_suffix
+# <chr>  <chr>                 <dbl>
+#   1 karter Dat                   -2.40
+# 2 karcer Pl                    -1.10
+# and so two rows are missing from d3
+d4 = d3 |> 
+  filter(stem %in% c('karter','karcer')) |> 
+  mutate(
+    suffix = case_when(
+      stem == 'karter' ~ 'Pl',
+      stem == 'karcer' ~ 'Dat'
+    ),
+    log_odds_back_suffix = NA
+  )
 
-d3 |> 
-  select(stem,log_odds_adj,llfpm10,language,trial_type,neighbourhood_size,stem_length,stem_final,stem_phonology,stem_final_consonant_cluster,form_varies) |> 
+d5 = bind_rows(d3,d4)  
+
+d5 |> 
   write_tsv('dat/word_metadata.tsv')
