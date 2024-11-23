@@ -1,18 +1,20 @@
+setwd('~/Github/RaczRebrus2024cont/')
+library(tidyverse)
+library(rstanarm)
+library(broom.mixed)
+library(performance)
+
+d = read_tsv('dat/filtered_data.tsv')
+
 # 4) How many and which conditions will participants be assigned to?
 # within-participant conditions: word preference for back / front forms in corpus, word language of origin, word date of borrowing, word length, word frequency, word neighbourhood density, word similarity to front / back stems, Hayes' criteria of word behaviour: stem ends in a bilabial stop, a sibilant, a coronal sonorant, or a consonant cluster.
 # 
 # 5) Specify exactly which analyses you will conduct to examine the main question/hypothesis.
 # (a) bayesian glm predicting yes/no from conditions with participant random intercept and word random intercept, weakly informative priors
+
 # (b) bayesian glm predicting rt from conditions with participant random intercept and word random intercept, weakly informative priors
 # loo used for model selection
 
-setwd('~/Github/RaczRebrus2024cont/')
-library(tidyverse)
-library(lme4)
-library(broom.mixed)
-library(performance)
-
-d = read_tsv('dat/filtered_data.tsv')
 
 # whoops
 d = d |> 

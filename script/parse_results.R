@@ -18,7 +18,7 @@ d = tibble(
     data = map(path,read_csv)
   )
 
-w = read_tsv('dat/words.tsv')
+w = read_tsv('dat/word_metadata.tsv')
 
 # -- add info -- #
 
