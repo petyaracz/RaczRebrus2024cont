@@ -28,13 +28,14 @@ d2 = d |>
   logodds_scaled = rescale(log_odds_adj),
   stem_phonology = fct_relevel(stem_phonology, 'other')
  ) |> 
- select(rt,accept,log_odds_adj,lang,stem_length,llfpm10,suffix,neighbourhood_size,stem_phonology,date_scaled,n_size_scaled,logfreq_scaled,stem_length_scaled,logodds_scaled,yi_la_scaled,knn_scaled,id,stem)
+ select(rt,accept,suffix,log_odds_adj,lang,stem_length,llfpm10,suffix,neighbourhood_size,stem_phonology,date_scaled,n_size_scaled,logfreq_scaled,stem_length_scaled,logodds_scaled,yi_la_scaled,knn_scaled,id,stem)
 
 nrow(d2[!complete.cases(d2),]) == 0 # mm yes mmm
 
 # 5) Specify exactly which analyses you will conduct to examine the main question/hypothesis.
 # (a) bayesian glm predicting yes/no from conditions with participant random intercept and word random intercept, weakly informative priors
-fit1 = stan_glmer(accept ~ 
+fit1a = stan_glmer(accept ~ 
+                    suffix +
                     logodds_scaled + # word preference for back / front forms in corpus, 
                     lang + # word language of origin,  
                     date_scaled + # word date of borrowing, 
@@ -48,17 +49,102 @@ fit1 = stan_glmer(accept ~
                   data = d2,
                   cores = 4
                     )
-performance::check_collinearity(fit1)
-pp_check(fit1)
-fit1
-sjPlot::plot_model(fit1, 'est', transform = NULL) +
+performance::check_collinearity(fit1a)
+pp_check(fit1a)
+sjPlot::plot_model(fit1a, 'est', transform = NULL) +
   theme_bw() +
   geom_hline(yintercept = 0, alpha = .5)
-sjPlot::plot_model(fit1, 'pred')
+
+fit1b = stan_glmer(accept ~ 
+                     suffix +
+                     logodds_scaled + # word preference for back / front forms in corpus, 
+                     lang + # word language of origin,  
+                     date_scaled + # word date of borrowing, 
+                     knn_scaled + # word similarity to front / back stems, 
+                     stem_phonology  +# Hayes' criteria of word behaviour: stem ends in a bilabial stop, a sibilant, a coronal sonorant, or a consonant cluster
+                     (1|id) + (1|stem),
+                   family = binomial,
+                   data = d2,
+                   cores = 4
+)
+
+sjPlot::plot_model(fit1b, 'est', transform = NULL) +
+  theme_bw() +
+  geom_hline(yintercept = 0, alpha = .5)
+
+fit1c = stan_glmer(accept ~ 
+                     logodds_scaled + # word preference for back / front forms in corpus, 
+                     lang + # word language of origin,  
+                     date_scaled * suffix + # word date of borrowing, 
+                     knn_scaled + # word similarity to front / back stems, 
+                     stem_phonology  +# Hayes' criteria of word behaviour: stem ends in a bilabial stop, a sibilant, a coronal sonorant, or a consonant cluster
+                     (1|id) + (1|stem),
+                   family = binomial,
+                   data = d2,
+                   cores = 4
+)
+
+fit1d = stan_glmer(accept ~ 
+                     logodds_scaled + # word preference for back / front forms in corpus, 
+                     lang + # word language of origin,  
+                     date_scaled + # word date of borrowing, 
+                     knn_scaled * suffix + # word similarity to front / back stems, 
+                     stem_phonology  +# Hayes' criteria of word behaviour: stem ends in a bilabial stop, a sibilant, a coronal sonorant, or a consonant cluster
+                     (1|id) + (1|stem),
+                   family = binomial,
+                   data = d2,
+                   cores = 4
+)
+
+fit1e = stan_glmer(accept ~ 
+                     logodds_scaled + # word preference for back / front forms in corpus, 
+                     lang * suffix + # word language of origin,  
+                     date_scaled + # word date of borrowing, 
+                     knn_scaled + # word similarity to front / back stems, 
+                     stem_phonology  +# Hayes' criteria of word behaviour: stem ends in a bilabial stop, a sibilant, a coronal sonorant, or a consonant cluster
+                     (1|id) + (1|stem),
+                   family = binomial,
+                   data = d2,
+                   cores = 4
+)
+
+
+fit1f = stan_glmer(accept ~ 
+                     logodds_scaled + # word preference for back / front forms in corpus, 
+                     lang + # word language of origin,  
+                     date_scaled + # word date of borrowing, 
+                     knn_scaled + # word similarity to front / back stems, 
+                     stem_phonology * suffix  + # Hayes' criteria of word behaviour: stem ends in a bilabial stop, a sibilant, a coronal sonorant, or a consonant cluster
+                     (1|id) + (1|stem),
+                   family = binomial,
+                   data = d2,
+                   cores = 4
+)
+
+sjPlot::plot_model(fit1c, 'est', transform = NULL) +
+  theme_bw() +
+  geom_hline(yintercept = 0, alpha = .5)
+
+loo1a = loo(fit1a)
+loo1b = loo(fit1b)
+loo1c = loo(fit1c)
+loo1d = loo(fit1d)
+loo1e = loo(fit1e)
+loo1f = loo(fit1f)
+loo_compare(loo1a,loo1b)
+loo_compare(loo1b,loo1c)
+loo_compare(loo1b,loo1d)
+loo_compare(loo1b,loo1e)
+loo_compare(loo1b,loo1f)
+
+sjPlot::plot_model(fit1c, 'pred', terms = c('knn_scaled','suffix'))
+sjPlot::plot_model(fit1f, 'pred', terms = c('stem_phonology','suffix'))
+
 # (b) bayesian glm predicting rt from conditions with participant random intercept and word random intercept, weakly informative priors
-d2a = d2[d2$accept == 1,]
+d2accept = d2[d2$accept == 1,]
 
 fit2a = stan_glmer(rt ~ 
+                    suffix +
                     logodds_scaled + # word preference for back / front forms in corpus, 
                     lang + # word language of origin,  
                     date_scaled + # word date of borrowing, 
@@ -68,12 +154,46 @@ fit2a = stan_glmer(rt ~
                     knn_scaled + # word similarity to front / back stems, 
                     stem_phonology  +# Hayes' criteria of word behaviour: stem ends in a bilabial stop, a sibilant, a coronal sonorant, or a consonant cluster
                     (1|id) + (1|stem),
-                  data = d2a,
+                  data = d2accept,
                   cores = 4
 )
 
 pp_check(fit2a) # some effect missing
 sjPlot::plot_model(fit2a, 'pred')
+
+fit2b = stan_glmer(rt ~ 
+                     suffix +
+                     logfreq_scaled + # word frequency, 
+                     knn_scaled + # word similarity to front / back stems, 
+                     (1|id) + (1|stem),
+                   data = d2accept,
+                   cores = 4
+)
+
+fit2c = stan_glmer(rt ~ 
+                     logfreq_scaled * suffix + # word frequency, 
+                     knn_scaled + # word similarity to front / back stems, 
+                     (1|id) + (1|stem),
+                   data = d2accept,
+                   cores = 4
+)
+
+fit2d = stan_glmer(rt ~ 
+                     logfreq_scaled + # word frequency, 
+                     knn_scaled * suffix + # word similarity to front / back stems, 
+                     (1|id) + (1|stem),
+                   data = d2accept,
+                   cores = 4
+)
+
+loo2a = loo(fit2a)
+loo2b = loo(fit2b)
+loo2c = loo(fit2c)
+loo2d = loo(fit2d)
+
+loo_compare(loo2a,loo2b)
+loo_compare(loo2b,loo2c)
+loo_compare(loo2b,loo2d)
 
 # loo used for model selection
 
