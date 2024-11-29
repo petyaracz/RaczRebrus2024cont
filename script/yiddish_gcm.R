@@ -184,28 +184,61 @@ d = pred |>
 
 ## mdc
 
-p1 = d |> 
+d |> 
   ggplot(aes(x_edit,y_edit,fill = log_odds_back,label = stem)) +
   geom_label(colour = 'white') +
+  geom_hline(yintercept = 0, alpha = .5, lty = 3) +
+  geom_vline(xintercept = 0, alpha = .5, lty = 3) +
   theme_void() +
   scale_fill_viridis_b() +
   labs(fill = 'log(back/front)') +
   ggtitle('edit distance')
 
-p2 = d |> 
+d |> 
   ggplot(aes(x_phon,y_phon,fill = log_odds_back,label = stem)) +
   geom_label(colour = 'white') +
   theme_void() +
+  geom_hline(yintercept = 0, alpha = .5, lty = 3) +
+  geom_vline(xintercept = 0, alpha = .5, lty = 3) +
   scale_fill_viridis_b() +
   labs(fill = 'log(back/front)') +
   ggtitle('phon distance')
 
-p3 = d |> 
+d |> 
   mutate(lang = ifelse(language %in% c('de','en','fr','yi','la'), language, 'other') |> 
            fct_relevel('la','en','fr','de','yi','other')
   ) |> 
   ggplot(aes(x_phon,y_phon,fill = lang,label = stem)) +
   geom_label(colour = 'white') +
+  geom_hline(yintercept = 0, alpha = .5, lty = 3) +
+  geom_vline(xintercept = 0, alpha = .5, lty = 3) +
+  theme_void() +
+  scale_fill_colorblind() +
+  labs(fill = 'src language') +
+  ggtitle('phon distance')
+
+d |> 
+  mutate(lang = ifelse(language %in% c('yi','la'), language, 'other') |> 
+           fct_relevel('yi')
+  ) |> 
+  filter(lang != 'other') |> 
+  ggplot(aes(x_phon,y_phon,fill = lang,label = stem)) +
+  geom_label(colour = 'white') +
+  geom_hline(yintercept = 0, alpha = .5, lty = 3) +
+  geom_vline(xintercept = 0, alpha = .5, lty = 3) +
+  theme_void() +
+  scale_fill_colorblind() +
+  labs(fill = 'src language') +
+  ggtitle('phon distance')
+
+p4 = d |> 
+  mutate(lang = ifelse(language %in% c('de','en','fr','yi','la'), language, 'other') |> 
+           fct_relevel('la','en','fr','de','yi','other')
+  ) |> 
+  ggplot(aes(x_phon,y_phon,fill = lang,label = stem)) +
+  geom_label(colour = 'white') +
+  geom_hline(yintercept = 0, alpha = .5, lty = 3) +
+  geom_vline(xintercept = 0, alpha = .5, lty = 3) +
   theme_void() +
   scale_fill_colorblind() +
   labs(fill = 'src language') +
@@ -232,7 +265,7 @@ sjPlot::plot_model(fit4, 'pred', terms = 'yi_la') +
   theme_bw() +
   ylab('p(back/front)') +
   xlab('similarity to yiddish / similarity to latin')
-ggsave('~/Documents/lectures_apps/lectures/Siptár/figures/yiddish_latin.pdf', width = 3, height = 3)
+ggsave('~/Documents/lectures_apps/lectures/Siptár/figures/yiddish_latin.pdf', width = 6, height = 3)
 
 # -- write -- #
 

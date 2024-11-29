@@ -17,6 +17,8 @@ d2 = d |>
   mutate(
     lang = ifelse(language %in% c('de','en','fr','la','yi'), language, 'other'),
     lang = fct_relevel(lang, 'other'),
+    knn_scaled = rescale(knn),
+    yi_la_scaled = rescale(yi_la),
     date_scaled = rescale(date),
     n_size_scaled = rescale(neighbourhood_size),
     logfreq_scaled = rescale(llfpm10),
@@ -24,9 +26,11 @@ d2 = d |>
     logodds_scaled = rescale(log_odds_adj),
     stem_phonology = fct_relevel(stem_phonology, 'other')
   ) |> 
-  select(rt,accept,log_odds_adj,lang,stem_length,llfpm10,suffix,neighbourhood_size,stem_phonology,stem_final_consonant_cluster,date_scaled,n_size_scaled,logfreq_scaled,stem_length_scaled,logodds_scaled,id,stem)
+  select(rt,accept,log_odds_adj,lang,stem_length,llfpm10,suffix,neighbourhood_size,stem_phonology,stem_final_consonant_cluster,date_scaled,n_size_scaled,logfreq_scaled,stem_length_scaled,logodds_scaled,yi_la_scaled,knn_scaled,id,stem)
 
-nrow(d2[!complete.cases(d2),]) == 0 # yup
+nrow(d2[!complete.cases(d2),]) == 0 # mm
+
+d3 = d2[complete.cases(d2),]
 
 # 5) Specify exactly which analyses you will conduct to examine the main question/hypothesis.
 # (a) bayesian glm predicting yes/no from conditions with participant random intercept and word random intercept, weakly informative priors
