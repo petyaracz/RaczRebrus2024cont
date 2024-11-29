@@ -114,7 +114,9 @@ d5 = bind_rows(d3,d4)
 d6 = left_join(d5,y)
 
 # add similarity
-d7 = left_join(d6,l)
+d7 = d6 |> 
+  select(-transcription) |> # slightly different transcription in d6 vs l
+  left_join(l)
 
 d7 |> 
   write_tsv('dat/word_metadata.tsv')

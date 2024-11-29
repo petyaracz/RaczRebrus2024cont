@@ -30,7 +30,7 @@ d2 = d |>
 
 nrow(d2[!complete.cases(d2),]) == 0 # mm
 
-d3 = d2[complete.cases(d2),]
+d3 = d2[!complete.cases(d2),]
 
 # 5) Specify exactly which analyses you will conduct to examine the main question/hypothesis.
 # (a) bayesian glm predicting yes/no from conditions with participant random intercept and word random intercept, weakly informative priors
