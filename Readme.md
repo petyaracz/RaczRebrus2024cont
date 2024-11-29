@@ -8,6 +8,7 @@ The previous paper is here: https://doi.org/10.5281/zenodo.12699305
 ### Files
 
 | filename | desc |
+| -- | -- |
 |  script/analysis.R |  "analysis" | 
 |  script/get_word_distance.R |  calculate phonological distance between back vowel + E nouns in Hungarian. see https://github.com/petyaracz/Racz2024b for exegesis | 
 |  script/distance_measures.R |  use distance measures to calculate similarity to yiddish / latin words and similarity to back / front stems, save output | 
