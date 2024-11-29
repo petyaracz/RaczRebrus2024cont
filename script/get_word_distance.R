@@ -15,7 +15,7 @@ library(tidyverse)
 # -- fun -- #
 
 # Hungarian orthography: replace characters in digraphs with their IPA equivalents or vice versa
-transcribeIPA = function(string, direction){
+transcribeIPA2 = function(string, direction){
   if (direction == 'single'){
     stringr::str_replace_all(string, c(
       'ccs' = 'cscs', 'ssz' = 'szsz', 'zzs' = 'zszs', 'tty' = 'tyty', 'ggy' = 'gygy', 'nny' = 'nyny', 'lly' = 'jj', 'cs' = 'č', 'sz' = 'ß', 'zs' = 'ž', 'ty' = 'ṯ', 'gy' = 'ḏ', 'ny' = 'ṉ', 'ly' = 'j', 's' = 'š', 'ß' = 's', 'x' = 'ks'))
@@ -29,22 +29,36 @@ transcribeIPA = function(string, direction){
 # clone Racz2024b RaczRebrus2024 from github/petyaracz, then
 
 # source functions
-source('~/Github/Racz2024b/code/helper.R')
+source('~/Github/published/Racz2024b/code/helper.R')
 # get segmental distance lookup (based on feature matrix)
-lookup_h = read_tsv('~/Github/Racz2024b/dat/segmental_distances/siptar_torkenczy_toth_racz_hungarian_dt.tsv')
+lookup_h = read_tsv('~/Github/published/Racz2024b/dat/segmental_distances/siptar_torkenczy_toth_racz_hungarian_dt.tsv')
 # get words
 words = read_tsv('~/Github/RaczRebrus2024/dat/dat_wide_stems.tsv')
 
 # -- calc dist -- #
 
 # transcribe words
-words$string = transcribeIPA(words$stem, 'single') # needs to be called string bud
+words$string = transcribeIPA2(words$stem, 'single') # needs to be called string bud
+
+# check to see if you have it all
+existing_segments = words$string |> 
+  str_split('') |> 
+  unlist() |> 
+  unique()
+
+setdiff(existing_segments,lookup_h$segment1)
+setdiff(lookup_h$segment1,existing_segments)
+# okay
 
 # align words, calc distances. RESOURCE INTENSIVE
 alignments = runLookup(words, words, lookup_h)
 
+word_distance = alignments |> 
+  distinct(test,training,phon_dist) |> 
+  mutate(edit_dist = stringdist::stringdist(test, training, method = 'lv'))
+
 # -- write -- #
-write_tsv(alignments, 'dat/alignments_haver.tsv')
+write_tsv(word_distance, 'dat/distance_haver.tsv')
 
 # dat_matrix = dat2 |>
 #   pivot_wider(names_from = segment2, values_from = dist) |> 

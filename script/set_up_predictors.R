@@ -24,6 +24,7 @@ transcribeIPA = function(string, direction){
     stringr::str_replace_all(string, c('s' = 'ß', 'š' = 's', 'ṉ' = 'ny', 'ḏ' = 'gy', 'ṯ' = 'ty', 'ž' = 'zs', 'ß' = 'sz', 'č' = 'cs'))
   }
 }
+
 # check n size
 countNeighbours = function(string,neighbour_forms){
   vector = neighbour_forms[neighbour_forms != string]
@@ -38,6 +39,8 @@ w = read_tsv('~/Github/RaczRebrus2024/dat/dat_wide_stems.tsv')
 s = read_tsv('~/Github/RaczRebrus2024/dat/stemlanguage.tsv')
 f = read_tsv('~/Github/Raczrebrus2024/dat/dat_wide.tsv')
 r = read_tsv('~/Github/RaczRebrus2025/dat/noun_webcorpus2_hunspell.gz')
+y = read_tsv('~/Github/RaczRebrus2024cont/dat/word_etym_checked_against_uesz.tsv')
+l = read_tsv('~/Github/RaczRebrus2024cont/dat/stems_with_similarity.tsv')
 
 # -- add -- #
 
@@ -82,7 +85,8 @@ d3 = d2 |>
     stem_phonology = case_when(
       str_detect(stem_final, '[bp]$') ~ 'bilabial_stop',
       str_detect(stem_final, '[sšzž]$') ~ 'sibilant',
-      str_detect(stem_final, '[nlrj]$') ~ 'coronal_sonorant'
+      str_detect(stem_final, '[nlrj]$') ~ 'coronal_sonorant',
+      T ~ 'other'
     ),
     stem_final_consonant_cluster = nchar(stem_final > 1)
     # set up hayes cats: stem ends in a bilabial stop, a sibilant, a coronal sonorant, or a consonant cluster.
@@ -106,5 +110,11 @@ d4 = d3 |>
 
 d5 = bind_rows(d3,d4)  
 
-d5 |> 
+# add year
+d6 = left_join(d5,y)
+
+# add similarity
+d7 = left_join(d6,l)
+
+d7 |> 
   write_tsv('dat/word_metadata.tsv')
