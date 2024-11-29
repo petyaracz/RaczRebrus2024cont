@@ -16,6 +16,7 @@ count(d,language)
 
 d2 = d |> 
  mutate(
+  accept = as.double(accept),
   lang = ifelse(language %in% c('de','en','fr','la','yi'), language, 'other'),
   lang = fct_relevel(lang, 'other'),
   knn_scaled = rescale(knn_2_weight),
@@ -33,7 +34,47 @@ nrow(d2[!complete.cases(d2),]) == 0 # mm yes mmm
 
 # 5) Specify exactly which analyses you will conduct to examine the main question/hypothesis.
 # (a) bayesian glm predicting yes/no from conditions with participant random intercept and word random intercept, weakly informative priors
+fit1 = stan_glmer(accept ~ 
+                    logodds_scaled + # word preference for back / front forms in corpus, 
+                    lang + # word language of origin,  
+                    date_scaled + # word date of borrowing, 
+                    stem_length_scaled + # word length, 
+                    logfreq_scaled + # word frequency, 
+                    n_size_scaled  +# word neighbourhood density, 
+                    knn_scaled + # word similarity to front / back stems, 
+                    stem_phonology  +# Hayes' criteria of word behaviour: stem ends in a bilabial stop, a sibilant, a coronal sonorant, or a consonant cluster
+                    (1|id) + (1|stem),
+                  family = binomial,
+                  data = d2,
+                  cores = 4
+                    )
+performance::check_collinearity(fit1)
+pp_check(fit1)
+fit1
+sjPlot::plot_model(fit1, 'est', transform = NULL) +
+  theme_bw() +
+  geom_hline(yintercept = 0, alpha = .5)
+sjPlot::plot_model(fit1, 'pred')
 # (b) bayesian glm predicting rt from conditions with participant random intercept and word random intercept, weakly informative priors
+d2a = d2[d2$accept == 1,]
+
+fit2a = stan_glmer(rt ~ 
+                    logodds_scaled + # word preference for back / front forms in corpus, 
+                    lang + # word language of origin,  
+                    date_scaled + # word date of borrowing, 
+                    stem_length_scaled + # word length, 
+                    logfreq_scaled + # word frequency, 
+                    n_size_scaled  +# word neighbourhood density, 
+                    knn_scaled + # word similarity to front / back stems, 
+                    stem_phonology  +# Hayes' criteria of word behaviour: stem ends in a bilabial stop, a sibilant, a coronal sonorant, or a consonant cluster
+                    (1|id) + (1|stem),
+                  data = d2a,
+                  cores = 4
+)
+
+pp_check(fit2a) # some effect missing
+sjPlot::plot_model(fit2a, 'pred')
+
 # loo used for model selection
 
 # hahaha no
