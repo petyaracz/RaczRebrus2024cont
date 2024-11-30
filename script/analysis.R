@@ -1,3 +1,5 @@
+# todo: in the spirit of the prereg, fit top-down stepwise. and then also horseshoe. compare. accept is likely more interesting than rt
+
 setwd('~/Github/RaczRebrus2024cont/')
 library(tidyverse)
 library(rstanarm)
@@ -43,7 +45,7 @@ fit1a = stan_glmer(accept ~
                     logfreq_scaled + # word frequency, 
                     n_size_scaled  +# word neighbourhood density, 
                     knn_scaled + # word similarity to front / back stems, 
-                    stem_phonology  +# Hayes' criteria of word behaviour: stem ends in a bilabial stop, a sibilant, a coronal sonorant, or a consonant cluster
+                    stem_phonology +# Hayes' criteria of word behaviour: stem ends in a bilabial stop, a sibilant, a coronal sonorant, or a consonant cluster
                     (1|id) + (1|stem),
                   family = binomial,
                   data = d2,
@@ -54,6 +56,32 @@ pp_check(fit1a)
 sjPlot::plot_model(fit1a, 'est', transform = NULL) +
   theme_bw() +
   geom_hline(yintercept = 0, alpha = .5)
+
+# https://avehtari.github.io/modelselection/bodyfat.html#3_Regression_model_with_regularized_horseshoe_prior
+p0 = 5 # prior guess for the number of relevant variables
+p = 9 # number of variables
+tau0 = p0/(p-p0) * 1/sqrt(nrow(d))
+rhs_prior = hs(global_scale=tau0)
+
+fit1hs = stan_glmer(accept ~ 
+                      suffix +
+                      logodds_scaled + # word preference for back / front forms in corpus,
+                      lang + # word language of origin,  
+                      date_scaled + # word date of borrowing, 
+                      stem_length_scaled + # word length, 
+                      logfreq_scaled + # word frequency, 
+                      n_size_scaled  +# word neighbourhood density, 
+                      knn_scaled + # word similarity to front / back stems, 
+                      stem_phonology +# Hayes' criteria of word behaviour: stem ends in a bilabial stop, a sibilant, a coronal sonorant, or a consonant cluster
+                      (1|id) + (1|stem),
+                    family = binomial,
+                    data = d2, 
+                    prior=rhs_prior, QR=TRUE, chains = 4, cores = 4, iter = 4000)
+
+loo1a = loo(fit1a)
+loo1hs = loo(fit1hs)
+loo_compare(loo1a,loo1hs)
+fit1hs
 
 fit1b = stan_glmer(accept ~ 
                      suffix +
@@ -108,7 +136,6 @@ fit1e = stan_glmer(accept ~
                    cores = 4
 )
 
-
 fit1f = stan_glmer(accept ~ 
                      logodds_scaled + # word preference for back / front forms in corpus, 
                      lang + # word language of origin,  
@@ -139,6 +166,58 @@ loo_compare(loo1b,loo1f)
 
 sjPlot::plot_model(fit1c, 'pred', terms = c('knn_scaled','suffix'))
 sjPlot::plot_model(fit1f, 'pred', terms = c('stem_phonology','suffix'))
+
+fit1g = stan_glmer(accept ~ 
+                     logodds_scaled * suffix + # word preference for back / front forms in corpus, 
+                     date_scaled + # word date of borrowing, 
+                     (1|id) + (1|stem),
+                   family = binomial,
+                   data = d2,
+                   cores = 4
+)
+
+fit1h = stan_glmer(accept ~ 
+                     logodds_scaled + # word preference for back / front forms in corpus, 
+                     date_scaled * suffix + # word date of borrowing, 
+                     (1|id) + (1|stem),
+                   family = binomial,
+                   data = d2,
+                   cores = 4
+)
+
+fit1i = stan_glmer(accept ~ 
+                     logodds_scaled + # word preference for back / front forms in corpus, 
+                     date_scaled +
+                     suffix +
+                     (1|id) + (1|stem),
+                   family = binomial,
+                   data = d2,
+                   cores = 4
+)
+
+loo1g = loo(fit1g)
+loo1h = loo(fit1h)
+loo1i = loo(fit1i)
+
+loo_compare(loo1i,loo1g)
+loo_compare(loo1i,loo1h)
+loo_compare(loo1h,loo1g)
+
+fit1h2 = stan_glmer(accept ~ 
+                     logodds_scaled + # word preference for back / front forms in corpus, 
+                     date_scaled * suffix + # word date of borrowing, 
+                     (1 + date_scaled|id) + (1|stem),
+                   family = binomial,
+                   data = d2,
+                   cores = 4,
+                   control = list(adapt_delta = 0.999, stepsize = 0.01, max_treedepth = 15)
+)
+
+loo1h2 = loo(fit1h2)
+loo_compare(loo1h,loo1h2)
+
+sjPlot::plot_model(fit1h, 'pred', terms = c('date_scaled','suffix'))
+sjPlot::plot_model(fit1g, 'pred', terms = c('logodds_scaled','suffix'))
 
 # (b) bayesian glm predicting rt from conditions with participant random intercept and word random intercept, weakly informative priors
 d2accept = d2[d2$accept == 1,]
