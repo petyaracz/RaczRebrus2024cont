@@ -2,10 +2,13 @@ setwd('~/Github/RaczRebrus2024cont')
 
 # use word distances to make figures and fit a gcm.
 # gcm categories: word source of origin!
+# knn: similarity
+# svm: similarity, with tuning for sigma
 
 # -- setup -- #
 
 library(tidyverse)
+library(kernlab)
 library(ggthemes)
 library(patchwork)
 
@@ -140,11 +143,57 @@ getAccuracy = function(dats,d){
   
 }
 
+# tuneSVM sigma on phonological distance and corpus patterns, return best sigma
+tuneSVM = function(dist,c){
+  dat_matrix_phon = dist |>
+    select(-edit_dist) |> 
+    pivot_wider(names_from = test, values_from = phon_dist) |>
+    select(-training) |>
+    as.matrix()
+  
+  tibble(
+    sigma = c(0.00001,0.0001,0.001,0.01,0.1,1,10,100,1000)
+  ) |> 
+    rowwise() |> 
+    mutate(
+      kernel_matrix = list(exp(-dist_matrix^2 / (2 * sigma^2))),
+      svm = list(ksvm(as.kernelMatrix(kernel_matrix), c$log_odds_corpus, kernel = "matrix")),
+      pred = list(mutate(c, pred = predict(svm))),
+      cor = list(with(pred, cor.test(pred, log_odds_corpus))),
+      tidy_cor = list(broom::tidy(cor))
+    ) |> 
+    ungroup() |> 
+    select(sigma,tidy_cor) |> 
+    unnest(tidy_cor) |> 
+    arrange(-estimate,-sigma) |> 
+    slice(1) |> 
+    pull(sigma)
+}
+
+# fit SVM, return predictions
+fitSVM = function(sigma,c,dist){
+  dist_matrix = dist |>
+    select(-edit_dist) |> 
+    pivot_wider(names_from = test, values_from = phon_dist) |>
+    select(-training) |>
+    as.matrix()
+  kernel_matrix = exp(-dist_matrix^2 / (2 * 0.01^2))
+  svm = ksvm(as.kernelMatrix(kernel_matrix), c$log_odds_corpus, kernel = "matrix")
+  predict(svm)
+}
+
 # -- read -- #
 
 dist = read_tsv('~/Github/RaczRebrus2024cont/dat/distance_haver.tsv')
 c = read_tsv('~/Github/RaczRebrus2024/dat/dat_wide_stems.tsv')
 l = read_tsv('~/Github/RaczRebrus2024/dat/stemlanguage.tsv')
+
+# -- fix log odds -- #
+
+c = c |> 
+  mutate(
+    log_odds_corpus = log((back+1)/(front+1))
+  )
 
 # -- do distance -- #
 
@@ -248,8 +297,13 @@ d |>
   geom_point() +
   geom_smooth() # mhm
 
+# -- svm -- #
+
+sigma = tuneSVM(dist,c)
+d$svm_weight = as.double(fitSVM(sigma,c,dist)) # I'm an asshole
+
 # -- write -- #
 
 d |> 
-  select(stem,transcription,knn_2_weight,yi_la_weight,x_phon,y_phon) |> 
+  select(stem,transcription,svm_weight,knn_2_weight,yi_la_weight,x_phon,y_phon) |> 
   write_tsv('dat/stems_with_similarity.tsv')
