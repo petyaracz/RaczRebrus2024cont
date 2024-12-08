@@ -145,27 +145,29 @@ getAccuracy = function(dats,d){
 
 # tuneSVM sigma on phonological distance and corpus patterns, return best sigma
 tuneSVM = function(dist,c){
-  dat_matrix_phon = dist |>
+  dist_matrix = dist |>
     select(-edit_dist) |> 
     pivot_wider(names_from = test, values_from = phon_dist) |>
     select(-training) |>
     as.matrix()
   
-  tibble(
-    sigma = c(0.00001,0.0001,0.001,0.01,0.1,1,10,100,1000)
+  mat = tibble(
+    sigma = c(0.00001,0.0001,0.001,0.01,0.1,0.25,.5,.75,1,1.25,1.5,1.75,2,5,10,100,1000)
   ) |> 
     rowwise() |> 
     mutate(
       kernel_matrix = list(exp(-dist_matrix^2 / (2 * sigma^2))),
       svm = list(ksvm(as.kernelMatrix(kernel_matrix), c$log_odds_corpus, kernel = "matrix")),
-      pred = list(mutate(c, pred = predict(svm))),
-      cor = list(with(pred, cor.test(pred, log_odds_corpus))),
-      tidy_cor = list(broom::tidy(cor))
+      preds = list(mutate(c, pred = predict(svm))),
+      glms = list(glm(cbind(back,front) ~ pred, data = preds, family = binomial)),
+      aic = list(AIC(glms))
     ) |> 
-    ungroup() |> 
-    select(sigma,tidy_cor) |> 
-    unnest(tidy_cor) |> 
-    arrange(-estimate,-sigma) |> 
+    ungroup()
+  
+  mat |>
+    select(sigma,aic) |> 
+    unnest(aic) |> 
+    arrange(aic,-sigma) |> 
     slice(1) |> 
     pull(sigma)
 }
@@ -177,7 +179,7 @@ fitSVM = function(sigma,c,dist){
     pivot_wider(names_from = test, values_from = phon_dist) |>
     select(-training) |>
     as.matrix()
-  kernel_matrix = exp(-dist_matrix^2 / (2 * 0.01^2))
+  kernel_matrix = exp(-dist_matrix^2 / (2 * sigma^2))
   svm = ksvm(as.kernelMatrix(kernel_matrix), c$log_odds_corpus, kernel = "matrix")
   predict(svm)
 }
@@ -300,10 +302,11 @@ d |>
 # -- svm -- #
 
 sigma = tuneSVM(dist,c)
-d$svm_weight = as.double(fitSVM(sigma,c,dist)) # I'm an asshole
+d$svm_weight_01 = as.double(fitSVM(.1,c,dist)) # I'm an asshole
+d$svm_weight_1 = as.double(fitSVM(1,c,dist))
 
 # -- write -- #
 
 d |> 
-  select(stem,transcription,svm_weight,knn_2_weight,yi_la_weight,x_phon,y_phon) |> 
+  select(stem,transcription,svm_weight_01,svm_weight_1,knn_2_weight,yi_la_weight,x_phon,y_phon) |> 
   write_tsv('dat/stems_with_similarity.tsv')

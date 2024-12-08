@@ -5,6 +5,15 @@
 The experiment is here: https://gitlab.pavlovia.org/petyaraczbme/noun-task
 The previous paper is here: https://doi.org/10.5281/zenodo.12699305
 
+### Workflow
+
+0. make_list -> make exp stimuli
+1. scrape_uesz -> convert_files -> find_dates: get etymology dates
+2. get_word_distance -> distance_measures: get word distance based machine learner predictions (GCM, KNN, SVM)
+3. setup_predictors -> parse_results: get word metadata from 1-2 and combine with _raw exp data from gitlab_ repository, remove outliers etc
+4. analysis -> pre-registered analyses
+
+
 ### Files
 
 | filename | desc |

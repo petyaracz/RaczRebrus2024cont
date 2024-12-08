@@ -116,8 +116,7 @@ d6 = left_join(d5,y)
 # add similarity
 d7 = d6 |> 
   select(-transcription) |> # slightly different transcription in d6 vs l
-  left_join(l) |> 
-  mutate(svm_category = ifelse(svm_weight > mean(svm_weight),'back','front'))
+  left_join(l)
 
 d7 |> 
   write_tsv('dat/word_metadata.tsv')
