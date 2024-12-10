@@ -63,7 +63,7 @@ sloo3 = loo(sim3)
 sloo4 = loo(sim4)
 sloos = loo_compare(sloo1,sloo2,sloo3,sloo4) |> 
   as_tibble() |> 
-  bind_cols(model = c('knn','gcm','svm1','svm01'))
+  bind_cols(model = c('svm1','svm01','knn','gcm')) # !!!!
 sr1 = performance::r2_bayes(sim1)
 sr2 = performance::r2_bayes(sim2)
 sr3 = performance::r2_bayes(sim3)

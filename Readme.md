@@ -19,6 +19,7 @@ The previous paper is here: https://doi.org/10.5281/zenodo.12699305
 | filename | desc |
 | -- | -- |
 |  script/analysis.R |  "analysis" | 
+| script/viz.R | high-quality, state of the art visualisations |
 |  script/get_word_distance.R |  calculate phonological distance between back vowel + E nouns in Hungarian. see https://github.com/petyaracz/Racz2024b for exegesis | 
 |  script/distance_measures.R |  use distance measures to calculate similarity to yiddish / latin words and similarity to back / front stems, save output | 
 |  script/make_list.R |   |  make list for gitlab exp input | 
@@ -68,5 +69,7 @@ Dict for tidy data (filtered_dat/unfiltered_dat)
 | date |  date of word borrowing. either from uesz or I estimated it using the source lang. you'd think this is like date of recording? no | 
 | yi_la |  output of generalised context model with grid search for s and p (but like both are 1) prediction for label "yiddish word" / "latin word". so like is this word more like the yiddish words (>.5) or more like the latin words (<.5) see script/distance_measures.R  | 
 | knn |  the summed log odds of the 2 nearest neighbour stems of the stem in the webcorpus 2 (we grid searched for k) see script/distance_measures.R  | 
+| svm01 | support vector machine predictions based on words using phonological distance matrix and sigma of 01 see script/distance_measures.R |
+| svm1 | support vector machine pred based on words using phonological distance matrix and sigma of 1 see script/distance_measures.R |
 | x_phon |  x for 2-dim mds of phonological distance between words see script/distance_measures.R  | 
 | y_phon |  y for 2-dim mds of phonological distance between words see script/distance_measures.R  | 
