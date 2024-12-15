@@ -6,10 +6,16 @@ library(ggrain)
 library(scales)
 library(ggthemes)
 library(knitr)
+library(rstanarm)
+library(patchwork)
 
 # -- read -- #
 
 d = read_tsv('dat/filtered_data.tsv')
+load('models/fit1a.Rda')
+load('models/fit6a.Rda')
+load('models/fit1hs.Rda')
+load('models/fit6hs.Rda')
 
 # -- wrangle -- #
 
@@ -28,15 +34,15 @@ d = d |>
     stem_phonology = fct_relevel(stem_phonology, 'other'),
     svm01_scaled = rescale(svm_weight_01),
     svm1_scaled = rescale(svm_weight_1),
+    svm1_category = ifelse(svm1_scaled > mean(svm1_scaled), 'back', 'front'),
     lang_de = lang == 'de',
     lang_en = lang == 'en',
     lang_fr = lang == 'fr',
     lang_la = lang == 'la',
-    lang_yi = lang == 'yi'
-  ) |> 
-  mutate(
+    lang_yi = lang == 'yi',
     lang = ifelse(language %in% c('de','en','fr','la','yi'), language, 'other'),
-    date2 = ntile(date, 5)
+    date2 = ntile(date, 5),
+    category = ifelse(log_odds_adj > mean(log_odds_adj), 'back', 'front')
   ) |> 
   mutate(
     period = glue::glue('{min(date)}-{max(date)}'),
@@ -48,10 +54,10 @@ d = d |>
 # -- summaries -- #
 
 dsum = d |> 
-  distinct(stem,date,period,lang,log_odds_adj,neighbourhood_size,llfpm10,stem_length,stem_phonology,svm_weight_1,x_phon,y_phon)
+  distinct(stem,category,date,period,lang,log_odds_adj,neighbourhood_size,llfpm10,stem_length,stem_phonology,svm_weight_1,svm1_category,x_phon,y_phon)
 
 dexp = d |> 
-  count(accept,suffix,stem,svm1_scaled,knn_2_weight,period,lang,log_odds_adj) |> 
+  count(accept,category,suffix,stem,svm1_scaled,svm1_category,knn_2_weight,period,lang,log_odds_adj) |> 
   pivot_wider(names_from = accept, values_from = n, values_fill = 0) |> 
   mutate(
     log_odds_resp = log((`1`+1)/(`0`+1))
@@ -60,14 +66,15 @@ dexp = d |>
 # -- tables -- #
 
 d |> 
-  distinct(period,stem) |> 
-  summarise(words = paste(stem, collapse = ', '), .by = period) |> 
-  arrange(period) |> 
+  distinct(period,category,stem) |> 
+  summarise(words = paste(stem, collapse = ', '), .by = c(period,category)) |> 
+  pivot_wider(names_from = category, values_from = words) |> 
   kable('simple')
 
 d |> 
-  distinct(lang,stem) |> 
-  summarise(words = paste(stem, collapse = ', '), .by = lang) |> 
+  distinct(lang,category,stem) |> 
+  summarise(words = paste(stem, collapse = ', '), .by = c(lang,category)) |> 
+  pivot_wider(names_from = category, values_from = words) |> 
   mutate(lang = fct_relevel(lang, 'other', 'yi', 'de', 'fr', 'en', 'la')) |> 
   arrange(lang) |> 
   kable('simple')
@@ -77,6 +84,11 @@ d |>
 ## word metadata
 
 dsum |> 
+  ggplot(aes(log_odds_adj, fill = category)) +
+  geom_histogram() +
+  theme_few()
+
+dsum |> 
   mutate(lang = fct_relevel(lang, 'la','en','de','fr','yi','other')) |> 
   ggplot(aes(lang,svm_weight_1)) +
   geom_rain() +
@@ -84,16 +96,19 @@ dsum |>
   theme_few()
 
 dsum |> 
-  ggplot(aes(date,log_odds_adj,label = stem)) +
-  geom_label() +
-  geom_smooth() +
-  theme_few()
-
-dsum |> 
-  ggplot(aes(period,log_odds_adj,label = stem)) +
+  ggplot(aes(period,log_odds_adj)) +
   geom_rain() +
   coord_flip() +
-  theme_few()
+  theme_few() +
+  ylab('log(back/front), corpus')
+
+dsum |> 
+  ggplot(aes(period,fill = category)) +
+  geom_bar(position = position_dodge()) +
+  coord_flip() +
+  theme_few() +
+  scale_fill_colorblind() +
+  ylab('log(back/front), corpus')
 
 dsum |> 
   ggplot(aes(svm_weight_1,log_odds_adj,label = stem)) +
@@ -101,7 +116,24 @@ dsum |>
   geom_smooth() +
   theme_few()
 
+dsum |> 
+  ggplot(aes(svm1_category,fill = category)) +
+  geom_bar(position = position_dodge()) +
+  scale_fill_colorblind() +
+  coord_flip() +
+  theme_few()
+
 ## results
+
+d |> 
+  mutate(`back suffix form` = ifelse(accept,'accept','reject')) |> 
+  ggplot(aes(category,fill=`back suffix form`)) +
+  geom_bar(position = position_dodge()) +
+  # facet_wrap(~ suffix) +
+  coord_flip() +
+  theme_few() +
+  scale_fill_brewer(palette = 'Pastel2') +
+  xlab('corpus behaviour')
 
 d |> 
   mutate(`back suffix form` = ifelse(accept,'accept','reject')) |> 
@@ -110,7 +142,7 @@ d |>
   # facet_wrap(~ suffix) +
   coord_flip() +
   theme_few() +
-  scale_fill_colorblind() +
+  scale_fill_brewer(palette = 'Pastel2') +
   xlab('period of borrowing')
 
 d |> 
@@ -123,10 +155,10 @@ d |>
   # facet_wrap(~ suffix) +
   coord_flip() +
   theme_few() +
-  scale_fill_colorblind() +
+  scale_fill_brewer(palette = 'Pastel2') +
   xlab('language of borrowing')
 
-dexp |> 
+d |> 
   count(accept,suffix,stem,log_odds_adj) |> # also suffix!
   pivot_wider(names_from = accept, values_from = n, values_fill = 0) |> 
   mutate(
@@ -163,3 +195,8 @@ dexp |>
   theme_few() +
   xlab('corpus log odds') +
   ylab('log(accept/reject)')
+
+## -- report -- ##
+
+formula(fit1a)
+fit1hs
