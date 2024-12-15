@@ -8,6 +8,7 @@ library(ggthemes)
 library(knitr)
 library(rstanarm)
 library(patchwork)
+library(sjPlot)
 
 # -- read -- #
 
@@ -69,7 +70,7 @@ d |>
   distinct(period,category,stem) |> 
   summarise(words = paste(stem, collapse = ', '), .by = c(period,category)) |> 
   pivot_wider(names_from = category, values_from = words) |> 
-  kable('simple')
+  googlesheets4::write_sheet('https://docs.google.com/spreadsheets/d/18jayTVDGODwlu8TJEQaqr9Wh8zywRjxKh_mRXgIrnd8/edit?usp=sharing', 'table1')
 
 d |> 
   distinct(lang,category,stem) |> 
@@ -77,9 +78,37 @@ d |>
   pivot_wider(names_from = category, values_from = words) |> 
   mutate(lang = fct_relevel(lang, 'other', 'yi', 'de', 'fr', 'en', 'la')) |> 
   arrange(lang) |> 
-  kable('simple')
+  googlesheets4::write_sheet('https://docs.google.com/spreadsheets/d/18jayTVDGODwlu8TJEQaqr9Wh8zywRjxKh_mRXgIrnd8/edit?usp=sharing', 'table2')
+
+d |> 
+  count(accept,stem,log_odds_adj,lang,period,neighbourhood_size,svm1_scaled,stem_phonology) |> 
+  pivot_wider(names_from = accept, values_from = n, values_fill = 0) |> 
+  rename(accept = `1`, reject = `0`) |> 
+  relocate(accept, .before = stem) |> 
+  relocate(reject, .after = accept) |> 
+  arrange(-accept) |> 
+  mutate(
+    log_odds_adj = round(log_odds_adj, 2),
+    svm1_scaled = round(svm1_scaled, 2)
+  ) |> 
+  googlesheets4::write_sheet('https://docs.google.com/spreadsheets/d/18jayTVDGODwlu8TJEQaqr9Wh8zywRjxKh_mRXgIrnd8/edit?usp=sharing', 'table3')
 
 # -- viz -- #
+
+## models
+
+plot_model(fit1a, 'est', transform = NULL) +
+  geom_hline(yintercept = 0, lty = 3) +
+  theme_bw() +
+  theme(panel.grid.major.y = element_blank()) +
+  ggtitle('Accept ~ ')
+
+plot_model(fit6a, 'est', transform = NULL) +
+  geom_hline(yintercept = 0, lty = 3) +
+  theme_bw() +
+  theme(panel.grid.major.y = element_blank()) +
+  ggtitle('RT ~ ')
+
 
 ## word metadata
 
@@ -87,6 +116,33 @@ dsum |>
   ggplot(aes(log_odds_adj, fill = category)) +
   geom_histogram() +
   theme_few()
+
+dsum |> 
+  mutate(
+    lang_n = case_when(
+      lang == 'la' ~ 1,
+      lang == 'en' ~ 2,
+      lang == 'fr' ~ 3,
+      lang == 'other' ~ 4,
+      lang == 'de' ~ 5,
+      lang == 'yi' ~ 6
+    ),
+    phon_n = case_when(
+      stem_phonology == 'other' ~ 1,
+      stem_phonology == 'sibilant' ~ 2,
+      stem_phonology == 'coronal_sonorant' ~ 3
+    )
+  ) |> 
+  select(date,lang_n,log_odds_adj,neighbourhood_size,llfpm10,stem_length,phon_n,svm_weight_1) |> 
+  psych::pairs.panels()
+  # corrplot::corrplot()
+  
+## make pairwise combinations of cols
+my_names = 
+my_combinations = combn(my_names, 2, paste, collapse = ', ') |> 
+  str_split(', ') |> 
+  map(unlist)
+
 
 dsum |> 
   mutate(lang = fct_relevel(lang, 'la','en','de','fr','yi','other')) |> 
@@ -135,7 +191,7 @@ d |>
   scale_fill_brewer(palette = 'Pastel2') +
   xlab('corpus behaviour')
 
-d |> 
+p1 = d |> 
   mutate(`back suffix form` = ifelse(accept,'accept','reject')) |> 
   ggplot(aes(period,fill=`back suffix form`)) +
   geom_bar(position = position_dodge()) +
@@ -143,9 +199,10 @@ d |>
   coord_flip() +
   theme_few() +
   scale_fill_brewer(palette = 'Pastel2') +
-  xlab('period of borrowing')
+  xlab('period of borrowing') +
+  guides(fill = 'none')
 
-d |> 
+p2 = d |> 
   mutate(
     `back suffix form` = ifelse(accept,'accept','reject'),
     lang = fct_relevel(lang, 'other', 'la', 'en', 'fr', 'de', 'yi')
@@ -157,6 +214,8 @@ d |>
   theme_few() +
   scale_fill_brewer(palette = 'Pastel2') +
   xlab('language of borrowing')
+
+p1 + p2
 
 d |> 
   count(accept,suffix,stem,log_odds_adj) |> # also suffix!
@@ -173,12 +232,14 @@ d |>
   ylab('ordered according to corpus preference') +
   xlab('log odds of accept/reject')
 
-dexp |> 
+p3 = dexp |> 
   ggplot(aes(svm1_scaled,log_odds_resp,label=stem)) +
   geom_label() +
-  geom_smooth() +
+  geom_smooth(method = 'lm') +
   theme_few() +
-  xlab('similarity, (SVM)')
+  ylab('log(accept/reject)') +
+  xlab('similarity, (SVM)') +
+  facet_wrap( ~ suffix)
 
 dexp |> 
   ggplot(aes(knn_2_weight,log_odds_resp, label = stem)) +
@@ -188,13 +249,16 @@ dexp |>
   xlab('similarity (KNN)') +
   ylab('log(accept/reject)')
 
-dexp |> 
+p4 = dexp |> 
   ggplot(aes(log_odds_adj,log_odds_resp, label = stem)) +
   geom_label() +
-  geom_smooth(alpha = .5, method = 'gam') +
+  geom_smooth(method = 'lm') +
   theme_few() +
   xlab('corpus log odds') +
-  ylab('log(accept/reject)')
+  ylab('log(accept/reject)') +
+  facet_wrap( ~ suffix)
+
+p4 / p3
 
 ## -- report -- ##
 
