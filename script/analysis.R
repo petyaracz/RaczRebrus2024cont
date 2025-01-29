@@ -46,6 +46,8 @@ ds = d |>
   ) |> 
   select(rt,accept,suffix,log_odds_adj,lang,lang_de,lang_en,lang_fr,lang_la,lang_yi,stem_length,llfpm10,suffix,neighbourhood_size,stem_phonology,date_scaled,n_size_scaled,logfreq_scaled,stem_length_scaled,logodds_scaled,yi_la_scaled,knn_scaled,svm01_scaled,svm1_scaled,id,stem)
 
+write_tsv(ds, 'dat/ds.tsv')
+
 # 4) How many and which conditions will participants be assigned to?
 # within-participant conditions: word preference for back / front forms in corpus, word language of origin, word date of borrowing, word length, word frequency, word neighbourhood density, word similarity to front / back stems, Hayes' criteria of word behaviour: stem ends in a bilabial stop, a sibilant, a coronal sonorant, or a consonant cluster.
 #

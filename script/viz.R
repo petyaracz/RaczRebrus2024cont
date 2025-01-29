@@ -9,10 +9,12 @@ library(knitr)
 library(rstanarm)
 library(patchwork)
 library(sjPlot)
+library(performance)
 
 # -- read -- #
 
 d = read_tsv('dat/filtered_data.tsv')
+ds = read_tsv('dat/ds.tsv') # for model plots
 load('models/fit1a.Rda')
 load('models/fit6a.Rda')
 load('models/fit1hs.Rda')
@@ -46,16 +48,16 @@ d = d |>
     category = ifelse(log_odds_adj > mean(log_odds_adj), 'back', 'front')
   ) |> 
   mutate(
-    period = glue::glue('{min(date)}-{max(date)}'),
+    period = glue::glue('Group {date2}, {min(date)}-{max(date)}'),
     .by = date2
-  ) |> 
+  ) |>
   select(-date2) |> 
   ungroup()
 
 # -- summaries -- #
 
 dsum = d |> 
-  distinct(stem,category,date,period,lang,log_odds_adj,neighbourhood_size,llfpm10,stem_length,stem_phonology,svm_weight_1,svm1_category,x_phon,y_phon)
+  distinct(stem,category,date,lang,log_odds_adj,neighbourhood_size,llfpm10,stem_length,stem_phonology,svm_weight_1,knn_2_weight,yi_la_weight,svm1_category,x_phon,y_phon)
 
 dexp = d |> 
   count(accept,category,suffix,stem,svm1_scaled,svm1_category,knn_2_weight,period,lang,log_odds_adj) |> 
@@ -95,6 +97,15 @@ d |>
 
 # -- viz -- #
 
+## sim corr
+
+dsum |> 
+  summarise(
+    r1 = cor(yi_la_weight,svm_weight_1, method = 'spearman'),
+    r2 = cor(yi_la_weight,knn_2_weight, method = 'spearman'),
+    r3 = cor(knn_2_weight,svm_weight_1, method = 'spearman')
+  )
+  
 ## models
 
 plot_model(fit1a, 'est', transform = NULL) +
@@ -103,12 +114,31 @@ plot_model(fit1a, 'est', transform = NULL) +
   theme(panel.grid.major.y = element_blank()) +
   ggtitle('Accept ~ ')
 
+ggsave('fig/model_accept.png', dpi = 600, width = 4, height = 3)
+
 plot_model(fit6a, 'est', transform = NULL) +
   geom_hline(yintercept = 0, lty = 3) +
   theme_bw() +
   theme(panel.grid.major.y = element_blank()) +
   ggtitle('RT ~ ')
 
+ggsave('fig/model_rt.png', dpi = 600, width = 4, height = 3)
+
+plot_model(fit1hs, 'est', transform = NULL) +
+  geom_hline(yintercept = 0, lty = 3) +
+  theme_bw() +
+  theme(panel.grid.major.y = element_blank()) +
+  ggtitle('Regularised model: Accept ~ ')
+
+ggsave('fig/model_accept_hs.png', dpi = 600, width = 4, height = 3)
+
+plot_model(fit6hs, 'est', transform = NULL) +
+  geom_hline(yintercept = 0, lty = 3) +
+  theme_bw() +
+  theme(panel.grid.major.y = element_blank()) +
+  ggtitle('Regularised model: RT ~ ')
+
+ggsave('fig/model_rt_hs.png', dpi = 600, width = 4, height = 3)
 
 ## word metadata
 
@@ -138,11 +168,9 @@ dsum |>
   # corrplot::corrplot()
   
 ## make pairwise combinations of cols
-my_names = 
 my_combinations = combn(my_names, 2, paste, collapse = ', ') |> 
   str_split(', ') |> 
   map(unlist)
-
 
 dsum |> 
   mutate(lang = fct_relevel(lang, 'la','en','de','fr','yi','other')) |> 
@@ -260,7 +288,3 @@ p4 = dexp |>
 
 p4 / p3
 
-## -- report -- ##
-
-formula(fit1a)
-fit1hs
