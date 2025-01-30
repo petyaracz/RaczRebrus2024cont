@@ -60,7 +60,7 @@ dsum = d |>
   distinct(stem,category,date,lang,log_odds_adj,neighbourhood_size,llfpm10,stem_length,stem_phonology,svm_weight_1,knn_2_weight,yi_la_weight,svm1_category,x_phon,y_phon)
 
 dexp = d |> 
-  count(accept,category,suffix,stem,svm1_scaled,svm1_category,knn_2_weight,period,lang,log_odds_adj) |> 
+  count(accept,stem,category,date,lang,log_odds_adj,neighbourhood_size,llfpm10,stem_length,stem_phonology,svm_weight_1,knn_2_weight,yi_la_weight,svm1_category,x_phon,y_phon) |> 
   pivot_wider(names_from = accept, values_from = n, values_fill = 0) |> 
   mutate(
     log_odds_resp = log((`1`+1)/(`0`+1))
@@ -106,185 +106,101 @@ dsum |>
     r3 = cor(knn_2_weight,svm_weight_1, method = 'spearman')
   )
   
-## models
+# -- models -- #
 
-plot_model(fit1a, 'est', transform = NULL) +
+plot_model(fit1a, 'est', transform = NULL, show.intercept = T, ci.lvl = .95) +
   geom_hline(yintercept = 0, lty = 3) +
   theme_bw() +
   theme(panel.grid.major.y = element_blank()) +
   ggtitle('Accept ~ ')
 
-ggsave('fig/model_accept.png', dpi = 600, width = 4, height = 3)
+ggsave('fig/model_accept.png', dpi = 600, width = 5, height = 3)
 
-plot_model(fit6a, 'est', transform = NULL) +
+plot_model(fit6a, 'est', transform = NULL, show.intercept = T, ci.lvl = .95) +
   geom_hline(yintercept = 0, lty = 3) +
   theme_bw() +
   theme(panel.grid.major.y = element_blank()) +
   ggtitle('RT ~ ')
 
-ggsave('fig/model_rt.png', dpi = 600, width = 4, height = 3)
+ggsave('fig/model_rt.png', dpi = 600, width = 5, height = 3)
 
-plot_model(fit1hs, 'est', transform = NULL) +
+broom.mixed::tidy(fit1a, conf.int = T)
+plogis(c(-4.67,     -2.49)  )
+
+plot_model(fit1hs, 'est', transform = NULL, show.intercept = T, ci.lvl = .95) +
   geom_hline(yintercept = 0, lty = 3) +
   theme_bw() +
   theme(panel.grid.major.y = element_blank()) +
   ggtitle('Regularised model: Accept ~ ')
 
-ggsave('fig/model_accept_hs.png', dpi = 600, width = 4, height = 3)
+ggsave('fig/model_accept_hs.png', dpi = 600, width = 5, height = 3)
 
-plot_model(fit6hs, 'est', transform = NULL) +
+plot_model(fit6hs, 'est', transform = NULL, show.intercept = T, ci.lvl = .95) +
   geom_hline(yintercept = 0, lty = 3) +
   theme_bw() +
   theme(panel.grid.major.y = element_blank()) +
   ggtitle('Regularised model: RT ~ ')
 
-ggsave('fig/model_rt_hs.png', dpi = 600, width = 4, height = 3)
+ggsave('fig/model_rt_hs.png', dpi = 600, width = 5, height = 3)
 
-## word metadata
+# -- corpus vs experiment -- #
 
-dsum |> 
-  ggplot(aes(log_odds_adj, fill = category)) +
-  geom_histogram() +
-  theme_few()
-
-dsum |> 
-  mutate(
-    lang_n = case_when(
-      lang == 'la' ~ 1,
-      lang == 'en' ~ 2,
-      lang == 'fr' ~ 3,
-      lang == 'other' ~ 4,
-      lang == 'de' ~ 5,
-      lang == 'yi' ~ 6
-    ),
-    phon_n = case_when(
-      stem_phonology == 'other' ~ 1,
-      stem_phonology == 'sibilant' ~ 2,
-      stem_phonology == 'coronal_sonorant' ~ 3
-    )
-  ) |> 
-  select(date,lang_n,log_odds_adj,neighbourhood_size,llfpm10,stem_length,phon_n,svm_weight_1) |> 
-  psych::pairs.panels()
-  # corrplot::corrplot()
-  
-## make pairwise combinations of cols
-my_combinations = combn(my_names, 2, paste, collapse = ', ') |> 
-  str_split(', ') |> 
-  map(unlist)
-
-dsum |> 
-  mutate(lang = fct_relevel(lang, 'la','en','de','fr','yi','other')) |> 
-  ggplot(aes(lang,svm_weight_1)) +
-  geom_rain() +
-  coord_flip() +
-  theme_few()
-
-dsum |> 
-  ggplot(aes(period,log_odds_adj)) +
-  geom_rain() +
-  coord_flip() +
-  theme_few() +
-  ylab('log(back/front), corpus')
-
-dsum |> 
-  ggplot(aes(period,fill = category)) +
-  geom_bar(position = position_dodge()) +
-  coord_flip() +
-  theme_few() +
-  scale_fill_colorblind() +
-  ylab('log(back/front), corpus')
-
-dsum |> 
-  ggplot(aes(svm_weight_1,log_odds_adj,label = stem)) +
+p1 = dexp |> 
+  ggplot(aes(log_odds_resp,log_odds_adj, label = stem)) +
   geom_label() +
-  geom_smooth() +
-  theme_few()
+  geom_smooth(method = 'loess') +
+  theme_bw() +
+  scale_x_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'experiment: p(accept)', breaks = c(.1,.25,.5,.75,.9)), name = 'experiment: log (accept / reject)', limits = c(-4,3)) +
+  scale_y_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'corpus: p(back)', breaks = c(.01,.1,.25,.5,.75,.9,.99)), name = 'corpus: log (back / front)')
 
-dsum |> 
-  ggplot(aes(svm1_category,fill = category)) +
-  geom_bar(position = position_dodge()) +
-  scale_fill_colorblind() +
+p2 = dexp |> 
+  mutate(lang = fct_relevel(lang, 'other', 'la', 'en', 'fr', 'de', 'yi')) |> 
+  ggplot(aes(lang,log_odds_adj)) +
+  geom_rain() +
   coord_flip() +
-  theme_few()
-
-## results
-
-d |> 
-  mutate(`back suffix form` = ifelse(accept,'accept','reject')) |> 
-  ggplot(aes(category,fill=`back suffix form`)) +
-  geom_bar(position = position_dodge()) +
-  # facet_wrap(~ suffix) +
-  coord_flip() +
-  theme_few() +
-  scale_fill_brewer(palette = 'Pastel2') +
-  xlab('corpus behaviour')
-
-p1 = d |> 
-  mutate(`back suffix form` = ifelse(accept,'accept','reject')) |> 
-  ggplot(aes(period,fill=`back suffix form`)) +
-  geom_bar(position = position_dodge()) +
-  # facet_wrap(~ suffix) +
-  coord_flip() +
-  theme_few() +
-  scale_fill_brewer(palette = 'Pastel2') +
-  xlab('period of borrowing') +
-  guides(fill = 'none')
-
-p2 = d |> 
-  mutate(
-    `back suffix form` = ifelse(accept,'accept','reject'),
-    lang = fct_relevel(lang, 'other', 'la', 'en', 'fr', 'de', 'yi')
-  ) |> 
-  ggplot(aes(lang,fill=`back suffix form`)) +
-  geom_bar(position = position_dodge()) +
-  # facet_wrap(~ suffix) +
-  coord_flip() +
-  theme_few() +
-  scale_fill_brewer(palette = 'Pastel2') +
-  xlab('language of borrowing')
-
-p1 + p2
-
-d |> 
-  count(accept,suffix,stem,log_odds_adj) |> # also suffix!
-  pivot_wider(names_from = accept, values_from = n, values_fill = 0) |> 
-  mutate(
-    log_odds_resp = log((`1`+1)/(`0`+1)),
-    stem = fct_reorder(stem,log_odds_adj)
-  ) |> 
-  ggplot(aes(log_odds_resp,stem, group = stem, colour = suffix)) +
-  geom_point() +
-  geom_line() +
-  scale_colour_grey() +
-  theme_few() +
-  ylab('ordered according to corpus preference') +
-  xlab('log odds of accept/reject')
+  theme_bw() +
+  scale_y_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'corpus: p(back)', breaks = c(.01,.1,.25,.5,.75,.9,.99)), name = 'corpus: log (back / front)')
 
 p3 = dexp |> 
-  ggplot(aes(svm1_scaled,log_odds_resp,label=stem)) +
-  geom_label() +
-  geom_smooth(method = 'lm') +
-  theme_few() +
-  ylab('log(accept/reject)') +
-  xlab('similarity, (SVM)') +
-  facet_wrap( ~ suffix)
-
-dexp |> 
-  ggplot(aes(knn_2_weight,log_odds_resp, label = stem)) +
-  geom_label() +
-  geom_smooth(alpha = .5, method = 'gam') +
-  theme_few() +
-  xlab('similarity (KNN)') +
-  ylab('log(accept/reject)')
+  mutate(lang = fct_relevel(lang, 'other', 'la', 'en', 'fr', 'de', 'yi')) |> 
+  ggplot(aes(lang,log_odds_resp)) +
+  geom_rain() +
+  coord_flip() +
+  theme_bw() +
+  scale_y_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'experiment: p(accept)', breaks = c(.1,.25,.5,.75,.9)), name = 'experiment: log (accept / reject)', limits = c(-4,3))
 
 p4 = dexp |> 
-  ggplot(aes(log_odds_adj,log_odds_resp, label = stem)) +
+  ggplot(aes(log_odds_adj,date, label = stem)) +
   geom_label() +
-  geom_smooth(method = 'lm') +
-  theme_few() +
-  xlab('corpus log odds') +
-  ylab('log(accept/reject)') +
-  facet_wrap( ~ suffix)
+  geom_smooth(method = 'loess') +
+  theme_bw() +
+  ylab('date of borrowing') +
+  scale_x_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'corpus: p(back)', breaks = c(.01,.1,.25,.5,.75,.9,.99)), name = 'corpus: log (back / front)')
 
-p4 / p3
+p5 = dexp |> 
+  ggplot(aes(log_odds_resp,date, label = stem)) +
+  geom_label() +
+  geom_smooth(method = 'loess') +
+  theme_bw() +
+  ylab('date of borrowing') +
+  scale_x_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'experiment: p(accept)', breaks = c(.1,.25,.5,.75,.9)), name = 'experiment: log (accept / reject)', limits = c(-4,3))
 
+p6 = dexp |> 
+  ggplot(aes(log_odds_adj,svm_weight_1, label = stem)) +
+  geom_label() +
+  geom_smooth(method = 'loess') +
+  theme_bw() +
+  ylab('similarity weight') +
+  scale_x_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'corpus: p(back)', breaks = c(.01,.1,.25,.5,.75,.9,.99)), name = 'corpus: log (back / front)')
+
+p7 = dexp |> 
+  ggplot(aes(log_odds_resp,svm_weight_1, label = stem)) +
+  geom_label() +
+  geom_smooth(method = 'loess') +
+  theme_bw() +
+  ylab('similarity weight') +
+  scale_x_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'experiment: p(accept)', breaks = c(.1,.25,.5,.75,.9)), name = 'experiment: log (accept / reject)', limits = c(-4,3))
+
+p1 / (p2 + p3) / (p4 + p5) / (p6 + p7) + plot_annotation(tag_levels = 'i')
+
+ggsave('fig/comp_corpus_exp.png', dpi = 600, width = 8, height = 12)
