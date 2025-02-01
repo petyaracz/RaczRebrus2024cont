@@ -15,6 +15,7 @@ library(performance)
 
 d = read_tsv('dat/filtered_data.tsv')
 ds = read_tsv('dat/ds.tsv') # for model plots
+c = read_tsv('dat/corpus_with_year_and_language.tsv')
 load('models/fit1a.Rda')
 load('models/fit6a.Rda')
 load('models/fit1hs.Rda')
@@ -96,6 +97,38 @@ d |>
   googlesheets4::write_sheet('https://docs.google.com/spreadsheets/d/18jayTVDGODwlu8TJEQaqr9Wh8zywRjxKh_mRXgIrnd8/edit?usp=sharing', 'table3')
 
 # -- viz -- #
+
+## corpus
+c1 = count(c,language) |> 
+  left_join(c) |> 
+  mutate(
+    language2 = ifelse(n > 14, language, NA) |> 
+      fct_relevel('la','en','fr','de','yi')
+  ) |> 
+  filter(!is.na(language2))
+  
+pc1 = c1 |> ggplot(aes(language2,log_odds_back)) +
+  geom_rain() +
+  coord_flip() +
+  theme_few() +
+  xlab('source language') +
+  scale_y_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'corpus: p(back)', breaks = c(.01,.1,.5,.9,.99)), name = 'corpus: log (back / front)')
+
+pc2 = c1 |> ggplot(aes(language2,svm_weight_1)) +
+  geom_rain() +
+  coord_flip() +
+  theme_few() +
+  xlab('source language') +
+  ylab('similarity weight') +
+  theme(axis.title.y = element_blank(), axis.text.y = element_blank(), axis.ticks.y = element_blank())
+  
+c |> 
+  filter(!is.na(year)) |> 
+  ggplot(aes(year,log_odds_back)) +
+  geom_point() +
+  geom_smooth(method = 'lm') +
+  theme_few()
+# I'm beyond chuffed I've spent two hours on getting these data to see the most horizontal regression line on the planet
 
 ## sim corr
 
@@ -212,3 +245,6 @@ p7 = dexp |>
 p1 / (p2 + p3) / (p4 + p5) / (p6 + p7) + plot_annotation(tag_levels = 'i')
 
 ggsave('fig/comp_corpus_exp.png', dpi = 600, width = 10, height = 12)
+
+pc1 + pc2
+ggsave('fig/corpus.png', dpi = 600, width = 8, height = 6)
