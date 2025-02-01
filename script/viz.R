@@ -143,6 +143,14 @@ plot_model(fit6hs, 'est', transform = NULL, show.intercept = T, ci.lvl = .95) +
 
 ggsave('fig/model_rt_hs.png', dpi = 600, width = 5, height = 3)
 
+plot_model(fit7hs, 'est', transform = NULL, show.intercept = F, ci.lvl = .95) +
+  geom_hline(yintercept = 0, lty = 3) +
+  theme_bw() +
+  theme(panel.grid.major.y = element_blank()) +
+  ggtitle('Regularised model: RT ~ ')
+
+ggsave('fig/model_rt_hs_ok.png', dpi = 600, width = 5, height = 3)
+
 # -- corpus vs experiment -- #
 
 p1 = dexp |> 

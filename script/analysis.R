@@ -263,8 +263,8 @@ sjPlot::plot_model(fit7a, 'est', transform = NULL) +
   theme_bw() +
   geom_hline(yintercept = 0, alpha = .5)
 
-p0 = 3 # prior guess for the number of relevant variables
-p = 14 # number of variables
+p0 = 2 # prior guess for the number of relevant variables
+p = 8 # number of variables
 tau0 = p0/(p-p0) * 1/sqrt(nrow(ds))
 rhs_prior = hs(global_scale=tau0)
 
@@ -272,26 +272,20 @@ fit7hs = stan_glmer(log_rt ~
                       accept +
                       suffix +
                       logodds_scaled + # word preference for back / front forms in corpus, 
-                      lang_de + # word language of origin,  
-                      lang_en +
-                      lang_fr +
-                      lang_la +
-                      lang_yi +
                       date_scaled + # word date of borrowing, 
                       stem_length_scaled + # word length, 
                       logfreq_scaled + # word frequency, 
                       n_size_scaled  +# word neighbourhood density, 
                       svm1_scaled + # word similarity to front / back stems, 
-                      stem_phonology +# Hayes' criteria of word behaviour: stem ends in a bilabial stop, a sibilant, a coronal sonorant, or a consonant cluster
                       (1|id) + (1|stem),
                     data = ds, 
-                    control = list(adapt_delta = 0.999),
+                    control = list(adapt_delta = 0.9999),
                     prior=rhs_prior, QR=TRUE, chains = 4, cores = 4, iter = 4000)
 
 sjPlot::plot_model(fit7hs, 'est', transform = NULL) +
   theme_bw() +
   geom_hline(yintercept = 0, alpha = .5)
-
+# I'm done. I'm out.
 
 # -- write -- #
 
