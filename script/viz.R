@@ -99,22 +99,26 @@ d |>
 # -- viz -- #
 
 ## corpus
-c1 = count(c,language) |> 
+c1 = c |> 
+  count(language) |> 
   left_join(c) |> 
   mutate(
     language2 = ifelse(n > 14, language, NA) |> 
       fct_relevel('la','en','fr','de','yi')
-  ) |> 
-  filter(!is.na(language2))
+  )
   
-pc1 = c1 |> ggplot(aes(language2,log_odds_back)) +
+pc1 = c1 |> 
+  filter(!is.na(language2)) |> 
+  ggplot(aes(language2,log_odds_back)) +
   geom_rain() +
   coord_flip() +
   theme_few() +
   xlab('source language') +
   scale_y_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'corpus: p(back)', breaks = c(.01,.1,.5,.9,.99)), name = 'corpus: log (back / front)')
 
-pc2 = c1 |> ggplot(aes(language2,svm_weight_1)) +
+pc2 = c1 |> 
+  filter(!is.na(language2)) |> 
+  ggplot(aes(language2,svm_weight_1)) +
   geom_rain() +
   coord_flip() +
   theme_few() +
@@ -129,6 +133,22 @@ c |>
   geom_smooth(method = 'lm') +
   theme_few()
 # I'm beyond chuffed I've spent two hours on getting these data to see the most horizontal regression line on the planet
+
+# pc3
+
+pc3 = c1 |> 
+  filter(!is.na(language2)) |> 
+  mutate(language2 = fct_rev(language2)) |> 
+  ggplot(aes(x_phon, y_phon)) +
+  stat_density2d(show.legend = F, colour = 'grey') +
+  theme_few() +
+  xlab('2d phonological\nsimilarity space') +
+  theme(
+    axis.title.y = element_blank(),
+    axis.ticks = element_blank(),
+    axis.text = element_blank()
+  ) +
+  facet_wrap( ~ language2, ncol = 1, strip.position = 'left')
 
 ## sim corr
 
@@ -246,5 +266,5 @@ p1 / (p2 + p3) / (p4 + p5) / (p6 + p7) + plot_annotation(tag_levels = 'i')
 
 ggsave('fig/comp_corpus_exp.png', dpi = 600, width = 10, height = 12)
 
-pc1 + pc2
+pc1 + pc3
 ggsave('fig/corpus.png', dpi = 600, width = 8, height = 6)
