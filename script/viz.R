@@ -107,7 +107,18 @@ c1 = c |>
       fct_relevel('la','en','fr','de','yi')
   )
 
+# log odds x src lang
 pc1 = c1 |> 
+  filter(!is.na(language2)) |> 
+  ggplot(aes(language2,log_odds_back)) +
+  geom_rain() +
+  coord_flip() +
+  theme_few() +
+  theme(axis.ticks.y = element_blank()) +
+  xlab('source language') +
+  scale_y_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'corpus: p(back)', breaks = c(.01,.1,.5,.9,.99)), name = 'corpus: log (back / front)')
+
+pc2 = c1 |> 
   filter(!is.na(language2)) |> 
   summarise(
     mean_sibilant = mean(ends_sibilant), 
@@ -118,44 +129,20 @@ pc1 = c1 |>
   ggplot(aes(language2,value,group = name, colour = name)) +
   geom_point() +
   geom_line() +
-  scale_colour_viridis_d(labels = c('coronal\nsonorant','sibilant'), name = 'final\nsegment') +
+  scale_colour_grey(labels = c('coronal\nsonorant','sibilant'), name = 'final\nsegment') +
   theme_few() +
-  theme(axis.title.y = element_blank(), axis.ticks.y = element_blank(), legend.position = 'bottom') +
+  theme(
+    axis.text.y = element_blank(),
+    axis.title.y = element_blank(), 
+    axis.ticks.y = element_blank()
+    ) +
+  guides(colour = 'none') +
   ylab('mean p(ending)') +
-  coord_flip()
-
-pc2 = c1 |> 
-  filter(!is.na(language2)) |>
-  select(log_odds_back,stem,ends_sibilant,ends_coronal_sonorant) |> 
-  pivot_longer(-c(log_odds_back,stem)) |> 
-  ggplot(aes(name,log_odds_back,fill = value)) +
-  geom_rain(alpha = .25) +
-  scale_fill_viridis_d(option = 'B', name = '', labels = c('absent','present')) +
-  scale_x_discrete(name = 'final segment', labels = c('coronal\nsonorant', 'sibilant')) +
-  scale_y_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'corpus: p(back)', breaks = c(.01,.1,.5,.9,.99)), name = 'corpus: log (back / front)') +
-  theme_few() +
-  theme(legend.position = 'bottom', axis.ticks.y = element_blank()) +
+  annotate('text', x = 4.5, y = .2, label = 'sibilant') +
+  annotate('text', x = 4, y = .5, label = 'sonorant\nconsonant') +
   coord_flip()
 
 pc3 = c1 |> 
-  filter(!is.na(language2)) |> 
-  ggplot(aes(language2,log_odds_back)) +
-  geom_rain() +
-  coord_flip() +
-  theme_few() +
-  theme(axis.ticks.y = element_blank()) +
-  xlab('source language') +
-  scale_y_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'corpus: p(back)', breaks = c(.01,.1,.5,.9,.99)), name = 'corpus: log (back / front)')
-
-c |> 
-  filter(!is.na(year)) |> 
-  ggplot(aes(year,log_odds_back)) +
-  geom_point() +
-  geom_smooth(method = 'lm') +
-  theme_few()
-# I'm beyond chuffed I've spent two hours on getting these data to see the most horizontal regression line on the planet
-
-pc4 = c1 |> 
   filter(!is.na(language2)) |> 
   mutate(language2 = fct_rev(language2)) |> 
   ggplot(aes(x_phon, y_phon)) +
@@ -164,10 +151,32 @@ pc4 = c1 |>
   xlab('2d phonological\nsimilarity space') +
   facet_wrap( ~ language2, ncol = 1, strip.position = 'left') +
   theme(
+    strip.text = element_blank(),
     axis.title.y = element_blank(),
     axis.ticks = element_blank(),
     axis.text = element_blank()
   )
+
+pc4 = c1 |> 
+  filter(!is.na(language2)) |>
+  select(log_odds_back,stem,ends_sibilant,ends_coronal_sonorant) |> 
+  pivot_longer(-c(log_odds_back,stem)) |> 
+  ggplot(aes(name,log_odds_back,fill = value)) +
+  geom_rain(alpha = .25) +
+  scale_fill_colorblind(name = '', labels = c('absent','present')) +
+  scale_x_discrete(name = 'final segment', labels = c('coronal\nsonorant', 'sibilant')) +
+  scale_y_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'corpus: p(back)', breaks = c(.01,.1,.5,.9,.99)), name = 'corpus: log (back / front)') +
+  theme_few() +
+  theme(legend.position = 'bottom', axis.ticks.y = element_blank()) +
+  coord_flip()
+
+c |> 
+  filter(!is.na(year)) |> 
+  ggplot(aes(year,log_odds_back)) +
+  geom_point() +
+  geom_smooth(method = 'lm') +
+  theme_few()
+# I'm beyond chuffed I've spent two hours on getting these data to see the most horizontal regression line on the planet
 
 ## sim corr
 
@@ -285,6 +294,6 @@ p1 / (p2 + p3) / (p4 + p5) / (p6 + p7) + plot_annotation(tag_levels = 'i')
 
 ggsave('fig/comp_corpus_exp.png', dpi = 600, width = 10, height = 12)
 
-pc3 + pc4 + pc2 + pc1 + plot_layout(width = c(3,2), height = c(2,1)) + plot_annotation(tag_levels = 'i')
-ggsave('fig/corpus.png', dpi = 600, width = 7.5, height = 9)
-ggsave('fig/corpus.pdf', dpi = 600, width = 7.5, height = 9)
+((pc1 + pc3 + pc2) + plot_layout(widths = c(3,2,1))) / pc4 + plot_layout(heights = c(2,1)) + plot_annotation(tag_levels = 'i')
+ggsave('fig/corpus.png', dpi = 600, width = 9, height = 9)
+ggsave('fig/corpus.pdf', dpi = 600, width = 9, height = 9)
