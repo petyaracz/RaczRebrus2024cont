@@ -15,7 +15,7 @@ library(performance)
 
 d = read_tsv('dat/filtered_data.tsv')
 ds = read_tsv('dat/ds.tsv') # for model plots
-c = read_tsv('dat/corpus_with_year_and_language.tsv')
+c = read_tsv('dat/corpus_with_year_and_language_and_phon.tsv')
 load('models/fit1a.Rda')
 load('models/fit6a.Rda')
 load('models/fit1hs.Rda')
@@ -106,26 +106,47 @@ c1 = c |>
     language2 = ifelse(n > 14, language, NA) |> 
       fct_relevel('la','en','fr','de','yi')
   )
-  
+
 pc1 = c1 |> 
+  filter(!is.na(language2)) |> 
+  summarise(
+    mean_sibilant = mean(ends_sibilant), 
+    mean_coronal_sonorant = mean(ends_coronal_sonorant),
+    .by = language2
+  ) |> 
+  pivot_longer(-language2) |> 
+  ggplot(aes(language2,value,group = name, colour = name)) +
+  geom_point() +
+  geom_line() +
+  scale_colour_viridis_d(labels = c('coronal\nsonorant','sibilant'), name = 'final\nsegment') +
+  theme_few() +
+  theme(axis.title.y = element_blank(), axis.ticks.y = element_blank(), legend.position = 'bottom') +
+  ylab('mean p(ending)') +
+  coord_flip()
+
+pc2 = c1 |> 
+  filter(!is.na(language2)) |>
+  select(log_odds_back,stem,ends_sibilant,ends_coronal_sonorant) |> 
+  pivot_longer(-c(log_odds_back,stem)) |> 
+  ggplot(aes(name,log_odds_back,fill = value)) +
+  geom_rain(alpha = .25) +
+  scale_fill_viridis_d(option = 'B', name = '', labels = c('absent','present')) +
+  scale_x_discrete(name = 'final segment', labels = c('coronal\nsonorant', 'sibilant')) +
+  scale_y_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'corpus: p(back)', breaks = c(.01,.1,.5,.9,.99)), name = 'corpus: log (back / front)') +
+  theme_few() +
+  theme(legend.position = 'bottom', axis.ticks.y = element_blank()) +
+  coord_flip()
+
+pc3 = c1 |> 
   filter(!is.na(language2)) |> 
   ggplot(aes(language2,log_odds_back)) +
   geom_rain() +
   coord_flip() +
   theme_few() +
+  theme(axis.ticks.y = element_blank()) +
   xlab('source language') +
   scale_y_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'corpus: p(back)', breaks = c(.01,.1,.5,.9,.99)), name = 'corpus: log (back / front)')
 
-pc2 = c1 |> 
-  filter(!is.na(language2)) |> 
-  ggplot(aes(language2,svm_weight_1)) +
-  geom_rain() +
-  coord_flip() +
-  theme_few() +
-  xlab('source language') +
-  ylab('similarity weight') +
-  theme(axis.title.y = element_blank(), axis.text.y = element_blank(), axis.ticks.y = element_blank())
-  
 c |> 
   filter(!is.na(year)) |> 
   ggplot(aes(year,log_odds_back)) +
@@ -134,21 +155,19 @@ c |>
   theme_few()
 # I'm beyond chuffed I've spent two hours on getting these data to see the most horizontal regression line on the planet
 
-# pc3
-
-pc3 = c1 |> 
+pc4 = c1 |> 
   filter(!is.na(language2)) |> 
   mutate(language2 = fct_rev(language2)) |> 
   ggplot(aes(x_phon, y_phon)) +
   stat_density2d(show.legend = F, colour = 'grey') +
   theme_few() +
   xlab('2d phonological\nsimilarity space') +
+  facet_wrap( ~ language2, ncol = 1, strip.position = 'left') +
   theme(
     axis.title.y = element_blank(),
     axis.ticks = element_blank(),
     axis.text = element_blank()
-  ) +
-  facet_wrap( ~ language2, ncol = 1, strip.position = 'left')
+  )
 
 ## sim corr
 
@@ -266,5 +285,6 @@ p1 / (p2 + p3) / (p4 + p5) / (p6 + p7) + plot_annotation(tag_levels = 'i')
 
 ggsave('fig/comp_corpus_exp.png', dpi = 600, width = 10, height = 12)
 
-pc1 + pc3
-ggsave('fig/corpus.png', dpi = 600, width = 8, height = 6)
+pc3 + pc4 + pc2 + pc1 + plot_layout(width = c(3,2), height = c(2,1)) + plot_annotation(tag_levels = 'i')
+ggsave('fig/corpus.png', dpi = 600, width = 7.5, height = 9)
+ggsave('fig/corpus.pdf', dpi = 600, width = 7.5, height = 9)

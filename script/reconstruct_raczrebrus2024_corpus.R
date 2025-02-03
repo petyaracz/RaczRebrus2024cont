@@ -30,6 +30,16 @@ years = tibble(
   year = uesz_y
   )
 
+# -- phon -- #
+
+words = words |> 
+  mutate(
+    ends_labial_stop =  str_detect(transcription, '[pbm]$'),
+    ends_sibilant =  str_detect(transcription, '[szšžč]$'),
+    ends_coronal_sonorant = str_detect(transcription, '[nṉlr]$'),
+    ends_two_consonants = str_detect(transcription, 'e[^e]{2}$')
+  )
+
 # -- combine -- #
 
 everything = words |> 
@@ -41,4 +51,4 @@ everything = words |>
 
 # -- write -- #
 
-write_tsv(everything, 'dat/corpus_with_year_and_language.tsv')
+write_tsv(everything, 'dat/corpus_with_year_and_language_and_phon.tsv')
